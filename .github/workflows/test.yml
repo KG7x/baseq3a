@@ -109,9 +109,10 @@ jobs:
         submodules: recursive
 
     - name: Build
+      shell: cmd
       run: |
           cd build/win32-qvm
-          compile.bat
+          call .\compile.bat
 # make -j 4 install DESTDIR=build/bin     
 
     - uses: actions/upload-artifact@v2
