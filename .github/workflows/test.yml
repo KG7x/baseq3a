@@ -26,6 +26,7 @@ jobs:
         if [ ${{ matrix.arch }} -eq 32 ]; then
             sudo dpkg --add-architecture i386
             sudo apt-get update -y
+            sudo apt-get -y install gcc-multilib g++-multilib
         fi
     - uses: actions/checkout@v2
       with:
