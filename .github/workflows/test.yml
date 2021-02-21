@@ -40,7 +40,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: Linux
-        path: build/linux/build
+        path: build/linux/build/**/*.so
         if-no-files-found: error
 #        retention-days: 5
 
@@ -89,7 +89,35 @@ jobs:
 
     - uses: actions/upload-artifact@v2
       with:
-        name: Windows (GCC)
-        path: build/linux/build
+        name: Windows
+        path: build/linux/build/**/*.dll
         if-no-files-found: error
+#        retention-days: 5
+
+  pak8a:
+    name: win32-qvm
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+#     matrix:
+#        include:
+#          - c: gcc
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+
+    - name: Build
+      run: |
+          cd build/win32-qvm
+          compile.bat
+# make -j 4 install DESTDIR=build/bin     
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: pak8a(win32-qvm)
+        path: |
+         build/win32-qvm/pak8a.pk3
+#        if-no-files-found: error
 #        retention-days: 5
