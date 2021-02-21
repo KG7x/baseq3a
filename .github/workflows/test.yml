@@ -90,6 +90,6 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: Windows (GCC)
-        path: build/bin/windows/gcc
+        path: build/linux/build
         if-no-files-found: error
 #        retention-days: 5
