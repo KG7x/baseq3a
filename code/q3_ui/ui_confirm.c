@@ -147,7 +147,7 @@ void ConfirmMenu_Cache( void ) {
 
 /*
 =================
-UI_ConfirmMenu_Stlye
+UI_ConfirmMenu_Style
 =================
 */
 void UI_ConfirmMenu_Style( const char *question, int style, void (*draw)( void ), void (*action)( qboolean result ) ) {

@@ -1,5 +1,5 @@
 //
-// string allocation/managment
+// string allocation/management
 
 #include "ui_shared.h"
 

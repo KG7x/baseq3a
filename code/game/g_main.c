@@ -1117,7 +1117,7 @@ void BeginIntermission( void ) {
 		return;	// already active
 	}
 
-	// if in tournement mode, change the wins / losses
+	// if in tournament mode, change the wins / losses
 	if ( g_gametype.integer == GT_TOURNAMENT ) {
 		AdjustTournamentScores();
 	}
@@ -1172,7 +1172,7 @@ void ExitLevel( void ) {
 	//bot interbreeding
 	BotInterbreedEndMatch();
 
-	// if we are running a tournement map, kick the loser to spectator status,
+	// if we are running a tournament map, kick the loser to spectator status,
 	// which will automatically grab the next spectator and restart
 	if ( g_gametype.integer == GT_TOURNAMENT  ) {
 		if ( !level.restarted ) {
@@ -1685,7 +1685,7 @@ FUNCTIONS CALLED EVERY FRAME
 =============
 CheckTournament
 
-Once a frame, check for changes in tournement player state
+Once a frame, check for changes in tournament player state
 =============
 */
 static void CheckTournament( void ) {
@@ -2148,7 +2148,7 @@ static void G_RunFrame( int levelTime ) {
 		}
 	}
 
-	// see if it is time to do a tournement restart
+	// see if it is time to do a tournament restart
 	CheckTournament();
 
 	// see if it is time to end the level

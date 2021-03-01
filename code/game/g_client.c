@@ -30,7 +30,7 @@ void SP_info_player_deathmatch( gentity_t *ent ) {
 }
 
 /*QUAKED info_player_start (1 0 0) (-16 -16 -24) (16 16 32)
-equivelant to info_player_deathmatch
+equivalent to info_player_deathmatch
 */
 void SP_info_player_start(gentity_t *ent) {
 	ent->classname = "info_player_deathmatch";
@@ -284,7 +284,7 @@ void InitBodyQue (void) {
 =============
 BodySink
 
-After sitting around for five seconds, fall into the ground and dissapear
+After sitting around for five seconds, fall into the ground and disappear
 =============
 */
 void BodySink( gentity_t *ent ) {
@@ -722,7 +722,7 @@ qboolean ClientUserinfoChanged( int clientNum ) {
 ClientConnect
 
 Called when a player begins connecting to the server.
-Called again for every map change or tournement restart.
+Called again for every map change or tournament restart.
 
 The session information will be valid after exit.
 
@@ -733,7 +733,7 @@ Otherwise, the client will be sent the current gamestate
 and will eventually get to ClientBegin.
 
 firstTime will be qtrue the very first time a client connects
-to the server machine, but qfalse on map changes and tournement
+to the server machine, but qfalse on map changes and tournament
 restarts.
 ============
 */
@@ -776,7 +776,7 @@ const char *ClientConnect( int clientNum, qboolean firstTime, qboolean isBot ) {
 
  	// IP filtering
  	// https://zerowing.idsoftware.com/bugzilla/show_bug.cgi?id=500
- 	// recommanding PB based IP / GUID banning, the builtin system is pretty limited
+ 	// recommending PB based IP / GUID banning, the builtin system is pretty limited
  	// check to see if they are on the banned IP list
 	value = Info_ValueForKey( userinfo, "ip" );
 
@@ -832,7 +832,7 @@ const char *ClientConnect( int clientNum, qboolean firstTime, qboolean isBot ) {
 	}
 	ent->inuse = qtrue;
 
-	// get and distribute relevant paramters
+	// get and distribute relevant parameters
 	G_LogPrintf( "ClientConnect: %i\n", clientNum );
 
 	client->pers.connected = CON_CONNECTING;

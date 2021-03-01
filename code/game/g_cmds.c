@@ -655,7 +655,7 @@ qboolean SetTeam( gentity_t *ent, const char *s ) {
 		player_die (ent, ent, ent, 100000, MOD_SUICIDE);
 	}
 
-	// they go to the end of the line for tournements
+	// they go to the end of the line for tournaments
 	if ( team == TEAM_SPECTATOR ) {
 		client->sess.spectatorTime = 0;
 	}
@@ -686,7 +686,7 @@ qboolean SetTeam( gentity_t *ent, const char *s ) {
 
 	BroadcastTeamChange( client, oldTeam );
 
-	// get and distribute relevent paramters
+	// get and distribute relevant parameters
 	ClientUserinfoChanged( clientNum );
 
 	ClientBegin( clientNum );
@@ -760,7 +760,7 @@ static void Cmd_Team_f( gentity_t *ent ) {
 		return;
 	}
 
-	// if they are playing a tournement game, count as a loss
+	// if they are playing a tournament game, count as a loss
 	if ( (g_gametype.integer == GT_TOURNAMENT )
 		&& ent->client->sess.sessionTeam == TEAM_FREE ) {
 		ent->client->sess.losses++;
@@ -806,7 +806,7 @@ static void Cmd_Follow_f( gentity_t *ent ) {
 		return;
 	}
 
-	// if they are playing a tournement game, count as a loss
+	// if they are playing a tournament game, count as a loss
 	if ( (g_gametype.integer == GT_TOURNAMENT )
 		&& ent->client->sess.sessionTeam == TEAM_FREE ) {
 		ent->client->sess.losses++;
@@ -832,7 +832,7 @@ void Cmd_FollowCycle_f( gentity_t *ent, int dir ) {
 	int		original;
 	gclient_t	*client;
 
-	// if they are playing a tournement game, count as a loss
+	// if they are playing a tournament game, count as a loss
 	if ( (g_gametype.integer == GT_TOURNAMENT )
 		&& ent->client->sess.sessionTeam == TEAM_FREE ) {
 		ent->client->sess.losses++;
@@ -901,7 +901,7 @@ static void G_SayTo( gentity_t *ent, gentity_t *other, int mode, int color, cons
 	if ( mode == SAY_TEAM  && !OnSameTeam(ent, other) ) {
 		return;
 	}
-	// no chatting to players in tournements
+	// no chatting to players in tournaments
 	if ( (g_gametype.integer == GT_TOURNAMENT )
 		&& other->client->sess.sessionTeam == TEAM_FREE
 		&& ent->client->sess.sessionTeam != TEAM_FREE ) {
@@ -967,7 +967,7 @@ static void G_Say( gentity_t *ent, gentity_t *target, int mode, const char *chat
 		G_Printf( "%s%s\n", name, text);
 	}
 
-	// send it to all the apropriate clients
+	// send it to all the appropriate clients
 	for (j = 0; j < level.maxclients; j++) {
 		other = &g_entities[j];
 		G_SayTo( ent, other, mode, color, name, text );
@@ -1055,7 +1055,7 @@ static void G_VoiceTo( gentity_t *ent, gentity_t *other, int mode, const char *i
 	if ( mode == SAY_TEAM && !OnSameTeam(ent, other) ) {
 		return;
 	}
-	// no chatting to players in tournements
+	// no chatting to players in tournaments
 	if ( g_gametype.integer == GT_TOURNAMENT ) {
 		return;
 	}
@@ -1094,7 +1094,7 @@ void G_Voice( gentity_t *ent, gentity_t *target, int mode, const char *id, qbool
 		G_Printf( "voice: %s %s\n", ent->client->pers.netname, id);
 	}
 
-	// send it to all the apropriate clients
+	// send it to all the appropriate clients
 	for (j = 0; j < level.maxclients; j++) {
 		other = &g_entities[j];
 		G_VoiceTo( ent, other, mode, id, voiceonly );

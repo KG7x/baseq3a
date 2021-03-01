@@ -534,7 +534,7 @@ static void CG_RegisterItemSounds( int itemNum ) {
 		trap_S_RegisterSound( item->pickup_sound, qfalse );
 	}
 
-	// parse the space seperated precache string for other media
+	// parse the space separated precache string for other media
 	s = item->sounds;
 	if (!s || !s[0])
 		return;
@@ -1951,7 +1951,7 @@ void CG_Init( int serverMessageNum, int serverCommandSequence, int clientNum ) {
 
 	cg.weaponSelect = WP_MACHINEGUN;
 
-	cgs.redflag = cgs.blueflag = -1; // For compatibily, default to unset for
+	cgs.redflag = cgs.blueflag = -1; // For compatibility, default to unset for
 	cgs.flagStatus = -1;
 	// old servers
 

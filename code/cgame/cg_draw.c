@@ -2879,7 +2879,7 @@ void CG_DrawActive( stereoFrame_t stereoView ) {
 		CG_CalculatePing();
 	}
 
-	// optionally draw the tournement scoreboard instead
+	// optionally draw the tournament scoreboard instead
 	if ( cg.snap->ps.persistant[PERS_TEAM] == TEAM_SPECTATOR &&
 		( cg.snap->ps.pm_flags & PMF_SCOREBOARD ) ) {
 		CG_DrawTourneyScoreboard();

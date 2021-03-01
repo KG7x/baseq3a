@@ -410,7 +410,7 @@ void G_RankDamage( int self, int attacker, int damage, int means_of_death )
 		// report general and specific hit given
 		// jwu 8/26/00
 		// had a case where attacker is 245 which is grnadeshooter attacker is
-		// g_entities index not necessarilly clientnum
+		// g_entities index not necessarily clientnum
 		if (g_entities[attacker].client) {
 			if( new_hit )
 			{

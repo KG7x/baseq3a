@@ -1,7 +1,7 @@
 // Copyright (C) 1999-2000 Id Software, Inc.
 //
 // cg_servercmds.c -- reliably sequenced text commands sent by the server
-// these are processed at snapshot transition time, so there will definately
+// these are processed at snapshot transition time, so there will definitely
 // be a valid snapshot this frame
 
 #include "cg_local.h"
@@ -454,7 +454,7 @@ CG_MapRestart
 The server has issued a map_restart, so the next snapshot
 is completely new and should not be interpolated to.
 
-A tournement restart will clear everything, but doesn't
+A tournament restart will clear everything, but doesn't
 require a reload of all the media
 ===============
 */

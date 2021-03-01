@@ -453,7 +453,7 @@ qboolean CG_DrawOldScoreboard( void ) {
 =================
 CG_DrawTourneyScoreboard
 
-Draw the oversize scoreboard for tournements
+Draw the oversize scoreboard for tournaments
 =================
 */
 void CG_DrawOldTourneyScoreboard( void ) {
