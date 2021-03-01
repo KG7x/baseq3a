@@ -36,10 +36,10 @@ cg_enemyModel [ pm | modelname ]
     if model is unknown (like "alien" or so) then it will be forced to "sarge"
 
 
-========================    
+========================
 cg_enemyColors [colorstring]
 
-    colorstring is a 3 [or 5] char-length string, where 
+    colorstring is a 3 [or 5] char-length string, where
 
     1st char - head color, all colors forced to '???' if not set
     2nd char - torso color, forced to white if not set

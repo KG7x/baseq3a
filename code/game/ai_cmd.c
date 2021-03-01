@@ -223,7 +223,7 @@ int FindClientByName( const char *name ) {
 
 	for ( i = 0; i < level.maxclients; i++ ) {
 		ClientName( i, buf, sizeof( buf ) );
-		if ( !Q_stricmp( buf, name ) ) 
+		if ( !Q_stricmp( buf, name ) )
 			return i; // exact match
 	}
 

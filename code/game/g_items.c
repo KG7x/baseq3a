@@ -37,7 +37,7 @@
 
 //======================================================================
 
-int SpawnTime( gentity_t *ent, qboolean firstSpawn ) 
+int SpawnTime( gentity_t *ent, qboolean firstSpawn )
 {
 	if ( !ent->item )
 		return 0;
@@ -78,7 +78,7 @@ int SpawnTime( gentity_t *ent, qboolean firstSpawn )
 	default: // IT_BAD and others
 		return 0;
 	}
-} 
+}
 
 
 int Pickup_Powerup( gentity_t *ent, gentity_t *other ) {
@@ -231,7 +231,7 @@ int Pickup_Holdable( gentity_t *ent, gentity_t *other ) {
 
 	other->client->ps.stats[STAT_HOLDABLE_ITEM] = ent->item - bg_itemlist;
 
-#ifdef MISSIONPACK	
+#ifdef MISSIONPACK
 	if( ent->item->giTag == HI_KAMIKAZE ) {
 		other->client->ps.eFlags |= EF_KAMIKAZE;
 	}
@@ -390,11 +390,11 @@ RespawnItem
 ===============
 */
 void RespawnItem( gentity_t *ent ) {
-	
+
 	if ( !ent ) {
 		return;
 	}
-	
+
 	// randomly select from teamed entities
 	if ( ent->team ) {
 		gentity_t *master;
@@ -595,8 +595,8 @@ void Touch_Item (gentity_t *ent, gentity_t *other, trace_t *trace) {
 	ent->r.contents = 0;
 
 	// ZOID
-	// A negative respawn times means to never respawn this item (but don't 
-	// delete it).  This is used by items that are respawned by third party 
+	// A negative respawn times means to never respawn this item (but don't
+	// delete it).  This is used by items that are respawned by third party
 	// events such as ctf flags
 	if ( respawn <= 0 ) {
 		ent->nextthink = 0;
@@ -683,7 +683,7 @@ gentity_t *Drop_Item( gentity_t *ent, gitem_t *item, float angle ) {
 	AngleVectors( angles, velocity, NULL, NULL );
 	VectorScale( velocity, 150, velocity );
 	velocity[2] += 200 + crandom() * 50;
-	
+
 	return LaunchItem( item, ent->s.pos.trBase, velocity );
 }
 
@@ -729,7 +729,7 @@ void FinishSpawningItem( gentity_t *ent ) {
 	if ( ent->count ) {
 		ent->s.time2 = ent->count;
 	} else if ( ent->item ) {
-		ent->s.time2 = ent->item->quantity;	
+		ent->s.time2 = ent->item->quantity;
 	}
 
 	if ( ent->spawnflags & 1 ) {
@@ -1036,7 +1036,7 @@ void G_RunItem( gentity_t *ent ) {
 	} else {
 		mask = MASK_PLAYERSOLID & ~CONTENTS_BODY;//MASK_SOLID;
 	}
-	trap_Trace( &tr, ent->r.currentOrigin, ent->r.mins, ent->r.maxs, origin, 
+	trap_Trace( &tr, ent->r.currentOrigin, ent->r.mins, ent->r.maxs, origin,
 		ent->r.ownerNum, mask );
 
 	VectorCopy( tr.endpos, ent->r.currentOrigin );

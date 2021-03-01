@@ -1630,32 +1630,32 @@ int BotInitLibrary( void ) {
 	trap_Cvar_VariableStringBuffer("bot_visualizejumppads", buf, sizeof(buf));
 	if ( buf[0] )
 		trap_BotLibVarSet( "bot_visualizejumppads", buf );
-	
+
 	//forced clustering calculations
 	trap_Cvar_VariableStringBuffer("bot_forceclustering", buf, sizeof(buf));
 	if ( buf[0] )
 		trap_BotLibVarSet( "forceclustering", buf );
-	
+
 	//forced reachability calculations
 	trap_Cvar_VariableStringBuffer("bot_forcereachability", buf, sizeof(buf));
 	if ( buf[0] )
 		trap_BotLibVarSet( "forcereachability", buf );
-	
+
 	//force writing of AAS to file
 	trap_Cvar_VariableStringBuffer("bot_forcewrite", buf, sizeof(buf));
 	if ( buf[0] )
 		trap_BotLibVarSet( "forcewrite", buf );
-	
+
 	//no AAS optimization
 	trap_Cvar_VariableStringBuffer("bot_aasoptimize", buf, sizeof(buf));
 	if ( buf[0] )
 		trap_BotLibVarSet( "aasoptimize", buf );
-	
+
 	//
 	trap_Cvar_VariableStringBuffer("bot_saveroutingcache", buf, sizeof(buf));
 	if ( buf[0] )
 		trap_BotLibVarSet( "saveroutingcache", buf );
-	
+
 	//reload instead of cache bot character files
 	trap_Cvar_VariableStringBuffer("bot_reloadcharacters", buf, sizeof(buf));
 	if ( !buf[0] )
@@ -1673,7 +1673,7 @@ int BotInitLibrary( void ) {
 
 	//game directory
 	trap_Cvar_VariableStringBuffer( "fs_game", buf, sizeof( buf ) );
-	if ( buf[0] ) 
+	if ( buf[0] )
 		trap_BotLibVarSet( "gamedir", buf );
 
 #ifdef MISSIONPACK

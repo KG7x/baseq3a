@@ -83,7 +83,7 @@ void CG_DamageFeedback( int yawByte, int pitchByte, int damage ) {
 	// but only if client is valid
 
 	//attacker = cg.predictedPlayerState.persistant[PERS_ATTACKER]; ?
-	attacker = cg.snap->ps.persistant[PERS_ATTACKER]; 
+	attacker = cg.snap->ps.persistant[PERS_ATTACKER];
 
 	if ( (unsigned)attacker < MAX_CLIENTS && attacker != cg.snap->ps.clientNum ) {
 		// dont do it when cg_draw2d = 0 ?
@@ -140,7 +140,7 @@ void CG_DamageFeedback( int yawByte, int pitchByte, int damage ) {
 		}
 
 		cg.v_dmg_roll = kick * left;
-		
+
 		cg.v_dmg_pitch = -kick * front;
 
 		if ( front <= 0.1 ) {
@@ -305,7 +305,7 @@ void CG_CheckLocalSounds( playerState_t *ps, playerState_t *ops ) {
 				index = 3 - index;
 
 			trap_S_StartLocalSound( cgs.media.hitSounds[ index ], CHAN_LOCAL_SOUND );
-		} 
+		}
 		else
 		{
 			trap_S_StartLocalSound( cgs.media.hitSound, CHAN_LOCAL_SOUND );
@@ -502,7 +502,7 @@ void CG_TransitionPlayerState( playerState_t *ps, playerState_t *ops ) {
 		CG_Respawn();
 	}
 
-	if ( cg.snap->ps.pm_type != PM_INTERMISSION 
+	if ( cg.snap->ps.pm_type != PM_INTERMISSION
 		&& ps->persistant[PERS_TEAM] != TEAM_SPECTATOR ) {
 		CG_CheckLocalSounds( ps, ops );
 	}

@@ -331,11 +331,11 @@ void G_RemapTeamShaders( void ) {
 	char string[1024];
 	float f = level.time * 0.001;
 	Com_sprintf( string, sizeof(string), "team_icon/%s_red", g_redteam.string );
-	AddRemap("textures/ctf2/redteam01", string, f); 
-	AddRemap("textures/ctf2/redteam02", string, f); 
+	AddRemap("textures/ctf2/redteam01", string, f);
+	AddRemap("textures/ctf2/redteam02", string, f);
 	Com_sprintf( string, sizeof(string), "team_icon/%s_blue", g_blueteam.string );
-	AddRemap("textures/ctf2/blueteam01", string, f); 
-	AddRemap("textures/ctf2/blueteam02", string, f); 
+	AddRemap("textures/ctf2/blueteam01", string, f);
+	AddRemap("textures/ctf2/blueteam02", string, f);
 	trap_SetConfigstring(CS_SHADERSTATE, BuildShaderStateConfig());
 #endif
 }
@@ -399,7 +399,7 @@ static void G_UpdateCvars( void ) {
 				cv->modificationCount = cv->vmCvar->modificationCount;
 
 				if ( cv->trackChange ) {
-					G_BroadcastServerCommand( -1, va("print \"Server: %s changed to %s\n\"", 
+					G_BroadcastServerCommand( -1, va("print \"Server: %s changed to %s\n\"",
 						cv->cvarName, cv->vmCvar->string ) );
 				}
 
@@ -416,7 +416,7 @@ static void G_UpdateCvars( void ) {
 }
 
 
-static void G_LocateSpawnSpots( void ) 
+static void G_LocateSpawnSpots( void )
 {
 	gentity_t			*ent;
 	int i, n;
@@ -427,7 +427,7 @@ static void G_LocateSpawnSpots( void )
 	n = 0;
 	ent = g_entities + MAX_CLIENTS;
 	for ( i = MAX_CLIENTS; i < MAX_GENTITIES; i++, ent++ ) {
-		
+
 		if ( !ent->inuse || !ent->classname )
 			continue;
 
@@ -581,7 +581,7 @@ static void G_InitGame( int levelTime, int randomSeed, int restart ) {
 	}
 
 	// let the server system know where the entites are
-	trap_LocateGameData( level.gentities, level.num_entities, sizeof( gentity_t ), 
+	trap_LocateGameData( level.gentities, level.num_entities, sizeof( gentity_t ),
 		&level.clients[0].ps, sizeof( level.clients[0] ) );
 
 	// reserve some spots for dead player bodies
@@ -637,7 +637,7 @@ static void G_InitGame( int levelTime, int randomSeed, int restart ) {
 G_ShutdownGame
 =================
 */
-static void G_ShutdownGame( int restart ) 
+static void G_ShutdownGame( int restart )
 {
 	G_Printf ("==== ShutdownGame ====\n");
 
@@ -729,7 +729,7 @@ void AddTournamentPlayer( void ) {
 			continue;
 		}
 		// never select the dedicated follow or scoreboard clients
-		if ( client->sess.spectatorState == SPECTATOR_SCOREBOARD || 
+		if ( client->sess.spectatorState == SPECTATOR_SCOREBOARD ||
 			client->sess.spectatorClient < 0  ) {
 			continue;
 		}
@@ -913,7 +913,7 @@ void CalculateRanks( void ) {
 
 			if ( level.clients[i].sess.sessionTeam != TEAM_SPECTATOR ) {
 				level.numNonSpectatorClients++;
-			
+
 				// decide if this should be auto-followed
 				if ( level.clients[i].pers.connected == CON_CONNECTED ) {
 					level.numPlayingClients++;
@@ -934,7 +934,7 @@ void CalculateRanks( void ) {
 		}
 	}
 
-	qsort( level.sortedClients, level.numConnectedClients, 
+	qsort( level.sortedClients, level.numConnectedClients,
 		sizeof(level.sortedClients[0]), SortRanks );
 
 	// set the rank value for all clients that are connected and not spectators
@@ -950,7 +950,7 @@ void CalculateRanks( void ) {
 				cl->ps.persistant[PERS_RANK] = 1;
 			}
 		}
-	} else {	
+	} else {
 		rank = -1;
 		score = MAX_QINT;
 		for ( i = 0;  i < level.numPlayingClients; i++ ) {
@@ -1035,11 +1035,11 @@ If a new client connects, this will be called after the spawn function.
 ========================
 */
 void MoveClientToIntermission( gentity_t *ent ) {
-	
+
 	gclient_t * client;
-	
+
 	client = ent->client;
-	
+
 	// take out of follow mode if needed
 	if ( client->sess.spectatorState == SPECTATOR_FOLLOW ) {
 		StopFollowing( ent, qtrue );
@@ -1162,7 +1162,7 @@ void BeginIntermission( void ) {
 ExitLevel
 
 When the intermission has been exited, the server is either killed
-or moved to a new level based on the "nextmap" cvar 
+or moved to a new level based on the "nextmap" cvar
 =============
 */
 void ExitLevel( void ) {
@@ -1181,7 +1181,7 @@ void ExitLevel( void ) {
 			level.restarted = qtrue;
 			level.intermissiontime = 0;
 		}
-		return;	
+		return;
 	}
 
 	level.intermissiontime = 0;
@@ -1217,7 +1217,7 @@ void ExitLevel( void ) {
 			G_LoadMap( NULL );
 		else
 			trap_SendConsoleCommand( EXEC_APPEND, "vstr nextmap\n" );
-	} 
+	}
 }
 
 
@@ -1360,7 +1360,7 @@ void CheckIntermissionExit( void ) {
 
 		if ( g_entities[i].r.svFlags & SVF_BOT ) {
 			cl->readyToExit = qtrue;
-		} 
+		}
 
 		if ( cl->readyToExit ) {
 			ready++;
@@ -1432,7 +1432,7 @@ static qboolean ScoreIsTied( void ) {
 	if ( level.numPlayingClients < 2 ) {
 		return qfalse;
 	}
-	
+
 	if ( g_gametype.integer >= GT_TEAM ) {
 		return level.teamScores[TEAM_RED] == level.teamScores[TEAM_BLUE];
 	}
@@ -1560,7 +1560,7 @@ static void ClearBodyQue( void ) {
 }
 
 
-static void G_WarmupEnd( void ) 
+static void G_WarmupEnd( void )
 {
 	gclient_t *client;
 	gentity_t *ent;
@@ -1581,10 +1581,10 @@ static void G_WarmupEnd( void )
 	trap_SetConfigstring( CS_SCORES2, "0" );
 	trap_SetConfigstring( CS_WARMUP, "" );
 	trap_SetConfigstring( CS_LEVEL_START_TIME, va( "%i", level.startTime ) );
-	
+
 	client = level.clients;
 	for ( i = 0; i < level.maxclients; i++, client++ ) {
-		
+
 		if ( client->pers.connected != CON_CONNECTED )
 			continue;
 
@@ -1803,7 +1803,7 @@ CheckVote
 ==================
 */
 static void CheckVote( void ) {
-	
+
 	if ( level.voteExecuteTime ) {
 		 if ( level.voteExecuteTime < level.time ) {
 			level.voteExecuteTime = 0;
@@ -1930,7 +1930,7 @@ void CheckTeamLeader( team_t team ) {
 	}
 
 	if ( max_id != -1 ) {
-		SetLeader( team, max_id ); 
+		SetLeader( team, max_id );
 		return;
 	}
 
@@ -2023,7 +2023,7 @@ void G_RunThink( gentity_t *ent ) {
 	if (thinktime > level.time) {
 		return;
 	}
-	
+
 	ent->nextthink = 0;
 	if ( !ent->think ) {
 		G_Error ( "NULL ent->think");
@@ -2046,7 +2046,7 @@ static void G_RunFrame( int levelTime ) {
 	gclient_t	*client;
 	static	gentity_t *missiles[ MAX_GENTITIES - MAX_CLIENTS ];
 	int		numMissiles;
-	
+
 	// if we are waiting for the level to restart, do nothing
 	if ( level.restarted ) {
 		return;
@@ -2121,7 +2121,7 @@ static void G_RunFrame( int levelTime ) {
 
 		if ( i < MAX_CLIENTS ) {
 			client = ent->client;
-			client->sess.spectatorTime += level.msec; 
+			client->sess.spectatorTime += level.msec;
 			if ( client->pers.connected == CON_CONNECTED )
 				G_RunClient( ent );
 			continue;

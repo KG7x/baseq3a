@@ -235,10 +235,10 @@ void UI_UpdateCvars( void ) {
 UI_VideoCheck
 =================
 */
-void UI_VideoCheck( int time ) 
+void UI_VideoCheck( int time )
 {
 	if ( abs( time - uis.lastVideoCheck ) > 1000 ) {
-		
+
 		int oldWidth, oldHeight;
 		oldWidth = uis.glconfig.vidWidth;
 		oldHeight = uis.glconfig.vidHeight;

@@ -22,7 +22,7 @@ COM_SkipPath
 char *COM_SkipPath (char *pathname)
 {
 	char	*last;
-	
+
 	last = pathname;
 	while (*pathname)
 	{
@@ -194,9 +194,9 @@ int COM_Compress( char *data_p ) {
 				}
 			// skip /* */ comments
 			} else if ( c == '/' && in[1] == '*' ) {
-				while ( *in && ( *in != '*' || in[1] != '/' ) ) 
+				while ( *in && ( *in != '*' || in[1] != '/' ) )
 					in++;
-				if ( *in ) 
+				if ( *in )
 					in += 2;
                         // record when we hit a newline
                         } else if ( c == '\n' || c == '\r' ) {
@@ -217,7 +217,7 @@ int COM_Compress( char *data_p ) {
                                 *out++ = ' ';
                                 whitespace = qfalse;
                             }
-                            
+
                             // copy quoted strings unmolested
                             if (c == '"') {
                                     *out++ = c;
@@ -292,10 +292,10 @@ char *COM_ParseExt( char **data_p, qboolean allowLineBreaks )
 			}
 		}
 		// skip /* */ comments
-		else if ( c == '/' && data[1] == '*' ) 
+		else if ( c == '/' && data[1] == '*' )
 		{
 			data += 2;
-			while ( *data && ( *data != '*' || data[1] != '/' ) ) 
+			while ( *data && ( *data != '*' || data[1] != '/' ) )
 			{
 				if ( *data == '\n' )
 				{
@@ -303,7 +303,7 @@ char *COM_ParseExt( char **data_p, qboolean allowLineBreaks )
 				}
 				data++;
 			}
-			if ( *data ) 
+			if ( *data )
 			{
 				data += 2;
 			}
@@ -453,7 +453,7 @@ void SkipTillSeparators( char **data )
 	if ( !*p )
 		return;
 
-	while ( (c = *p) != '\0' ) 
+	while ( (c = *p) != '\0' )
 	{
 		p++;
 		if ( is_separator[ c ] )
@@ -514,10 +514,10 @@ char *COM_ParseSep( char **data_p, qboolean allowLineBreaks )
 			}
 		}
 		// skip /* */ comments
-		else if ( c == '/' && data[1] == '*' ) 
+		else if ( c == '/' && data[1] == '*' )
 		{
 			data += 2;
-			while ( *data && ( *data != '*' || data[1] != '/' ) ) 
+			while ( *data && ( *data != '*' || data[1] != '/' ) )
 			{
 				if ( *data == '\n' )
 				{
@@ -525,7 +525,7 @@ char *COM_ParseSep( char **data_p, qboolean allowLineBreaks )
 				}
 				data++;
 			}
-			if ( *data ) 
+			if ( *data )
 			{
 				data += 2;
 			}
@@ -568,12 +568,12 @@ char *COM_ParseSep( char **data_p, qboolean allowLineBreaks )
 	}
 
 	// special case for separators
- 	if ( is_separator[ c ]  )  
+ 	if ( is_separator[ c ]  )
 	{
 		com_token[ len ] = c;
 		len++;
 		data++;
-	} 
+	}
 	else // parse a regular word
 	do
 	{
@@ -598,37 +598,37 @@ char *COM_ParseSep( char **data_p, qboolean allowLineBreaks )
 Com_Split
 ============
 */
-int Com_Split( char *in, char **out, int outsz, int delim ) 
+int Com_Split( char *in, char **out, int outsz, int delim )
 {
 	int c;
 	char **o = out, **end = out + outsz;
 	// skip leading spaces
 	if ( delim >= ' ' ) {
-		while( (c = *in) != '\0' && c <= ' ' ) 
-			in++; 
+		while( (c = *in) != '\0' && c <= ' ' )
+			in++;
 	}
 	*out = in; out++;
 	while( out < end ) {
-		while( (c = *in) != '\0' && c != delim ) 
-			in++; 
+		while( (c = *in) != '\0' && c != delim )
+			in++;
 		*in = '\0';
 		if ( !c ) {
 			// don't count last null value
-			if ( out[-1][0] == '\0' ) 
+			if ( out[-1][0] == '\0' )
 				out--;
 			break;
 		}
 		in++;
 		// skip leading spaces
 		if ( delim >= ' ' ) {
-			while( (c = *in) != '\0' && c <= ' ' ) 
-				in++; 
+			while( (c = *in) != '\0' && c <= ' ' )
+				in++;
 		}
 		*out = in; out++;
 	}
 	// sanitize last value
-	while( (c = *in) != '\0' && c != delim ) 
-		in++; 
+	while( (c = *in) != '\0' && c != delim )
+		in++;
 	*in = '\0';
 	c = out - o;
 	// set remaining out pointers
@@ -779,11 +779,11 @@ char* Q_strrchr( const char* string, int c )
 /*
 =============
 Q_strncpyz
- 
+
 Safe strncpy that ensures a trailing zero
 =============
 */
-void Q_strncpyz( char *dest, const char *src, int destsize ) 
+void Q_strncpyz( char *dest, const char *src, int destsize )
 {
 	if ( !dest ) {
 		Com_Error( ERR_FATAL, "Q_strncpyz: NULL dest" );
@@ -794,14 +794,14 @@ void Q_strncpyz( char *dest, const char *src, int destsize )
 	}
 
 	if ( destsize < 1 ) {
-		Com_Error(ERR_FATAL,"Q_strncpyz: destsize < 1" ); 
+		Com_Error(ERR_FATAL,"Q_strncpyz: destsize < 1" );
 	}
 
 	strncpy( dest, src, destsize-1 );
 	dest[ destsize-1 ] = '\0';
 }
 
-                 
+
 int Q_stricmpn( const char *s1, const char *s2, int n ) {
 	int	c1, c2;
 
@@ -812,7 +812,7 @@ int Q_stricmpn( const char *s1, const char *s2, int n ) {
 			return -1;
 	} else if ( s2 == NULL )
 		return 1;
-	
+
 	do {
 		c1 = *s1; s1++;
 		c2 = *s2; s2++;
@@ -820,7 +820,7 @@ int Q_stricmpn( const char *s1, const char *s2, int n ) {
 		if ( !n-- ) {
 			return 0; // strings are equal until end point
 		}
-		
+
 		if ( c1 != c2 ) {
 			if (c1 >= 'a' && c1 <= 'z') {
 				c1 -= ('a' - 'A');
@@ -833,14 +833,14 @@ int Q_stricmpn( const char *s1, const char *s2, int n ) {
 			}
 		}
 	} while (c1);
-	
+
 	return 0;		// strings are equal
 }
 
 
 int Q_strncmp( const char *s1, const char *s2, int n ) {
 	int		c1, c2;
-	
+
 	do {
 		c1 = *s1; s1++;
 		c2 = *s2; s2++;
@@ -848,21 +848,21 @@ int Q_strncmp( const char *s1, const char *s2, int n ) {
 		if (!n--) {
 			return 0;		// strings are equal until end point
 		}
-		
+
 		if (c1 != c2) {
 			return c1 < c2 ? -1 : 1;
 		}
 	} while (c1);
-	
+
 	return 0;		// strings are equal
 }
 
 
-int Q_stricmp( const char *s1, const char *s2 ) 
+int Q_stricmp( const char *s1, const char *s2 )
 {
 	unsigned char c1, c2;
 
-	if ( s1 == NULL ) 
+	if ( s1 == NULL )
 	{
 		if ( s2 == NULL )
 			return 0;
@@ -871,13 +871,13 @@ int Q_stricmp( const char *s1, const char *s2 )
 	}
 	else if ( s2 == NULL )
 		return 1;
-	
-	do 
+
+	do
 	{
 		c1 = *s1; s1++;
 		c2 = *s2; s2++;
 
-		if ( c1 != c2 ) 
+		if ( c1 != c2 )
 		{
 			if ( c1 <= 'Z' && c1 >= 'A' )
 				c1 += ('a' - 'A');
@@ -885,7 +885,7 @@ int Q_stricmp( const char *s1, const char *s2 )
 			if ( c2 <= 'Z' && c2 >= 'A' )
 				c2 += ('a' - 'A');
 
-			if ( c1 != c2 ) 
+			if ( c1 != c2 )
 				return c1 < c2 ? -1 : 1;
 		}
 	}
@@ -895,7 +895,7 @@ int Q_stricmp( const char *s1, const char *s2 )
 }
 
 
-char *Q_strlwr( char *s1 ) 
+char *Q_strlwr( char *s1 )
 {
     char	*s;
 
@@ -1002,7 +1002,7 @@ varargs versions of all text functions.
 FIXME: make this buffer size safe someday
 ============
 */
-char * QDECL va( const char *format, ... ) 
+char * QDECL va( const char *format, ... )
 {
 	va_list		argptr;
 	static char		string[2][32000];	// in case va is called by nested functions
@@ -1093,7 +1093,7 @@ char *Info_ValueForKey( const char *s, const char *key ) {
 			{
 				Com_Error( ERR_DROP, "Info_ValueForKey: oversize infostring value" );
 			}
-			else 
+			else
 			{
 				while ( v < s )
 				{
@@ -1284,7 +1284,7 @@ qboolean Info_SetValueForKey( char *s, const char *key, const char *value ) {
 		return qtrue;
 
 	len2 = Com_sprintf( newi, sizeof( newi ), "\\%s\\%s", key, value );
-	
+
 	if ( len1 + len2 >= MAX_INFO_STRING )
 	{
 		Com_Printf( S_COLOR_YELLOW "Info string length exceeded\n" );

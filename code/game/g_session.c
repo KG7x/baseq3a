@@ -24,7 +24,7 @@ void G_WriteClientSessionData( gclient_t *client ) {
 	const char	*s;
 	const char	*var;
 
-	s = va("%i %i %i %i %i %i %i", 
+	s = va("%i %i %i %i %i %i %i",
 		client->sess.sessionTeam,
 		client->sess.spectatorTime,
 		client->sess.spectatorState,
@@ -100,7 +100,7 @@ Called on a first-time connect
 */
 void G_InitSessionData( gclient_t *client, const char *team, qboolean isBot ) {
 	clientSession_t	*sess;
-	
+
 	sess = &client->sess;
 
 	// initial team determination
@@ -114,7 +114,7 @@ void G_InitSessionData( gclient_t *client, const char *team, qboolean isBot ) {
 			} else {
 				// always spawn as spectator in team games
 				if ( isBot == qfalse ) {
-					sess->sessionTeam = TEAM_SPECTATOR;	
+					sess->sessionTeam = TEAM_SPECTATOR;
 				} else  {
 					// bind player to specified team
 					if ( team[0] == 'r' || team[0] == 'R' ) {
@@ -178,7 +178,7 @@ void G_InitWorldSession( void ) {
 
 	trap_Cvar_VariableStringBuffer( "session", s, sizeof(s) );
 	gt = atoi( s );
-	
+
 	// if the gametype changed since the last session, don't use any
 	// client sessions
 	if ( !*s || g_gametype.integer != gt ) {

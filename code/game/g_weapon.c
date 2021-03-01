@@ -1,6 +1,6 @@
 // Copyright (C) 1999-2000 Id Software, Inc.
 //
-// g_weapon.c 
+// g_weapon.c
 // perform the server side effects of a weapon firing
 
 #include "g_local.h"
@@ -68,7 +68,7 @@ qboolean CheckGauntletAttack( gentity_t *ent ) {
 	gentity_t	*tent;
 	gentity_t	*traceEnt;
 	int			damage;
-	
+
 	// set aiming directions
 	AngleVectors( ent->client->ps.viewangles, forward, right, up );
 
@@ -132,7 +132,7 @@ SnapVectorTowards
 
 Round a vector to integers for more efficient network
 transmission, but make sure that it rounds towards a given point
-rather than blindly truncating.  This prevents it from truncating 
+rather than blindly truncating.  This prevents it from truncating
 into a wall.
 ======================
 */

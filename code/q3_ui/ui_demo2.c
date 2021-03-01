@@ -14,7 +14,7 @@ DEMOS MENU
 
 
 #define ART_BACK0			"menu/art/back_0"
-#define ART_BACK1			"menu/art/back_1"	
+#define ART_BACK1			"menu/art/back_1"
 #define ART_GO0				"menu/art/play_0"
 #define ART_GO1				"menu/art/play_1"
 #define ART_ARROWS_VERT		"menu/art/arrows_vert_0"
@@ -82,7 +82,7 @@ static char	buffer[NAMEBUFSIZE];	// filename buffer
 static char	show_names[UI_MAX_DEMOS][UI_DEMO_LENGTH*3];
 
 static const char* sorttype[] = {
-	"No",			
+	"No",
 	"Name, asc",
 	"Name, desc",
 	0
@@ -109,9 +109,9 @@ static void Demos_DrawFilter( void *self ) {
 	y = f->generic.y;
 	focus = (f->generic.parent->cursor == f->generic.menuPosition);
 #if 0
-	UI_FillRect( f->generic.left, f->generic.top, 
-		f->generic.right-f->generic.left, 
-		f->generic.bottom-f->generic.top, 
+	UI_FillRect( f->generic.left, f->generic.top,
+		f->generic.right-f->generic.left,
+		f->generic.bottom-f->generic.top,
 		text_color_disabled );
 #endif
 	style = UI_LEFT|UI_SMALLFONT;
@@ -178,7 +178,7 @@ static void UI_DemosRestorePosition( void ) {
 UI_DemosReadDir
 ===============
 */
-static void UI_DemosReadDir( void ) 
+static void UI_DemosReadDir( void )
 {
 	char	extension[32], *s;
 	int		i, len, n, c, m;
@@ -223,7 +223,7 @@ static void UI_DemosReadDir( void )
 			Com_sprintf( extension, sizeof( extension ), "dm_%d", (int)trap_Cvar_VariableValue( "protocol" ) );
 			m = trap_FS_GetFileList( dir, extension, s, len );
 		}
-		if ( num_files + m > UI_MAX_DEMOS ) 
+		if ( num_files + m > UI_MAX_DEMOS )
 			m = UI_MAX_DEMOS - n;
 		for ( i = 0; i < m; i++, c++ ) {
 			len = strlen( s );
@@ -263,7 +263,7 @@ static qboolean UI_UpdateDirectory( char *name ) {
 			if ( !s || s == dir )
 				dirlevel = 0;
 			return qtrue;
-		}		
+		}
 	} else {
 		Q_strcat( dir, sizeof( dir ), "/" );
 		Q_strcat( dir, sizeof( dir ), name );
@@ -360,7 +360,7 @@ static void UI_DemosDblclick( void *ptr ) {
 
 #if 0
 static sfxHandle_t UI_DemosKeydown( void *ptr, int key ) {
-/*	
+/*
 	if ( key == K_ENTER || key == K_KP_ENTER ) {
 		UI_DemoClick();
 		return menu_move_sound;
@@ -443,20 +443,20 @@ int UI_cstricmp( const char *src, const char *dst ) {
             c1 = src[1];
             src += 2;
             continue;
-        } 
-                
+        }
+
         if ( *dst == '^' && dst[1] ) {
             c2 = dst[1];
             dst += 2;
             continue;
-        } 
-		
+        }
+
 		ch1 = *src;
 		ch2 = *dst;
 
-		if ( ch1 >= 'a' && ch1 <= 'z' ) 
+		if ( ch1 >= 'a' && ch1 <= 'z' )
 			ch1 = ch1 - 'a' + 'A';
-		if ( ch2 >= 'a' && ch2 <= 'z' ) 
+		if ( ch2 >= 'a' && ch2 <= 'z' )
 			ch2 = ch2 - 'a' + 'A';
 
         ret = ch1 - ch2;
@@ -480,32 +480,32 @@ int UI_cstricmp( const char *src, const char *dst ) {
 }
 
 
-static int compare_entries( demo_entry_t * a, demo_entry_t *b, int mode ) 
+static int compare_entries( demo_entry_t * a, demo_entry_t *b, int mode )
 {
 	int t;
 	t = b->file_type - a->file_type;
 	if ( !t )
-		if ( mode == 1 ) 
+		if ( mode == 1 )
 			return UI_cstricmp( a->file_name, b->file_name );
 		else
 			return -UI_cstricmp( a->file_name, b->file_name );
 
-	else 
+	else
 		return t;
 }
 
 
-static void UI_demosort( demo_entry_t **a, int n, int mode ) 
+static void UI_demosort( demo_entry_t **a, int n, int mode )
 {
     demo_entry_t * tmp;
     int i = 0, j = n;
     demo_entry_t *m = a[ n>>1 ];
-    do 
+    do
     {
         while ( compare_entries( a[i], m, mode ) < 0 ) i++;
         while ( compare_entries( a[j], m, mode ) > 0 ) j--;
 
-		if ( i <= j ) 
+		if ( i <= j )
         {
             tmp = a[i];
             a[i] = a[j];
@@ -513,7 +513,7 @@ static void UI_demosort( demo_entry_t **a, int n, int mode )
             i++;
             j--;
         }
-    } 
+    }
     while ( i <= j );
     if ( j > 0 ) UI_demosort( a, j, mode );
     if ( n > i ) UI_demosort( a+i, n-i, mode );
@@ -542,7 +542,7 @@ static void UI_DemosFillList( void ) {
 			// strip extension
 			if ( !Q_stricmp( matchname + len - 6, ".dm_68" ) )
 				matchname[ len-6 ] = '\0';
-		
+
 			BG_StripColor( matchname );
 			if ( !Q_stristr( matchname, s_demos.namefilter ) ) {
 				continue;
@@ -571,7 +571,7 @@ static void UI_DemosFillList( void ) {
 			memset( show_names[i] +  len - 6, ' ', 6 );
 			len -= 6;
 		}
-		
+
 		diff = UI_cstrdiff ( show_names[i] );
 
 		show_names[i][s_demos.list.width-1+diff] = '\0';
@@ -708,7 +708,7 @@ static void Demos_MenuInit( void ) {
 	s_demos.sort.generic.y			= 72;
 	s_demos.sort.itemnames			= sorttype;
 	s_demos.sort.curvalue			= (int)trap_Cvar_VariableValue( "ui_demoSort" );
-	
+
 	if ( s_demos.sort.curvalue < 0 || s_demos.sort.curvalue > 2 )
 		 s_demos.sort.curvalue = 0;
 

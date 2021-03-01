@@ -1525,7 +1525,7 @@ char *EasyClientName(int client, char *buf, int size) {
 			memmove(ptr, ptr+1, strlen(ptr + 1)+1);
 		}
 	}
-	
+
 	Q_strncpyz( buf, name, size );
 
 	return buf;
@@ -4835,7 +4835,7 @@ void BotCheckEvents(bot_state_t *bs, entityState_t *state) {
 				bs->enemysuicide = qtrue;
 			}
 			//
-#ifdef MISSIONPACK			
+#ifdef MISSIONPACK
 			if (gametype == GT_1FCTF) {
 				//
 				BotEntityInfo(target, &entinfo);

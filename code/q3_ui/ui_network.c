@@ -133,7 +133,7 @@ static void UI_NetworkOptionsMenu_Init( void ) {
 	networkOptionsInfo.framel.generic.type		= MTYPE_BITMAP;
 	networkOptionsInfo.framel.generic.name		= ART_FRAMEL;
 	networkOptionsInfo.framel.generic.flags		= QMF_INACTIVE;
-	networkOptionsInfo.framel.generic.x			= 0;  
+	networkOptionsInfo.framel.generic.x			= 0;
 	networkOptionsInfo.framel.generic.y			= 78;
 	networkOptionsInfo.framel.width				= 256;
 	networkOptionsInfo.framel.height			= 329;

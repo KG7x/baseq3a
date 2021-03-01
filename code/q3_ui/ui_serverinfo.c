@@ -9,7 +9,7 @@
 
 static char* serverinfo_artlist[] =
 {
-	SERVERINFO_FRAMEL,	
+	SERVERINFO_FRAMEL,
 	SERVERINFO_FRAMER,
 	SERVERINFO_BACK0,
 	SERVERINFO_BACK1,
@@ -66,7 +66,7 @@ void Favorites_Add( void )
 			// already in list
 			return;
 		}
-		
+
 		// use first empty or non-numeric available slot
 		if ((adrstr[0]  < '0' || adrstr[0] > '9' ) && !best)
 			best = i+1;
@@ -89,7 +89,7 @@ static void ServerInfo_Event( void* ptr, int event )
 		case ID_ADD:
 			if (event != QM_ACTIVATED)
 				break;
-		
+
 			Favorites_Add();
 			UI_PopMenu();
 			break;
@@ -162,7 +162,7 @@ void UI_ServerInfoMenu( void )
 	s_serverinfo.framel.generic.type  = MTYPE_BITMAP;
 	s_serverinfo.framel.generic.name  = SERVERINFO_FRAMEL;
 	s_serverinfo.framel.generic.flags = QMF_INACTIVE;
-	s_serverinfo.framel.generic.x	  = 0;  
+	s_serverinfo.framel.generic.x	  = 0;
 	s_serverinfo.framel.generic.y	  = 78;
 	s_serverinfo.framel.width  	      = 256;
 	s_serverinfo.framel.height  	  = 329;
@@ -234,9 +234,9 @@ void UI_ServerInfoMenu( void )
 
 		str = show_info[s_serverinfo.list.numitems];
 		s_serverinfo.list.itemnames[s_serverinfo.list.numitems] = str;
-		
+
 		len = strlen( key );
-		len = max - len; 
+		len = max - len;
 
 		// align key name
 		for ( i = 0; i < len; i++ )

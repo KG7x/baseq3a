@@ -4,7 +4,7 @@
 
 
 #define ART_BACK0		"menu/art/back_0"
-#define ART_BACK1		"menu/art/back_1"	
+#define ART_BACK1		"menu/art/back_1"
 #define ART_FRAMEL		"menu/art/frame2_l"
 #define ART_FRAMER		"menu/art/frame1_r"
 
@@ -114,7 +114,7 @@ static void UI_CinematicsMenu_Init( void ) {
 	cinematicsMenuInfo.framel.generic.type		= MTYPE_BITMAP;
 	cinematicsMenuInfo.framel.generic.name		= ART_FRAMEL;
 	cinematicsMenuInfo.framel.generic.flags		= QMF_INACTIVE;
-	cinematicsMenuInfo.framel.generic.x			= 0;  
+	cinematicsMenuInfo.framel.generic.x			= 0;
 	cinematicsMenuInfo.framel.generic.y			= 78;
 	cinematicsMenuInfo.framel.width  			= 256;
 	cinematicsMenuInfo.framel.height  			= 329;
@@ -133,7 +133,7 @@ static void UI_CinematicsMenu_Init( void ) {
 	cinematicsMenuInfo.cin_idlogo.generic.x			= 320;
 	cinematicsMenuInfo.cin_idlogo.generic.y			= y;
 	cinematicsMenuInfo.cin_idlogo.generic.id		= ID_CIN_IDLOGO;
-	cinematicsMenuInfo.cin_idlogo.generic.callback	= UI_CinematicsMenu_Event; 
+	cinematicsMenuInfo.cin_idlogo.generic.callback	= UI_CinematicsMenu_Event;
 	cinematicsMenuInfo.cin_idlogo.string			= "ID LOGO";
 	cinematicsMenuInfo.cin_idlogo.color				= color_red;
 	cinematicsMenuInfo.cin_idlogo.style				= UI_CENTER;
@@ -144,7 +144,7 @@ static void UI_CinematicsMenu_Init( void ) {
 	cinematicsMenuInfo.cin_intro.generic.x			= 320;
 	cinematicsMenuInfo.cin_intro.generic.y			= y;
 	cinematicsMenuInfo.cin_intro.generic.id			= ID_CIN_INTRO;
-	cinematicsMenuInfo.cin_intro.generic.callback	= UI_CinematicsMenu_Event; 
+	cinematicsMenuInfo.cin_intro.generic.callback	= UI_CinematicsMenu_Event;
 	cinematicsMenuInfo.cin_intro.string				= "INTRO";
 	cinematicsMenuInfo.cin_intro.color				= color_red;
 	cinematicsMenuInfo.cin_intro.style				= UI_CENTER;
@@ -158,7 +158,7 @@ static void UI_CinematicsMenu_Init( void ) {
 	cinematicsMenuInfo.cin_tier1.generic.x			= 320;
 	cinematicsMenuInfo.cin_tier1.generic.y			= y;
 	cinematicsMenuInfo.cin_tier1.generic.id			= ID_CIN_TIER1;
-	cinematicsMenuInfo.cin_tier1.generic.callback	= UI_CinematicsMenu_Event; 
+	cinematicsMenuInfo.cin_tier1.generic.callback	= UI_CinematicsMenu_Event;
 	cinematicsMenuInfo.cin_tier1.string				= "Tier 1";
 	cinematicsMenuInfo.cin_tier1.color				= color_red;
 	cinematicsMenuInfo.cin_tier1.style				= UI_CENTER;
@@ -172,7 +172,7 @@ static void UI_CinematicsMenu_Init( void ) {
 	cinematicsMenuInfo.cin_tier2.generic.x			= 320;
 	cinematicsMenuInfo.cin_tier2.generic.y			= y;
 	cinematicsMenuInfo.cin_tier2.generic.id			= ID_CIN_TIER2;
-	cinematicsMenuInfo.cin_tier2.generic.callback	= UI_CinematicsMenu_Event; 
+	cinematicsMenuInfo.cin_tier2.generic.callback	= UI_CinematicsMenu_Event;
 	cinematicsMenuInfo.cin_tier2.string				= "Tier 2";
 	cinematicsMenuInfo.cin_tier2.color				= color_red;
 	cinematicsMenuInfo.cin_tier2.style				= UI_CENTER;
@@ -186,7 +186,7 @@ static void UI_CinematicsMenu_Init( void ) {
 	cinematicsMenuInfo.cin_tier3.generic.x			= 320;
 	cinematicsMenuInfo.cin_tier3.generic.y			= y;
 	cinematicsMenuInfo.cin_tier3.generic.id			= ID_CIN_TIER3;
-	cinematicsMenuInfo.cin_tier3.generic.callback	= UI_CinematicsMenu_Event; 
+	cinematicsMenuInfo.cin_tier3.generic.callback	= UI_CinematicsMenu_Event;
 	cinematicsMenuInfo.cin_tier3.string				= "Tier 3";
 	cinematicsMenuInfo.cin_tier3.color				= color_red;
 	cinematicsMenuInfo.cin_tier3.style				= UI_CENTER;
@@ -200,7 +200,7 @@ static void UI_CinematicsMenu_Init( void ) {
 	cinematicsMenuInfo.cin_tier4.generic.x			= 320;
 	cinematicsMenuInfo.cin_tier4.generic.y			= y;
 	cinematicsMenuInfo.cin_tier4.generic.id			= ID_CIN_TIER4;
-	cinematicsMenuInfo.cin_tier4.generic.callback	= UI_CinematicsMenu_Event; 
+	cinematicsMenuInfo.cin_tier4.generic.callback	= UI_CinematicsMenu_Event;
 	cinematicsMenuInfo.cin_tier4.string				= "Tier 4";
 	cinematicsMenuInfo.cin_tier4.color				= color_red;
 	cinematicsMenuInfo.cin_tier4.style				= UI_CENTER;
@@ -214,7 +214,7 @@ static void UI_CinematicsMenu_Init( void ) {
 	cinematicsMenuInfo.cin_tier5.generic.x			= 320;
 	cinematicsMenuInfo.cin_tier5.generic.y			= y;
 	cinematicsMenuInfo.cin_tier5.generic.id			= ID_CIN_TIER5;
-	cinematicsMenuInfo.cin_tier5.generic.callback	= UI_CinematicsMenu_Event; 
+	cinematicsMenuInfo.cin_tier5.generic.callback	= UI_CinematicsMenu_Event;
 	cinematicsMenuInfo.cin_tier5.string				= "Tier 5";
 	cinematicsMenuInfo.cin_tier5.color				= color_red;
 	cinematicsMenuInfo.cin_tier5.style				= UI_CENTER;
@@ -228,7 +228,7 @@ static void UI_CinematicsMenu_Init( void ) {
 	cinematicsMenuInfo.cin_tier6.generic.x			= 320;
 	cinematicsMenuInfo.cin_tier6.generic.y			= y;
 	cinematicsMenuInfo.cin_tier6.generic.id			= ID_CIN_TIER6;
-	cinematicsMenuInfo.cin_tier6.generic.callback	= UI_CinematicsMenu_Event; 
+	cinematicsMenuInfo.cin_tier6.generic.callback	= UI_CinematicsMenu_Event;
 	cinematicsMenuInfo.cin_tier6.string				= "Tier 6";
 	cinematicsMenuInfo.cin_tier6.color				= color_red;
 	cinematicsMenuInfo.cin_tier6.style				= UI_CENTER;
@@ -242,7 +242,7 @@ static void UI_CinematicsMenu_Init( void ) {
 	cinematicsMenuInfo.cin_tier7.generic.x			= 320;
 	cinematicsMenuInfo.cin_tier7.generic.y			= y;
 	cinematicsMenuInfo.cin_tier7.generic.id			= ID_CIN_TIER7;
-	cinematicsMenuInfo.cin_tier7.generic.callback	= UI_CinematicsMenu_Event; 
+	cinematicsMenuInfo.cin_tier7.generic.callback	= UI_CinematicsMenu_Event;
 	cinematicsMenuInfo.cin_tier7.string				= "Tier 7";
 	cinematicsMenuInfo.cin_tier7.color				= color_red;
 	cinematicsMenuInfo.cin_tier7.style				= UI_CENTER;
@@ -256,7 +256,7 @@ static void UI_CinematicsMenu_Init( void ) {
 	cinematicsMenuInfo.cin_end.generic.x			= 320;
 	cinematicsMenuInfo.cin_end.generic.y			= y;
 	cinematicsMenuInfo.cin_end.generic.id			= ID_CIN_END;
-	cinematicsMenuInfo.cin_end.generic.callback		= UI_CinematicsMenu_Event; 
+	cinematicsMenuInfo.cin_end.generic.callback		= UI_CinematicsMenu_Event;
 	cinematicsMenuInfo.cin_end.string				= "END";
 	cinematicsMenuInfo.cin_end.color				= color_red;
 	cinematicsMenuInfo.cin_end.style				= UI_CENTER;

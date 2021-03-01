@@ -17,13 +17,13 @@
 
 static char* playermodel_artlist[] =
 {
-	MODEL_BACK0,	
-	MODEL_BACK1,	
+	MODEL_BACK0,
+	MODEL_BACK1,
 	MODEL_SELECT,
 	MODEL_SELECTED,
 	MODEL_FRAMEL,
 	MODEL_FRAMER,
-	MODEL_PORTS,	
+	MODEL_PORTS,
 	MODEL_ARROWS,
 	MODEL_ARROWSL,
 	MODEL_ARROWSR,
@@ -98,7 +98,7 @@ static void PlayerModel_UpdateGrid( void )
 	for (i=0; i<PLAYERGRID_ROWS*PLAYERGRID_COLS; i++,j++)
 	{
 		if (j < s_playermodel.nummodels)
-		{ 
+		{
 			// model/skin portrait
  			s_playermodel.pics[i].generic.name         = s_playermodel.modelnames[j];
 			s_playermodel.picbuttons[i].generic.flags &= ~QMF_INACTIVE;
@@ -155,7 +155,7 @@ static void PlayerModel_UpdateModel( void )
 	vec3_t	moveangles;
 
 	memset( &s_playermodel.playerinfo, 0, sizeof(playerInfo_t) );
-	
+
 	viewangles[YAW]   = 180 - 30;
 	viewangles[PITCH] = 0;
 	viewangles[ROLL]  = 0;
@@ -233,7 +233,7 @@ static sfxHandle_t PlayerModel_MenuKey( int key )
 				{
 					Menu_SetCursor(&s_playermodel.menu,s_playermodel.menu.cursor-1);
 					return (menu_move_sound);
-					
+
 				}
 				else if (s_playermodel.modelpage > 0)
 				{
@@ -257,7 +257,7 @@ static sfxHandle_t PlayerModel_MenuKey( int key )
 				{
 					Menu_SetCursor(&s_playermodel.menu,s_playermodel.menu.cursor+1);
 					return (menu_move_sound);
-				}					
+				}
 				else if ((picnum == 15) && (s_playermodel.modelpage < s_playermodel.numpages-1))
 				{
 					s_playermodel.modelpage++;
@@ -269,7 +269,7 @@ static sfxHandle_t PlayerModel_MenuKey( int key )
 					return (menu_buzz_sound);
 			}
 			break;
-			
+
 		case K_MOUSE2:
 		case K_ESCAPE:
 			PlayerModel_SaveChanges();
@@ -389,12 +389,12 @@ static void PlayerModel_BuildList( void )
 	for (i=0; i<numdirs && s_playermodel.nummodels < MAX_PLAYERMODELS; i++,dirptr+=dirlen+1)
 	{
 		dirlen = strlen(dirptr);
-		
+
 		if (dirlen && dirptr[dirlen-1]=='/') dirptr[dirlen-1]='\0';
 
 		if (!strcmp(dirptr,".") || !strcmp(dirptr,".."))
 			continue;
-			
+
 		// iterate all skin files in directory
 		numfiles = trap_FS_GetFileList( va("models/players/%s",dirptr), "tga", filelist, 2048 );
 		fileptr  = filelist;
@@ -418,7 +418,7 @@ static void PlayerModel_BuildList( void )
 				trap_S_RegisterSound( va( "sound/player/announce/%s_wins.wav", skinname), qfalse );
 			}
 		}
-	}	
+	}
 
 	//APSFIXME - Degenerate no models case
 
@@ -446,7 +446,7 @@ static void PlayerModel_SetMenuItems( void )
 
 	// model
 	trap_Cvar_VariableStringBuffer( "model", s_playermodel.modelskin, 64 );
-	
+
 	// find model in our list
 	for (i=0; i<s_playermodel.nummodels; i++)
 	{
@@ -463,7 +463,7 @@ static void PlayerModel_SetMenuItems( void )
 
 		if (!Q_stricmp( s_playermodel.modelskin, modelskin ))
 		{
-			// found pic, set selection here		
+			// found pic, set selection here
 			s_playermodel.selectedmodel = i;
 			s_playermodel.modelpage     = i/MAX_MODELSPERPAGE;
 

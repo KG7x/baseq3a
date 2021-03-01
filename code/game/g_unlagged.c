@@ -153,7 +153,7 @@ void G_TimeShiftAllClients( int ltime, gentity_t *skip ) {
 
 	// for every client
 	ent = &g_entities[0];
-	for ( i = 0; i < level.maxclients; i++, ent++ ) 
+	for ( i = 0; i < level.maxclients; i++, ent++ )
 	{
 		if ( ent == skip )
 			continue;
@@ -161,7 +161,7 @@ void G_TimeShiftAllClients( int ltime, gentity_t *skip ) {
 		if ( !ent->r.linked )
 			continue;
 
-		if ( ent->client && ent->inuse && ent->client->sess.sessionTeam < TEAM_SPECTATOR ) 
+		if ( ent->client && ent->inuse && ent->client->sess.sessionTeam < TEAM_SPECTATOR )
 			G_TimeShiftClient( ent, ltime, qfalse, skip );
 	}
 }
@@ -174,7 +174,7 @@ G_DoTimeShiftFor
 Decide what time to shift everyone back to, and do it
 ================
 */
-void G_DoTimeShiftFor( gentity_t *ent ) {	
+void G_DoTimeShiftFor( gentity_t *ent ) {
 	int time;
 
 	// don't time shift for mistakes or bots
@@ -225,24 +225,24 @@ Move ALL the clients back to where they were before the time shift,
 except for "skip"
 =======================
 */
-void G_UnTimeShiftAllClients( gentity_t *skip ) 
+void G_UnTimeShiftAllClients( gentity_t *skip )
 {
 	int		i;
 	gentity_t	*ent;
 	qboolean	linked;
 
 	ent = &g_entities[0];
-	for ( i = 0; i < level.maxclients; i++, ent++ ) 
+	for ( i = 0; i < level.maxclients; i++, ent++ )
 	{
 		if ( ent == skip )
 			continue;
 
 		linked = ent->r.linked;
 
-		if ( ent->client && ent->inuse && ent->client->sess.sessionTeam < TEAM_SPECTATOR ) 
+		if ( ent->client && ent->inuse && ent->client->sess.sessionTeam < TEAM_SPECTATOR )
 		{
 			G_UnTimeShiftClient( ent );
-			if ( !linked ) 
+			if ( !linked )
 			{
 				trap_UnlinkEntity( ent );
 			}

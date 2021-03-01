@@ -1,15 +1,15 @@
-/* 
+/*
 	Map rotation system
 
     \g_rotation server cvar must point on this file
-	
+
 	Syntax:
 
 	$cvar1 = value1; // set cvar1 for each rotation step (i.e global)
 	{...}
 	"mapname1" // first map in rotation
 	"mapname2" // second map in rotation
-	{ 
+	{
 		$cvar2 = value2; // set cvar2 only for "mapname2"
 		{...}
 	}

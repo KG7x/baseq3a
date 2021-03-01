@@ -10,7 +10,7 @@ CG_AdjustFrom640
 Adjusted for resolution and screen aspect ratio
 ================
 */
-void CG_AdjustFrom640( float *x, float *y, float *w, float *h ) 
+void CG_AdjustFrom640( float *x, float *y, float *w, float *h )
 {
 	// scale for screen sizes
 	*x = *x * cgs.screenXScale + cgs.screenXBias;
@@ -136,8 +136,8 @@ static void CG_DrawChar( int x, int y, int width, int height, int ch ) {
 	size = 0.0625;
 
 	trap_R_DrawStretchPic( ax, ay, aw, ah,
-					   fcol, frow, 
-					   fcol + size, frow + size, 
+					   fcol, frow,
+					   fcol + size, frow + size,
 					   cgs.media.charsetShader );
 }
 
@@ -152,7 +152,7 @@ to a fixed color.
 Coordinates are at 640 by 480 virtual resolution
 ==================
 */
-void CG_DrawStringExt( int x, int y, const char *string, const float *setColor, 
+void CG_DrawStringExt( int x, int y, const char *string, const float *setColor,
 		qboolean forceColor, qboolean shadow, int charWidth, int charHeight, int maxChars ) {
 	vec4_t		color;
 	const char	*s;
@@ -233,7 +233,7 @@ static const font_t *font = &bigchars;
 static const font_metric_t *metrics = &bigchars.metrics[0];
 
 
-void CG_SelectFont( int index ) 
+void CG_SelectFont( int index )
 {
 	if ( index == 0 )
 		font = &bigchars;
@@ -250,7 +250,7 @@ static qboolean CG_FileExist( const char *file )
 
 	if ( !file || !file[0] )
 		return qfalse;
-	
+
 	trap_FS_FOpenFile( file, &f, FS_READ );
 	if ( f == FS_INVALID_HANDLE )
 		return qfalse;
@@ -329,7 +329,7 @@ static void CG_LoadFont( font_t *fnt, const char *fontName )
 
 			//Com_Printf( S_COLOR_CYAN "img: %s, threshold: %i\n", shaderName[ shaderCount ], shaderThreshold[ shaderCount ] );
 			shaderCount++;
-			
+
 			SkipRestOfLine( &text );
 			continue;
 		}
@@ -349,7 +349,7 @@ static void CG_LoadFont( font_t *fnt, const char *fontName )
 				return;
 			}
 			r_height = 1.0 / height;
-			
+
 			token = COM_ParseExt( &text, qfalse );
 			if ( token[0] == '\0' ) {
 				Com_Printf( "CG_LoadFont: error reading char widht.\n" );
@@ -400,7 +400,7 @@ static void CG_LoadFont( font_t *fnt, const char *fontName )
 			return;
 		}
 		x0 = atof( token );
-	
+
 		// y0
 		token = COM_ParseExt( &text, qfalse );
 		if ( !token[0] ) {
@@ -408,7 +408,7 @@ static void CG_LoadFont( font_t *fnt, const char *fontName )
 			return;
 		}
 		y0 = atof( token );
-		
+
 		// w1-offset
 		token = COM_ParseExt( &text, qfalse );
 		if ( !token[0] ) {
@@ -478,7 +478,7 @@ static void CG_LoadFont( font_t *fnt, const char *fontName )
 
 	// always assume zero threshold for lowest-quality shader
 	shaderThreshold[0] = 0;
-	
+
 	fnt->shaderCount = shaderCount;
 	for ( i = 0; i < shaderCount; i++ ) {
 		fnt->shader[i] = trap_R_RegisterShaderNoMip( shaderName[i] );
@@ -489,7 +489,7 @@ static void CG_LoadFont( font_t *fnt, const char *fontName )
 }
 
 
-void CG_LoadFonts( void ) 
+void CG_LoadFonts( void )
 {
 	CG_LoadFont( &bigchars, "gfx/2d/bigchars.cfg" );
 	CG_LoadFont( &numbers, "gfx/2d/numbers.cfg" );
@@ -531,7 +531,7 @@ static float DrawStringLength( const char *string, float ax, float aw, float max
 			x_end = ax + aw;
 		}
 
-		if ( x_end > max_ax ) 
+		if ( x_end > max_ax )
 			break;
 
 		ax = x_end;
@@ -542,7 +542,7 @@ static float DrawStringLength( const char *string, float ax, float aw, float max
 }
 
 
-void CG_DrawString( float x, float y, const char *string, const vec4_t setColor, float charWidth, float charHeight, int maxChars, int flags ) 
+void CG_DrawString( float x, float y, const char *string, const vec4_t setColor, float charWidth, float charHeight, int maxChars, int flags )
 {
 	const font_metric_t *fm;
 	const float		*tc; // texture coordinates for char
@@ -586,7 +586,7 @@ void CG_DrawString( float x, float y, const char *string, const vec4_t setColor,
 
 	sh = font->shader[0]; // low-res shader by default
 
-	if ( flags & DS_SHADOW ) { 
+	if ( flags & DS_SHADOW ) {
 		xx = ax;
 
 		// calculate shadow offsets
@@ -638,10 +638,10 @@ void CG_DrawString( float x, float y, const char *string, const vec4_t setColor,
 			sh = font->shader[i];
 		}
 	}
-	
+
 	Vector4Copy( setColor, color );
 	trap_R_SetColor( color );
-	
+
 	while ( *s != '\0' ) {
 
 		if ( *s == Q_COLOR_ESCAPE && s[1] != '\0' && s[1] != '^' ) {
@@ -682,7 +682,7 @@ void CG_DrawString( float x, float y, const char *string, const vec4_t setColor,
 #else
 
 
-static float DrawStringLen( const char *s, float charWidth ) 
+static float DrawStringLen( const char *s, float charWidth )
 {
 	int count;
 	count = 0;
@@ -700,7 +700,7 @@ static float DrawStringLen( const char *s, float charWidth )
 
 void CG_DrawString( float x, float y, const char *s, const vec4_t color, float charWidth, float charHeight, int maxChars, int flags )
 {
-	if ( !color ) 
+	if ( !color )
 	{
 		color = g_color_table[ ColorIndex( COLOR_WHITE ) ];
 	}
@@ -777,7 +777,7 @@ void CG_TileClear( void ) {
 	w = cgs.glconfig.vidWidth;
 	h = cgs.glconfig.vidHeight;
 
-	if ( cg.refdef.x == 0 && cg.refdef.y == 0 && 
+	if ( cg.refdef.x == 0 && cg.refdef.y == 0 &&
 		cg.refdef.width == w && cg.refdef.height == h ) {
 		return;		// full screen rendering
 	}
@@ -939,7 +939,7 @@ CG_ColorForHealth
 */
 void CG_ColorForHealth( vec4_t hcolor ) {
 
-	CG_GetColorForHealth( cg.snap->ps.stats[STAT_HEALTH], 
+	CG_GetColorForHealth( cg.snap->ps.stats[STAT_HEALTH],
 		cg.snap->ps.stats[STAT_ARMOR], hcolor );
 }
 
@@ -948,7 +948,7 @@ void CG_ColorForHealth( vec4_t hcolor ) {
 // bk001205 - code below duplicated in q3_ui/ui-atoms.c
 // bk001205 - FIXME: does this belong in ui_shared.c?
 // bk001205 - FIXME: HARD_LINKED flags not visible here
-#ifndef Q3_STATIC // bk001205 - q_shared defines not visible here 
+#ifndef Q3_STATIC // bk001205 - q_shared defines not visible here
 /*
 =================
 UI_DrawProportionalString2
@@ -1120,7 +1120,7 @@ static void UI_DrawBannerString2( int x, int y, const char* str, vec4_t color )
 
 	// draw the colored text
 	trap_R_SetColor( color );
-	
+
 	ax = x * cgs.screenXScale + cgs.screenXBias;
 	ay = y * cgs.screenYScale + cgs.screenYBias;
 
@@ -1230,7 +1230,7 @@ static void UI_DrawProportionalString2( int x, int y, const char* str, vec4_t co
 
 	// draw the colored text
 	trap_R_SetColor( color );
-	
+
 	ax = x * cgs.screenXScale + cgs.screenXBias;
 	ay = y * cgs.screenYScale + cgs.screenYBias;
 

@@ -18,7 +18,7 @@ DRIVER INFORMATION MENU
 #define DRIVERINFO_BACK0	"menu/art/back_0"
 #define DRIVERINFO_BACK1	"menu/art/back_1"
 
-static char* driverinfo_artlist[] = 
+static char* driverinfo_artlist[] =
 {
 	DRIVERINFO_FRAMEL,
 	DRIVERINFO_FRAMER,
@@ -270,7 +270,7 @@ typedef struct
 } InitialVideoOptions_s;
 
 static InitialVideoOptions_s	s_ivo;
-static graphicsoptions_t		s_graphicsoptions;	
+static graphicsoptions_t		s_graphicsoptions;
 
 static InitialVideoOptions_s s_ivo_templates[] =
 {
@@ -409,7 +409,7 @@ static void GraphicsOptions_UpdateMenuItems( void )
 	}
 
 	GraphicsOptions_CheckConfig();
-}	
+}
 
 /*
 =================
@@ -694,7 +694,7 @@ void GraphicsOptions_MenuInit( void )
 		0
 	};
 
-	static const char *resolutions[] = 
+	static const char *resolutions[] =
 	{
 		"320x240",
 		"400x300",

@@ -136,7 +136,7 @@ void TeamMain_MenuInit( void ) {
 
 	trap_GetConfigString( CS_SERVERINFO, info, sizeof( info ) );
 	gametype = atoi( Info_ValueForKey( info, "g_gametype" ) );
-			      
+
 	// set initial states
 	switch( gametype ) {
 	case GT_SINGLE_PLAYER:

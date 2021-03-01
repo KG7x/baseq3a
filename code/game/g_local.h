@@ -70,13 +70,13 @@ struct gentity_s {
 	const char	*model;
 	const char	*model2;
 	int			freetime;			// level.time when the object was freed
-	
+
 	int			eventTime;			// events will be cleared EVENT_VALID_MSEC after set
 	qboolean	freeAfterEvent;
 	qboolean	unlinkAfterEvent;
 
 	qboolean	physicsObject;		// if true, it can be pushed by movers and fall off edges
-									// all game items are physicsObjects, 
+									// all game items are physicsObjects,
 	float		physicsBounce;		// 1.0 = continuous bounce, 0.0 = no bounce
 	int			clipmask;			// brushes with this content value will be collided against
 									// when moving.  items and corpses do not collide against
@@ -224,7 +224,7 @@ typedef struct {
 // client data that stays across multiple respawns, but is cleared
 // on each level change or team change at ClientBegin()
 typedef struct {
-	clientConnected_t	connected;	
+	clientConnected_t	connected;
 	usercmd_t	cmd;				// we would lose angles if not persistant
 	qboolean	localClient;		// true if "ip" info key is "localhost"
 	qboolean	initialSpawn;		// the first spawn should be at a cool location
@@ -417,7 +417,7 @@ typedef struct {
 	int			intermissiontime;		// time the intermission was started
 	qboolean	readyToExit;			// at least one client wants to exit
 	int			exitTime;
-	
+
 	vec3_t		intermission_origin;	// also used for spectator spawns
 	vec3_t		intermission_angle;
 	qboolean	intermission_spot;

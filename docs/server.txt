@@ -4,7 +4,7 @@
 
 ========================
 g_gametype <number>
-    
+
     0 - Free For All
     1 - 1-vs-1 Duel/Tournament
     2 - Single Player, selectable only from UI
@@ -45,9 +45,9 @@ g_rotation
   just don't forget to quote such strings, for example:
 
   \callvote "g_gametype 1; map_restart"
-  
+
   string aliases (ffa,duel,tdm,ctf) now acceptable for g_gametype, for example:
-  
+
   \callvote "g_gametype tdm; fraglimit 100; timelimit 0; map_restart"
 
   \callvote rotate - will switch to next map just like \callvote nextmap

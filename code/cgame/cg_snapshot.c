@@ -57,7 +57,7 @@ static void CG_TransitionEntity( centity_t *cent ) {
 CG_SetInitialSnapshot
 
 This will only happen on the very first snapshot, or
-on tourney restarts.  All other times will use 
+on tourney restarts.  All other times will use
 CG_TransitionSnapshot instead.
 
 FIXME: Also called by map_restart?
@@ -248,7 +248,7 @@ static snapshot_t *CG_ReadNextSnapshot( void ) {
 	snapshot_t	*dest;
 
 	if ( cg.latestSnapshotNum > cgs.processedSnapshotNum + 1000 ) {
-		CG_Printf( "WARNING: CG_ReadNextSnapshot: way out of range, %i > %i\n", 
+		CG_Printf( "WARNING: CG_ReadNextSnapshot: way out of range, %i > %i\n",
 			cg.latestSnapshotNum, cgs.processedSnapshotNum );
 	}
 

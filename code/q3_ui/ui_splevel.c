@@ -22,11 +22,11 @@ SINGLE PLAYER LEVEL SELECT MENU
 #define ART_MAP_COMPLETE4			"menu/art/level_complete4"
 #define ART_MAP_COMPLETE5			"menu/art/level_complete5"
 #define ART_BACK0					"menu/art/back_0"
-#define ART_BACK1					"menu/art/back_1"	
+#define ART_BACK1					"menu/art/back_1"
 #define ART_FIGHT0					"menu/art/fight_0"
 #define ART_FIGHT1					"menu/art/fight_1"
 #define ART_RESET0					"menu/art/reset_0"
-#define ART_RESET1					"menu/art/reset_1"	
+#define ART_RESET1					"menu/art/reset_1"
 #define ART_CUSTOM0					"menu/art/skirmish_0"
 #define ART_CUSTOM1					"menu/art/skirmish_1"
 
@@ -599,19 +599,19 @@ static void UI_SPLevelMenu_MenuDraw( void ) {
 		UI_DrawString( x + 64, y + 96, levelMenuInfo.levelNames[n], UI_CENTER|UI_SMALLFONT, color_orange );
 
 		if( levelMenuInfo.levelScores[n] == 1 ) {
-			UI_DrawHandlePic( x, y, 128, 96, levelMenuInfo.levelCompletePic[levelMenuInfo.levelScoresSkill[n] - 1] ); 
+			UI_DrawHandlePic( x, y, 128, 96, levelMenuInfo.levelCompletePic[levelMenuInfo.levelScoresSkill[n] - 1] );
 		}
 
 		if ( n == selectedArena ) {
 			if( Menu_ItemAtCursor( &levelMenuInfo.menu ) == &levelMenuInfo.item_maps[n] ) {
 				trap_R_SetColor( color );
 			}
-			UI_DrawHandlePic( x-1, y-1, 130, 130 - 14, levelMenuInfo.levelSelectedPic ); 
+			UI_DrawHandlePic( x-1, y-1, 130, 130 - 14, levelMenuInfo.levelSelectedPic );
 			trap_R_SetColor( NULL );
 		}
 		else if( Menu_ItemAtCursor( &levelMenuInfo.menu ) == &levelMenuInfo.item_maps[n] ) {
 			trap_R_SetColor( color );
-			UI_DrawHandlePic( x-31, y-30, 256, 256-27, levelMenuInfo.levelFocusPic); 
+			UI_DrawHandlePic( x-31, y-30, 256, 256-27, levelMenuInfo.levelFocusPic);
 			trap_R_SetColor( NULL );
 		}
 	}

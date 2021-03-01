@@ -20,11 +20,11 @@ static void UI_ReadableSize ( char *buf, int bufsize, int value )
 {
 	if (value > 1024*1024*1024 ) { // gigs
 		Com_sprintf( buf, bufsize, "%d", value / (1024*1024*1024) );
-		Com_sprintf( buf+strlen(buf), bufsize-strlen(buf), ".%02d GB", 
+		Com_sprintf( buf+strlen(buf), bufsize-strlen(buf), ".%02d GB",
 			(value % (1024*1024*1024))*100 / (1024*1024*1024) );
 	} else if (value > 1024*1024 ) { // megs
 		Com_sprintf( buf, bufsize, "%d", value / (1024*1024) );
-		Com_sprintf( buf+strlen(buf), bufsize-strlen(buf), ".%02d MB", 
+		Com_sprintf( buf+strlen(buf), bufsize-strlen(buf), ".%02d MB",
 			(value % (1024*1024))*100 / (1024*1024) );
 	} else if (value > 1024 ) { // kilos
 		Com_sprintf( buf, bufsize, "%d KB", value / 1024 );
@@ -61,7 +61,7 @@ static void UI_DisplayDownloadInfo( const char *downloadName ) {
 	trap_Cvar_VariableStringBuffer( "cl_downloadSize", buf, sizeof( buf ) );
 	downloadSize = atoi( buf );
 	trap_Cvar_VariableStringBuffer( "cl_downloadCount", buf, sizeof( buf ) );
-	downloadCount = atoi( buf ); 
+	downloadCount = atoi( buf );
 	trap_Cvar_VariableStringBuffer( "cl_downloadTime", buf, sizeof( buf ) );
 	downloadTime = atoi( buf );
 
@@ -69,7 +69,7 @@ static void UI_DisplayDownloadInfo( const char *downloadName ) {
 	fprintf( stderr, "\n\n-----------------------------------------------\n");
 	fprintf( stderr, "DB: downloadSize:  %16d\n", downloadSize );
 	fprintf( stderr, "DB: downloadCount: %16d\n", downloadCount );
-	fprintf( stderr, "DB: downloadTime:  %16d\n", downloadTime );  
+	fprintf( stderr, "DB: downloadTime:  %16d\n", downloadTime );
   	fprintf( stderr, "DB: UI realtime:   %16d\n", uis.realtime );	// bk
 	fprintf( stderr, "DB: UI frametime:  %16d\n", uis.frametime );	// bk
 #endif
@@ -94,7 +94,7 @@ static void UI_DisplayDownloadInfo( const char *downloadName ) {
 				percentage = 0;
 		} else
 			percentage = downloadCount * 100 / downloadSize;
-		if ( percentage > 100 ) 
+		if ( percentage > 100 )
 			percentage = 100;
 		s = va( "%s (%d%%)", downloadName, percentage );
 	} else {
@@ -108,7 +108,7 @@ static void UI_DisplayDownloadInfo( const char *downloadName ) {
 
 	if (downloadCount < 4096 || !downloadTime) {
 		UI_DrawProportionalString( leftWidth, 160, "estimating", style, color_white );
-		UI_DrawProportionalString( leftWidth, 192, 
+		UI_DrawProportionalString( leftWidth, 192,
 			va("(%s of %s copied)", dlSizeBuf, totalSizeBuf), style, color_white );
 	} else {
 	  // bk010108
@@ -133,28 +133,28 @@ static void UI_DisplayDownloadInfo( const char *downloadName ) {
 
 			// We do it in K (/1024) because we'd overflow around 4MB
 			n = (n - (((downloadCount/1024) * n) / (downloadSize/1024))) * 1000;
-			
+
 			UI_PrintTime ( dlTimeBuf, sizeof dlTimeBuf, n ); // bk010104
 				//(n - (((downloadCount/1024) * n) / (downloadSize/1024))) * 1000);
 
-			UI_DrawProportionalString( leftWidth, 160, 
+			UI_DrawProportionalString( leftWidth, 160,
 				dlTimeBuf, style, color_white );
-			UI_DrawProportionalString( leftWidth, 192, 
+			UI_DrawProportionalString( leftWidth, 192,
 				va("(%s of %s copied)", dlSizeBuf, totalSizeBuf), style, color_white );
 		} else {
-			UI_DrawProportionalString( leftWidth, 160, 
+			UI_DrawProportionalString( leftWidth, 160,
 				"estimating", style, color_white );
 			if (downloadSize) {
-				UI_DrawProportionalString( leftWidth, 192, 
+				UI_DrawProportionalString( leftWidth, 192,
 					va("(%s of %s copied)", dlSizeBuf, totalSizeBuf), style, color_white );
 			} else {
-				UI_DrawProportionalString( leftWidth, 192, 
+				UI_DrawProportionalString( leftWidth, 192,
 					va("(%s copied)", dlSizeBuf), style, color_white );
 			}
 		}
 
 		if (xferRate) {
-			UI_DrawProportionalString( leftWidth, 224, 
+			UI_DrawProportionalString( leftWidth, 224,
 				va("%s/Sec", xferRateBuf), style, color_white );
 		}
 	}
@@ -196,9 +196,9 @@ void UI_DrawConnectScreen( qboolean overlay ) {
 	//UI_DrawProportionalString( 320, 96, "Press Esc to abort", UI_CENTER|UI_SMALLFONT|UI_DROPSHADOW, menu_text_color );
 
 	// display global MOTD at bottom
-	UI_DrawProportionalString( SCREEN_WIDTH/2, SCREEN_HEIGHT-32, 
+	UI_DrawProportionalString( SCREEN_WIDTH/2, SCREEN_HEIGHT-32,
 		Info_ValueForKey( cstate.updateInfoString, "motd" ), UI_CENTER|UI_SMALLFONT|UI_DROPSHADOW, menu_text_color );
-	
+
 	// print any server info (server full, bad version, etc)
 	if ( cstate.connState < CA_CONNECTED ) {
 		UI_DrawProportionalString_AutoWrapped( 320, 192, 630, 20, cstate.messageString, UI_CENTER|UI_SMALLFONT|UI_DROPSHADOW, menu_text_color );
@@ -219,7 +219,7 @@ void UI_DrawConnectScreen( qboolean overlay ) {
 		Field_Clear( &passwordField.field );
 		passwordField.width = 256;
 		passwordField.field.widthInChars = 16;
-		Q_strncpyz( passwordField.field.buffer, Cvar_VariableString("password"), 
+		Q_strncpyz( passwordField.field.buffer, Cvar_VariableString("password"),
 			sizeof(passwordField.field.buffer) );
 
 		Menu_AddItem( &s_ingame_menu, ( void * ) &s_customize_player_action );

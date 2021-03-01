@@ -2,7 +2,7 @@
 
 #include "g_local.h"
 
-qboolean G_MapExist( const char *map ) 
+qboolean G_MapExist( const char *map )
 {
 	fileHandle_t fh;
 	int len;
@@ -21,7 +21,7 @@ qboolean G_MapExist( const char *map )
 }
 
 
-void G_LoadMap( const char *map ) 
+void G_LoadMap( const char *map )
 {
 	char cmd[ MAX_CVAR_VALUE_STRING ];
 	char ver[ 16 ];
@@ -29,7 +29,7 @@ void G_LoadMap( const char *map )
 
 	trap_Cvar_VariableStringBuffer( "version", ver, sizeof( ver ) );
 	if ( !Q_strncmp( ver, "Q3 1.32 ", 8 ) || !Q_strncmp( ver, "Q3 1.32b ", 9 ) ||
-		!Q_strncmp( ver, "Q3 1.32c ", 9 ) ) 
+		!Q_strncmp( ver, "Q3 1.32c ", 9 ) )
 		version = 0; // buggy vanilla binaries
 	else
 		version = 1;
@@ -51,7 +51,7 @@ void G_LoadMap( const char *map )
 }
 
 
-qboolean ParseMapRotation( void ) 
+qboolean ParseMapRotation( void )
 {
 	char buf[ 4096 ];
 	char cvar[ 256 ];
@@ -60,7 +60,7 @@ qboolean ParseMapRotation( void )
 	fileHandle_t fh;
 	int	len;
 	char *tk;
-	int reqIndex; 
+	int reqIndex;
 	int curIndex = 0;
 	int scopeLevel = 0;
 
@@ -68,12 +68,12 @@ qboolean ParseMapRotation( void )
 		return qfalse;
 
 	len = trap_FS_FOpenFile( g_rotation.string, &fh, FS_READ );
-	if ( fh == FS_INVALID_HANDLE ) 
+	if ( fh == FS_INVALID_HANDLE )
 	{
 		Com_Printf( S_COLOR_YELLOW "%s: map rotation file doesn't exists.\n", g_rotation.string );
 		return qfalse;
 	}
-	if ( len >= sizeof( buf ) ) 
+	if ( len >= sizeof( buf ) )
 	{
 		Com_Printf( S_COLOR_YELLOW "%s: map rotation file is too big.\n", g_rotation.string );
 		len = sizeof( buf ) - 1;
@@ -81,7 +81,7 @@ qboolean ParseMapRotation( void )
 	trap_FS_Read( buf, len, fh );
 	buf[ len ] = '\0';
 	trap_FS_FCloseFile( fh );
-	
+
 	Com_InitSeparators(); // needed for COM_ParseSep()
 
 	reqIndex = trap_Cvar_VariableIntegerValue( SV_ROTATION );
@@ -95,10 +95,10 @@ __rescan:
 	s = buf; // initialize token parsing
 	map[0] = '\0';
 
-	while ( 1 ) 
+	while ( 1 )
 	{
 		tk = COM_ParseSep( &s, qtrue );
-		if ( tk[0] == '\0' ) 
+		if ( tk[0] == '\0' )
 			break;
 
 		if ( tk[0] == '$' ) // cvar name
@@ -107,17 +107,17 @@ __rescan:
 			strcpy( cvar, tk+1 );
 			tk = COM_ParseSep( &s, qfalse );
 			// expect '='
-			if ( tk[0] == '=' && tk[1] == '\0' ) 
+			if ( tk[0] == '=' && tk[1] == '\0' )
 			{
 				tk = COM_ParseSep( &s, qtrue );
-				if ( !scopeLevel || curIndex == reqIndex ) 
+				if ( !scopeLevel || curIndex == reqIndex )
 				{
 					trap_Cvar_Set( cvar, tk );
 				}
-				SkipTillSeparators( &s ); 
+				SkipTillSeparators( &s );
 				continue;
 			}
-			else 
+			else
 			{
 				COM_ParseWarning( S_COLOR_YELLOW "missing '=' after '%s'", cvar );
 				SkipRestOfLine( &s );
@@ -125,27 +125,27 @@ __rescan:
 			}
 
 		}
-		else if ( tk[0] == '{' && tk[1] == '\0' ) 
+		else if ( tk[0] == '{' && tk[1] == '\0' )
 		{
-			if ( scopeLevel == 0 && curIndex ) 
+			if ( scopeLevel == 0 && curIndex )
 			{
 				scopeLevel++;
 				continue;
 			}
-			else 
+			else
 			{
 				COM_ParseWarning( S_COLOR_YELLOW "unexpected '{'" );
 				continue;
 			}
 		}
-		else if ( tk[0] == '}' && tk[1] == '\0' ) 
+		else if ( tk[0] == '}' && tk[1] == '\0' )
 		{
-			if ( scopeLevel == 1 ) 
+			if ( scopeLevel == 1 )
 			{
 				scopeLevel--;
 				continue;
 			}
-			else 
+			else
 			{
 				COM_ParseWarning( S_COLOR_YELLOW "unexpected '}'" );
 			}
@@ -153,12 +153,12 @@ __rescan:
 		else if ( G_MapExist( tk ) )
 		{
 			curIndex++;
-			if ( curIndex == reqIndex ) 
+			if ( curIndex == reqIndex )
 			{
 				Q_strncpyz( map, tk, sizeof( map ) );
 			}
 		}
-		else 
+		else
 		{
 			COM_ParseWarning( S_COLOR_YELLOW "map '%s' doesn't exists", tk );
 			SkipRestOfLine( &s );

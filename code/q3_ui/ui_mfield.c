@@ -84,7 +84,7 @@ void MField_Draw( mfield_t *edit, int x, int y, int style, vec4_t color ) {
 		len = strlen(str);
 		x = x - len*charw;
 	}
-	
+
 	UI_DrawChar( x + ( edit->cursor - prestep ) * charw, y, cursorChar, style & ~(UI_CENTER|UI_RIGHT), color );
 }
 
@@ -129,13 +129,13 @@ void MField_KeyDownEvent( mfield_t *edit, int key ) {
 
 	if ( key == K_DEL || key == K_KP_DEL ) {
 		if ( edit->cursor < len ) {
-			memmove( edit->buffer + edit->cursor, 
+			memmove( edit->buffer + edit->cursor,
 				edit->buffer + edit->cursor + 1, len - edit->cursor );
 		}
 		return;
 	}
 
-	if ( key == K_RIGHTARROW || key == K_KP_RIGHTARROW ) 
+	if ( key == K_RIGHTARROW || key == K_KP_RIGHTARROW )
 	{
 		if ( edit->cursor < len ) {
 			edit->cursor++;
@@ -147,7 +147,7 @@ void MField_KeyDownEvent( mfield_t *edit, int key ) {
 		return;
 	}
 
-	if ( key == K_LEFTARROW || key == K_KP_LEFTARROW ) 
+	if ( key == K_LEFTARROW || key == K_KP_LEFTARROW )
 	{
 		if ( edit->cursor > 0 ) {
 			edit->cursor--;
@@ -201,7 +201,7 @@ void MField_CharEvent( mfield_t *edit, int ch ) {
 
 	if ( ch == 'h' - 'a' + 1 )	{	// ctrl-h is backspace
 		if ( edit->cursor > 0 ) {
-			memmove( edit->buffer + edit->cursor - 1, 
+			memmove( edit->buffer + edit->cursor - 1,
 				edit->buffer + edit->cursor, len + 1 - edit->cursor );
 			edit->cursor--;
 			if ( edit->cursor < edit->scroll )
@@ -289,10 +289,10 @@ void MenuField_Init( menufield_s* m ) {
 	{
 		w = BIGCHAR_WIDTH;
 		h = BIGCHAR_HEIGHT;
-	}	
+	}
 
 	if (m->generic.name) {
-		l = (strlen( m->generic.name )+1) * w;		
+		l = (strlen( m->generic.name )+1) * w;
 	}
 	else {
 		l = 0;
@@ -333,7 +333,7 @@ void MenuField_Draw( menufield_s *f )
 		w = BIGCHAR_WIDTH;
 		//h = BIGCHAR_HEIGHT;
 		style = UI_BIGFONT;
-	}	
+	}
 
 	if (Menu_ItemAtCursor( f->generic.parent ) == f) {
 		focus = qtrue;
@@ -353,7 +353,7 @@ void MenuField_Draw( menufield_s *f )
 	if ( focus )
 	{
 		// draw cursor
-		UI_FillRect( f->generic.left, f->generic.top, f->generic.right-f->generic.left+1, f->generic.bottom-f->generic.top+1, listbar_color ); 
+		UI_FillRect( f->generic.left, f->generic.top, f->generic.right-f->generic.left+1, f->generic.bottom-f->generic.top+1, listbar_color );
 		UI_DrawChar( x, y, 13, UI_CENTER|UI_BLINK|style, color);
 	}
 

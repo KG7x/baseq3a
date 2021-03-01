@@ -337,7 +337,7 @@ static void UI_DrawBannerString2( int x, int y, const char* str, vec4_t color )
 
 	// draw the colored text
 	trap_R_SetColor( color );
-	
+
 	ax = x * uis.scale + uis.biasX;
 	ay = y * uis.scale + uis.biasY;
 
@@ -447,7 +447,7 @@ static void UI_DrawProportionalString2( int x, int y, const char* str, vec4_t co
 
 	// draw the colored text
 	trap_R_SetColor( color );
-	
+
 	ax = x * uis.scale + uis.biasX;
 	ay = y * uis.scale + uis.biasY;
 
@@ -564,9 +564,9 @@ void UI_DrawProportionalString_AutoWrapped( int x, int y, int xmax, int ystep, c
 
 	if (!str || str[0]=='\0')
 		return;
-	
+
 	sizeScale = UI_ProportionalSizeScale( style );
-	
+
 	Q_strncpyz(buf, str, sizeof(buf));
 	s1 = s2 = s3 = buf;
 
@@ -596,7 +596,7 @@ void UI_DrawProportionalString_AutoWrapped( int x, int y, int xmax, int ystep, c
         s2++;
         if (*s2 != '\0') // if we are printing an overflowing line we have s2 == s3
           UI_DrawProportionalString(x, y, s2, style, color);
-				break; 
+				break;
       }
 			s2++;
 			s1 = s2;
@@ -638,7 +638,7 @@ static void UI_DrawString2( int x, int y, const char* str, vec4_t color, int cha
 
 	// draw the colored text
 	trap_R_SetColor( color );
-	
+
 	ax = x * uis.scale + uis.biasX;
 	ay = y * uis.scale + uis.biasY;
 	aw = charw * uis.scale;
@@ -715,13 +715,13 @@ void UI_DrawString( int x, int y, const char* str, int style, vec4_t color )
 
 	if (style & UI_PULSE)
 	{
-		lowlight[0] = 0.8*color[0]; 
+		lowlight[0] = 0.8*color[0];
 		lowlight[1] = 0.8*color[1];
 		lowlight[2] = 0.8*color[2];
 		lowlight[3] = 0.8*color[3];
 		UI_LerpColor(color,lowlight,newcolor,0.5+0.5*sin(uis.realtime/PULSE_DIVISOR));
 		drawcolor = newcolor;
-	}	
+	}
 	else
 		drawcolor = color;
 
@@ -820,7 +820,7 @@ void UI_SetActiveMenu( uiMenuCommand_t menu ) {
 		trap_Cvar_Set( "cl_paused", "1" );
 		UI_InGameMenu();
 		return;
-		
+
 	// bk001204
 	case UIMENU_TEAM:
 	case UIMENU_POSTGAME:
@@ -876,7 +876,7 @@ void UI_MouseEvent( int dx, int dy )
 	// update virtual mouse cursor coordinates
 	uis.cursorx += dx * uis.cursorScaleR;
 	uis.cursory += dy * uis.cursorScaleR;
-	
+
 	// clamp virtual coordinates
 	if ( uis.cursorx < uis.screenXmin )
 		uis.cursorx = uis.screenXmin;
@@ -918,7 +918,7 @@ void UI_MouseEvent( int dx, int dy )
 
 		((menucommon_s*)(uis.activemenu->items[uis.activemenu->cursor]))->flags |= QMF_HASMOUSEFOCUS;
 		return;
-	}  
+	}
 
 	if (uis.activemenu->nitems > 0) {
 		// out of any region
@@ -1125,7 +1125,7 @@ void UI_DrawHandlePic( float x, float y, float w, float h, qhandle_t hShader ) {
 		t0 = 0;
 		t1 = 1;
 	}
-	
+
 	UI_AdjustFrom640( &x, &y, &w, &h );
 	trap_R_DrawStretchPic( x, y, w, h, s0, t0, s1, t1, hShader );
 }
@@ -1199,7 +1199,7 @@ void UI_Refresh( int realtime )
 	UI_UpdateCvars();
 
 	UI_VideoCheck( realtime );
-	
+
 	if ( uis.activemenu )
 	{
 		if (uis.activemenu->fullscreen)

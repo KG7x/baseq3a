@@ -13,7 +13,7 @@ ADD BOTS MENU
 
 
 #define ART_BACK0			"menu/art/back_0"
-#define ART_BACK1			"menu/art/back_1"	
+#define ART_BACK1			"menu/art/back_1"
 #define ART_FIGHT0			"menu/art/accept_0"
 #define ART_FIGHT1			"menu/art/accept_1"
 #define ART_BACKGROUND		"menu/art/addbotframe"
@@ -209,7 +209,7 @@ static void UI_AddBotsMenu_Draw( void ) {
 	Menu_Draw( &addBotsMenuInfo.menu );
 }
 
-	
+
 /*
 =================
 UI_AddBotsMenu_Init
