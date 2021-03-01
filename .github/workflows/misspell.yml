@@ -5,8 +5,9 @@ jobs:
     name: runner / misspell
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code.
-        uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
       - name: misspell
         uses: reviewdog/action-misspell@v1.2.0
         with:
