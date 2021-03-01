@@ -1,9 +1,14 @@
-name: misspell
+name: spell
 on: [push, pull_request]
 jobs:
   misspell:
+    name: runner / misspell
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Analyze code statically using misspell
-        uses: moneyforward/misspell-action@v0
+      - name: Check out code.
+        uses: actions/checkout@v1
+      - name: misspell
+        uses: reviewdog/action-misspell@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          locale: "UK"
