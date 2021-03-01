@@ -2,13 +2,8 @@ name: misspell
 on: [push, pull_request]
 jobs:
   misspell:
-    name: runner / misspell
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code.
-        uses: actions/checkout@v2
-      - name: misspell
-        uses: ./
-        with:
-          github_token: ${{ secrets.github_token }}
-          locale: "US"
+      - uses: actions/checkout@v2
+      - name: Analyze code statically using misspell
+        uses: moneyforward/misspell-action@v0
