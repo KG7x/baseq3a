@@ -423,9 +423,9 @@ void CG_DrawFlagModel( float x, float y, float w, float h, int team, qboolean fo
 
 		if( team == TEAM_RED ) {
 			handle = cgs.media.redFlagModel;
-		} else if( team == TEAM_BLUE ) {
+		} else if ( team == TEAM_BLUE ) {
 			handle = cgs.media.blueFlagModel;
-		} else if( team == TEAM_FREE ) {
+		} else if ( team == TEAM_FREE ) {
 			handle = cgs.media.neutralFlagModel;
 		} else {
 			return;
@@ -436,9 +436,9 @@ void CG_DrawFlagModel( float x, float y, float w, float h, int team, qboolean fo
 
 		if( team == TEAM_RED ) {
 			item = BG_FindItemForPowerup( PW_REDFLAG );
-		} else if( team == TEAM_BLUE ) {
+		} else if ( team == TEAM_BLUE ) {
 			item = BG_FindItemForPowerup( PW_BLUEFLAG );
-		} else if( team == TEAM_FREE ) {
+		} else if ( team == TEAM_FREE ) {
 			item = BG_FindItemForPowerup( PW_NEUTRALFLAG );
 		} else {
 			return;
@@ -606,9 +606,9 @@ static void CG_DrawStatusBar( void ) {
 
 	if( cg.predictedPlayerState.powerups[PW_REDFLAG] ) {
 		CG_DrawStatusBarFlag( 185 + CHAR_WIDTH*3 + TEXT_ICON_SPACE + ICON_SIZE, TEAM_RED );
-	} else if( cg.predictedPlayerState.powerups[PW_BLUEFLAG] ) {
+	} else if ( cg.predictedPlayerState.powerups[PW_BLUEFLAG] ) {
 		CG_DrawStatusBarFlag( 185 + CHAR_WIDTH*3 + TEXT_ICON_SPACE + ICON_SIZE, TEAM_BLUE );
-	} else if( cg.predictedPlayerState.powerups[PW_NEUTRALFLAG] ) {
+	} else if ( cg.predictedPlayerState.powerups[PW_NEUTRALFLAG] ) {
 		CG_DrawStatusBarFlag( 185 + CHAR_WIDTH*3 + TEXT_ICON_SPACE + ICON_SIZE, TEAM_FREE );
 	}
 
@@ -796,7 +796,7 @@ static float CG_DrawAttacker( float y ) {
 	CG_DrawHead( cgs.screenXmax + 1 - size, y, size, size, clientNum, angles );
 
 	info = CG_ConfigString( CS_PLAYERS + clientNum );
-	name = Info_ValueForKey(  info, "n" );
+	name = Info_ValueForKey( info, "n" );
 	y += size;
 
 	VectorSet( color, 1, 1, 1 );

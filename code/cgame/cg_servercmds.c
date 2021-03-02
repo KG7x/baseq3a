@@ -232,7 +232,7 @@ void CG_SetConfigValues( void ) {
 		cgs.blueflag = s[1] - '0';
 	}
 #ifdef MISSIONPACK
-	else if( cgs.gametype == GT_1FCTF ) {
+	else if ( cgs.gametype == GT_1FCTF ) {
 		s = CG_ConfigString( CS_FLAGSTATUS );
 		cgs.flagStatus = s[0] - '0';
 	}
@@ -362,7 +362,7 @@ static void CG_ConfigStringModified( void ) {
 			cgs.blueflag = str[1] - '0';
 		}
 #ifdef MISSIONPACK
-		else if( cgs.gametype == GT_1FCTF ) {
+		else if ( cgs.gametype == GT_1FCTF ) {
 			cgs.flagStatus = str[0] - '0';
 		}
 #endif

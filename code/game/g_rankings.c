@@ -515,7 +515,7 @@ void G_RankPlayerDie( int self, int attacker, int means_of_death )
 			break;
 		}
 	}
-	else if( attacker == self )
+	else if ( attacker == self )
 	{
 		p1 = self;
 		p2 = -1;

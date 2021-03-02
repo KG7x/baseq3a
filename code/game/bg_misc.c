@@ -1876,7 +1876,7 @@ char *DecodedString( const char *in )
 		    (( c2 >= '0' && c2 <= '9' ) || ( c2 >= 'a' && c2 <= 'f' ))) {
 			*out++ = hex2dec( c1 ) * 16 + hex2dec( c2 );
 			in += 3;
-		} else if ( *in == '#' && *(in+1) == '#' )  {
+		} else if ( *in == '#' && *(in+1) == '#' ) {
 			*out++ = '#';
 			in += 2;
 		} else {
@@ -1898,7 +1898,7 @@ int BG_stricmp( const char *s1, const char *s2 ) {
 		c2 = locase[(unsigned char)*s2]; s2++;
 		if (c1 != c2)
 			return ((c1 < c2) ? -1 : 1);
-	}  while ( c1 );
+	} while ( c1 );
 	return 0;		// strings are equal
 }
 

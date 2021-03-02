@@ -170,7 +170,7 @@ static void PText_Init( menutext_s *t )
 	if( t->generic.flags & QMF_RIGHT_JUSTIFY ) {
 		x -= w;
 	}
-	else if( t->generic.flags & QMF_CENTER_JUSTIFY ) {
+	else if ( t->generic.flags & QMF_CENTER_JUSTIFY ) {
 		x -= w / 2;
 	}
 
@@ -308,7 +308,7 @@ void Bitmap_Draw( menubitmap_s *b )
 			UI_DrawHandlePic( x, y, w, h, b->shader );
 
 		// bk001204 - parentheses
-		if (  ( (b->generic.flags & QMF_PULSE)
+		if ( ( (b->generic.flags & QMF_PULSE)
 			|| (b->generic.flags & QMF_PULSEIFFOCUS) )
 		      && (Menu_ItemAtCursor( b->generic.parent ) == b))
 		{
@@ -623,7 +623,7 @@ static void Slider_Draw( menuslider_s *s ) {
 		color = text_color_disabled;
 		style = UI_SMALLFONT;
 	}
-	else if( focus ) {
+	else if ( focus ) {
 		color  = text_color_highlight;
 		style = UI_SMALLFONT | UI_PULSE;
 	}
@@ -646,7 +646,7 @@ static void Slider_Draw( menuslider_s *s ) {
 		if( s->range < 0 ) {
 			s->range = 0;
 		}
-		else if( s->range > 1) {
+		else if ( s->range > 1) {
 			s->range = 1;
 		}
 	}
@@ -876,7 +876,7 @@ static void ScrollList_Init( menulist_s *l )
 		l->columns = 1;
 		l->separation = 0;
 	}
-	else if( !l->separation ) {
+	else if ( !l->separation ) {
 		l->separation = 3;
 	}
 
@@ -938,7 +938,7 @@ sfxHandle_t ScrollList_Key( menulist_s *l, int key )
 						// doubleclick
 						if ( l->generic.dblclick ) {
 							if ( l->oldvalue == l->curvalue ) {
-								if  ( l->mouse1time ) {
+								if ( l->mouse1time ) {
 									time = trap_Milliseconds();
 									if ( time - l->mouse1time < 250 ) {
 										//Com_Printf("doubleclick\n");

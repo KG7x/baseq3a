@@ -86,16 +86,16 @@ static void UI_NetworkOptionsMenu_Event( void* ptr, int event ) {
 		if( networkOptionsInfo.rate.curvalue == 0 ) {
 			trap_Cvar_SetValue( "rate", 2500 );
 		}
-		else if( networkOptionsInfo.rate.curvalue == 1 ) {
+		else if ( networkOptionsInfo.rate.curvalue == 1 ) {
 			trap_Cvar_SetValue( "rate", 3000 );
 		}
-		else if( networkOptionsInfo.rate.curvalue == 2 ) {
+		else if ( networkOptionsInfo.rate.curvalue == 2 ) {
 			trap_Cvar_SetValue( "rate", 4000 );
 		}
-		else if( networkOptionsInfo.rate.curvalue == 3 ) {
+		else if ( networkOptionsInfo.rate.curvalue == 3 ) {
 			trap_Cvar_SetValue( "rate", 5000 );
 		}
-		else if( networkOptionsInfo.rate.curvalue == 4 ) {
+		else if ( networkOptionsInfo.rate.curvalue == 4 ) {
 			trap_Cvar_SetValue( "rate", 25000 );
 		}
 		break;
@@ -221,13 +221,13 @@ static void UI_NetworkOptionsMenu_Init( void ) {
 	if( rate <= 2500 ) {
 		networkOptionsInfo.rate.curvalue = 0;
 	}
-	else if( rate <= 3000 ) {
+	else if ( rate <= 3000 ) {
 		networkOptionsInfo.rate.curvalue = 1;
 	}
-	else if( rate <= 4000 ) {
+	else if ( rate <= 4000 ) {
 		networkOptionsInfo.rate.curvalue = 2;
 	}
-	else if( rate <= 5000 ) {
+	else if ( rate <= 5000 ) {
 		networkOptionsInfo.rate.curvalue = 3;
 	}
 	else {

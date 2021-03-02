@@ -55,7 +55,7 @@ void	trap_FS_FCloseFile( fileHandle_t f ) {
 	syscall( G_FS_FCLOSE_FILE, f );
 }
 
-int trap_FS_GetFileList(  const char *path, const char *extension, char *listbuf, int bufsize ) {
+int trap_FS_GetFileList( const char *path, const char *extension, char *listbuf, int bufsize ) {
 	return syscall( G_FS_GETFILELIST, path, extension, listbuf, bufsize );
 }
 
@@ -696,7 +696,7 @@ void trap_BotResetAvoidReach(int movestate) {
 }
 
 void trap_BotResetLastAvoidReach(int movestate) {
-	syscall( BOTLIB_AI_RESET_LAST_AVOID_REACH,movestate  );
+	syscall( BOTLIB_AI_RESET_LAST_AVOID_REACH,movestate );
 }
 
 int trap_BotReachabilityArea(vec3_t origin, int testground) {

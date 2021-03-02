@@ -287,7 +287,7 @@ void G_FindTeams( void ) {
 
 	c = 0;
 	c2 = 0;
-	for ( i=MAX_CLIENTS, e=g_entities+i ; i < level.num_entities ; i++,e++ ){
+	for ( i=MAX_CLIENTS, e=g_entities+i ; i < level.num_entities ; i++,e++ ) {
 		if (!e->inuse)
 			continue;
 		if (!e->team)
@@ -730,7 +730,7 @@ void AddTournamentPlayer( void ) {
 		}
 		// never select the dedicated follow or scoreboard clients
 		if ( client->sess.spectatorState == SPECTATOR_SCOREBOARD ||
-			client->sess.spectatorClient < 0  ) {
+			client->sess.spectatorClient < 0 ) {
 			continue;
 		}
 
@@ -836,7 +836,7 @@ static int QDECL SortRanks( const void *a, const void *b ) {
 	if ( ca->sess.spectatorState == SPECTATOR_SCOREBOARD || ca->sess.spectatorClient < 0 ) {
 		return 1;
 	}
-	if ( cb->sess.spectatorState == SPECTATOR_SCOREBOARD || cb->sess.spectatorClient < 0  ) {
+	if ( cb->sess.spectatorState == SPECTATOR_SCOREBOARD || cb->sess.spectatorClient < 0 ) {
 		return -1;
 	}
 
@@ -1174,7 +1174,7 @@ void ExitLevel( void ) {
 
 	// if we are running a tournament map, kick the loser to spectator status,
 	// which will automatically grab the next spectator and restart
-	if ( g_gametype.integer == GT_TOURNAMENT  ) {
+	if ( g_gametype.integer == GT_TOURNAMENT ) {
 		if ( !level.restarted ) {
 			RemoveTournamentLoser();
 			trap_SendConsoleCommand( EXEC_APPEND, "map_restart 0\n" );

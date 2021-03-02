@@ -177,7 +177,7 @@ void VectorNormalizeFast( vec3_t v )
 	v[2] *= ilength;
 }
 
-void VectorInverse( vec3_t v ){
+void VectorInverse( vec3_t v ) {
 	v[0] = -v[0];
 	v[1] = -v[1];
 	v[2] = -v[2];

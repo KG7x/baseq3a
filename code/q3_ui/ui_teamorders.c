@@ -206,7 +206,7 @@ static void UI_TeamOrdersMenu_ListDraw( void *self ) {
 
 	hasfocus = (l->generic.parent->cursor == l->generic.menuPosition);
 
-	x =	320;//l->generic.x;
+	x =	320; //l->generic.x;
 	y =	l->generic.y;
 	for( i = 0; i < l->numitems; i++ ) {
 		style = UI_LEFT|UI_SMALLFONT|UI_CENTER;

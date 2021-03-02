@@ -30,7 +30,7 @@ void SP_info_null( gentity_t *self ) {
 Used as a positional target for in-game calculation, like jumppad targets.
 target_position does the same thing
 */
-void SP_info_notnull( gentity_t *self ){
+void SP_info_notnull( gentity_t *self ) {
 	G_SetOrigin( self, self->s.origin );
 }
 

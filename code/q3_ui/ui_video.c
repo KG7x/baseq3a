@@ -421,7 +421,7 @@ static void GraphicsOptions_ApplyChanges( void *unused, int notification )
 	if (notification != QM_ACTIVATED)
 		return;
 
-	switch ( s_graphicsoptions.texturebits.curvalue  )
+	switch ( s_graphicsoptions.texturebits.curvalue )
 	{
 	case 0:
 		trap_Cvar_Reset( "r_texturebits" );

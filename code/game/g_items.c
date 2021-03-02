@@ -119,7 +119,7 @@ int Pickup_Powerup( gentity_t *ent, gentity_t *other ) {
 
 		// if same team in team game, no sound
 		// cannot use OnSameTeam as it expects to g_entities, not clients
-		if ( g_gametype.integer >= GT_TEAM && other->client->sess.sessionTeam == client->sess.sessionTeam  ) {
+		if ( g_gametype.integer >= GT_TEAM && other->client->sess.sessionTeam == client->sess.sessionTeam ) {
 			continue;
 		}
 
@@ -1034,7 +1034,7 @@ void G_RunItem( gentity_t *ent ) {
 	if ( ent->clipmask ) {
 		mask = ent->clipmask;
 	} else {
-		mask = MASK_PLAYERSOLID & ~CONTENTS_BODY;//MASK_SOLID;
+		mask = MASK_PLAYERSOLID & ~CONTENTS_BODY; //MASK_SOLID;
 	}
 	trap_Trace( &tr, ent->r.currentOrigin, ent->r.mins, ent->r.maxs, origin,
 		ent->r.ownerNum, mask );

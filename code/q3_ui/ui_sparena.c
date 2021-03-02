@@ -19,7 +19,7 @@ void UI_SPArena_Start( const char *arenaInfo ) {
 		if( Q_stricmp( txt, "training" ) == 0 ) {
 			level = -4;
 		}
-		else if( Q_stricmp( txt, "final" ) == 0 ) {
+		else if ( Q_stricmp( txt, "final" ) == 0 ) {
 			level = UI_GetNumSPTiers() * ARENAS_PER_TIER;
 		}
 	}

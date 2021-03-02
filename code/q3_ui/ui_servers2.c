@@ -490,7 +490,7 @@ static void ArenaServers_UpdateList( void )
 		else if ( servernodeptr->pingtime < 200 ) {
 			pingColor = S_COLOR_GREEN;
 		}
-		else if( servernodeptr->pingtime < 400 ) {
+		else if ( servernodeptr->pingtime < 400 ) {
 			pingColor = S_COLOR_YELLOW;
 		}
 		else {
@@ -1060,7 +1060,7 @@ static void ArenaServers_DoRefresh( void )
 		strcpy( g_arenaservers.pinglist[j].adrstr, adrstr );
 		g_arenaservers.pinglist[j].start = uis.realtime;
 
-		trap_Cmd_ExecuteText( EXEC_NOW, va( "ping %s\n", adrstr )  );
+		trap_Cmd_ExecuteText( EXEC_NOW, va( "ping %s\n", adrstr ) );
 
 		// advance to next server
 		g_arenaservers.currentping++;
@@ -1698,7 +1698,7 @@ void ArenaServers_Cache( void ) {
 	trap_R_RegisterShaderNoMip( ART_REFRESH1 );
 	trap_R_RegisterShaderNoMip( ART_CONNECT0 );
 	trap_R_RegisterShaderNoMip( ART_CONNECT1 );
-	trap_R_RegisterShaderNoMip( ART_ARROWS0  );
+	trap_R_RegisterShaderNoMip( ART_ARROWS0 );
 	trap_R_RegisterShaderNoMip( ART_ARROWS_UP );
 	trap_R_RegisterShaderNoMip( ART_ARROWS_DOWN );
 	trap_R_RegisterShaderNoMip( ART_UNKNOWNMAP );

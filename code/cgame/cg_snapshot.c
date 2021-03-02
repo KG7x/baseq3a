@@ -203,7 +203,7 @@ static void CG_SetNextSnap( snapshot_t *snap ) {
 
 		// if this frame is a teleport, or the entity wasn't in the
 		// previous frame, don't interpolate
-		if ( !cent->currentValid || ( ( cent->currentState.eFlags ^ es->eFlags ) & EF_TELEPORT_BIT )  ) {
+		if ( !cent->currentValid || ( ( cent->currentState.eFlags ^ es->eFlags ) & EF_TELEPORT_BIT ) ) {
 			cent->interpolate = qfalse;
 		} else {
 			cent->interpolate = qtrue;

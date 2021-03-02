@@ -497,7 +497,7 @@ void BroadcastTeamChange( gclient_t *client, team_t oldTeam )
 
 static qboolean AllowTeamSwitch( int clientNum, team_t newTeam ) {
 
-	if ( g_teamForceBalance.integer  ) {
+	if ( g_teamForceBalance.integer ) {
 		int		counts[TEAM_NUM_TEAMS];
 
 		counts[TEAM_BLUE] = TeamCount( clientNum, TEAM_BLUE );
@@ -563,7 +563,7 @@ qboolean SetTeam( gentity_t *ent, const char *s ) {
 
 	specClient = clientNum;
 	specState = SPECTATOR_NOT;
-	if ( !Q_stricmp( s, "scoreboard" ) || !Q_stricmp( s, "score" )  ) {
+	if ( !Q_stricmp( s, "scoreboard" ) || !Q_stricmp( s, "score" ) ) {
 		team = TEAM_SPECTATOR;
 		specState = SPECTATOR_SCOREBOARD;
 	} else if ( !Q_stricmp( s, "follow1" ) ) {

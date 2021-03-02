@@ -296,7 +296,7 @@ static qboolean ShotgunPellet( const vec3_t start, const vec3_t end, gentity_t *
 		traceEnt = &g_entities[ tr.entityNum ];
 
 		// send bullet impact
-		if (  tr.surfaceFlags & SURF_NOIMPACT ) {
+		if ( tr.surfaceFlags & SURF_NOIMPACT ) {
 			return qfalse;
 		}
 

@@ -267,7 +267,7 @@ static void UI_SPLevelMenu_SetMenuItems( void ) {
 		levelMenuInfo.item_maps[2].shader = 0;
 		levelMenuInfo.item_maps[3].shader = 0;
 	}
-	else if( selectedArenaSet == finalTier ) {
+	else if ( selectedArenaSet == finalTier ) {
 		arenaInfo = UI_GetSpecialArenaInfo( "final" );
 		level = atoi( Info_ValueForKey( arenaInfo, "num" ) );
 		UI_SPLevelMenu_SetMenuArena( 0, level, arenaInfo );
@@ -565,7 +565,7 @@ static void UI_SPLevelMenu_MenuDraw( void ) {
 			if( level >= 1000000 ) {
 				Com_sprintf( string, sizeof(string), "%im", level / 1000000 );
 			}
-			else if( level >= 1000 ) {
+			else if ( level >= 1000 ) {
 				Com_sprintf( string, sizeof(string), "%ik", level / 1000 );
 			}
 			else {
@@ -609,7 +609,7 @@ static void UI_SPLevelMenu_MenuDraw( void ) {
 			UI_DrawHandlePic( x-1, y-1, 130, 130 - 14, levelMenuInfo.levelSelectedPic );
 			trap_R_SetColor( NULL );
 		}
-		else if( Menu_ItemAtCursor( &levelMenuInfo.menu ) == &levelMenuInfo.item_maps[n] ) {
+		else if ( Menu_ItemAtCursor( &levelMenuInfo.menu ) == &levelMenuInfo.item_maps[n] ) {
 			trap_R_SetColor( color );
 			UI_DrawHandlePic( x-31, y-30, 256, 256-27, levelMenuInfo.levelFocusPic);
 			trap_R_SetColor( NULL );

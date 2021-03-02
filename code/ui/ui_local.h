@@ -618,9 +618,9 @@ typedef struct {
 
 
 typedef struct {
-  const char *name;
+	const char *name;
 	const char *imageName;
-  qhandle_t headImage;
+	qhandle_t headImage;
 	const char *base;
 	qboolean active;
 	int reference;
@@ -633,12 +633,12 @@ typedef struct {
 } aliasInfo;
 
 typedef struct {
-  const char *teamName;
+	const char *teamName;
 	const char *imageName;
 	const char *teamMembers[TEAM_MEMBERS];
-  qhandle_t teamIcon;
-  qhandle_t teamIcon_Metal;
-  qhandle_t teamIcon_Name;
+	qhandle_t teamIcon;
+	qhandle_t teamIcon_Metal;
+	qhandle_t teamIcon_Name;
 	int cinematic;
 } teamInfo;
 
@@ -648,12 +648,12 @@ typedef struct {
 } gameTypeInfo;
 
 typedef struct {
-  const char *mapName;
-  const char *mapLoadName;
+	const char *mapName;
+	const char *mapLoadName;
 	const char *imageName;
 	const char *opponentName;
 	int teamMembers;
-  int typeBits;
+	int typeBits;
 	int cinematic;
 	int timeToBeat[MAX_GAMETYPES];
 	qhandle_t levelShot;
@@ -839,8 +839,8 @@ extern void			UI_DrawNamedPic( float x, float y, float width, float height, cons
 extern void			UI_DrawHandlePic( float x, float y, float w, float h, qhandle_t hShader );
 extern void			UI_FillRect( float x, float y, float width, float height, const float *color );
 extern void			UI_DrawRect( float x, float y, float width, float height, const float *color );
-extern void     UI_DrawTopBottom(float x, float y, float w, float h);
-extern void     UI_DrawSides(float x, float y, float w, float h);
+extern void			UI_DrawTopBottom(float x, float y, float w, float h);
+extern void			UI_DrawSides(float x, float y, float w, float h);
 extern void			UI_UpdateScreen( void );
 extern void			UI_SetColor( const float *rgba );
 extern void			UI_LerpColor(vec4_t a, vec4_t b, vec4_t c, float t);
@@ -914,7 +914,7 @@ int				trap_FS_FOpenFile( const char *qpath, fileHandle_t *f, fsMode_t mode );
 void			trap_FS_Read( void *buffer, int len, fileHandle_t f );
 void			trap_FS_Write( const void *buffer, int len, fileHandle_t f );
 void			trap_FS_FCloseFile( fileHandle_t f );
-int				trap_FS_GetFileList(  const char *path, const char *extension, char *listbuf, int bufsize );
+int				trap_FS_GetFileList( const char *path, const char *extension, char *listbuf, int bufsize );
 int				trap_FS_Seek( fileHandle_t f, long offset, int origin ); // fsOrigin_t
 qhandle_t		trap_R_RegisterModel( const char *name );
 qhandle_t		trap_R_RegisterSkin( const char *name );
@@ -1058,7 +1058,7 @@ void UI_SetBestScore( int level, int score );
 int UI_TierCompleted( int levelWon );
 qboolean UI_ShowTierVideo( int tier );
 qboolean UI_CanShowTierVideo( int tier );
-int  UI_GetCurrentGame( void );
+int UI_GetCurrentGame( void );
 void UI_NewGame( void );
 void UI_LogAwardData( int award, int data );
 int UI_GetAwardLevel( int award );

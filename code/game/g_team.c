@@ -225,10 +225,10 @@ void Team_CheckDroppedItem( gentity_t *dropped ) {
 	if( dropped->item->giTag == PW_REDFLAG ) {
 		Team_SetFlagStatus( TEAM_RED, FLAG_DROPPED );
 	}
-	else if( dropped->item->giTag == PW_BLUEFLAG ) {
+	else if ( dropped->item->giTag == PW_BLUEFLAG ) {
 		Team_SetFlagStatus( TEAM_BLUE, FLAG_DROPPED );
 	}
-	else if( dropped->item->giTag == PW_NEUTRALFLAG ) {
+	else if ( dropped->item->giTag == PW_NEUTRALFLAG ) {
 		Team_SetFlagStatus( TEAM_FREE, FLAG_DROPPED );
 	}
 }
@@ -556,7 +556,7 @@ void Team_ResetFlags( void ) {
 		Team_ResetFlag( TEAM_BLUE );
 	}
 #ifdef MISSIONPACK
-	else if( g_gametype.integer == GT_1FCTF ) {
+	else if ( g_gametype.integer == GT_1FCTF ) {
 		Team_ResetFlag( TEAM_FREE );
 	}
 #endif
@@ -658,10 +658,10 @@ void Team_FreeEntity( gentity_t *ent ) {
 	if( ent->item->giTag == PW_REDFLAG ) {
 		Team_ReturnFlag( TEAM_RED );
 	}
-	else if( ent->item->giTag == PW_BLUEFLAG ) {
+	else if ( ent->item->giTag == PW_BLUEFLAG ) {
 		Team_ReturnFlag( TEAM_BLUE );
 	}
-	else if( ent->item->giTag == PW_NEUTRALFLAG ) {
+	else if ( ent->item->giTag == PW_NEUTRALFLAG ) {
 		Team_ReturnFlag( TEAM_FREE );
 	}
 }
@@ -682,10 +682,10 @@ void Team_DroppedFlagThink(gentity_t *ent) {
 	if( ent->item->giTag == PW_REDFLAG ) {
 		team = TEAM_RED;
 	}
-	else if( ent->item->giTag == PW_BLUEFLAG ) {
+	else if ( ent->item->giTag == PW_BLUEFLAG ) {
 		team = TEAM_BLUE;
 	}
-	else if( ent->item->giTag == PW_NEUTRALFLAG ) {
+	else if ( ent->item->giTag == PW_NEUTRALFLAG ) {
 		team = TEAM_FREE;
 	}
 
@@ -830,7 +830,7 @@ static int Team_TouchEnemyFlag( gentity_t *ent, gentity_t *other, team_t team ) 
 			Team_SetFlagStatus( TEAM_FREE, FLAG_TAKEN_BLUE );
 		}
 	}
-	else{
+	else {
 #endif
 		PrintMsg (NULL, "%s" S_COLOR_WHITE " got the %s flag!\n",
 			other->client->pers.netname, TeamName(team));
@@ -877,11 +877,11 @@ int Pickup_Team( gentity_t *ent, gentity_t *other ) {
 	if( strcmp(ent->classname, "team_CTF_redflag") == 0 ) {
 		team = TEAM_RED;
 	}
-	else if( strcmp(ent->classname, "team_CTF_blueflag") == 0 ) {
+	else if ( strcmp(ent->classname, "team_CTF_blueflag") == 0 ) {
 		team = TEAM_BLUE;
 	}
 #ifdef MISSIONPACK
-	else if( strcmp(ent->classname, "team_CTF_neutralflag") == 0  ) {
+	else if ( strcmp(ent->classname, "team_CTF_neutralflag") == 0 ) {
 		team = TEAM_FREE;
 	}
 #endif

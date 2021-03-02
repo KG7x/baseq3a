@@ -973,7 +973,7 @@ static void PM_CrashLand( void ) {
 
 	// SURF_NODAMAGE is used for bounce pads where you don't ever
 	// want to take damage or play a crunch sound
-	if ( !(pml.groundTrace.surfaceFlags & SURF_NODAMAGE) )  {
+	if ( !(pml.groundTrace.surfaceFlags & SURF_NODAMAGE) ) {
 		if ( delta > 60 ) {
 			PM_AddEvent( EV_FALL_FAR );
 		} else if ( delta > 40 ) {
@@ -1223,7 +1223,7 @@ static void PM_SetWaterLevel( void ) {
 			pm->waterlevel = 2;
 			point[2] = pm->ps->origin[2] + MINS_Z + sample2;
 			cont = pm->pointcontents (point, pm->ps->clientNum );
-			if ( cont & MASK_WATER ){
+			if ( cont & MASK_WATER ) {
 				pm->waterlevel = 3;
 			}
 		}

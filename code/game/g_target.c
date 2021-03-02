@@ -52,9 +52,9 @@ void Use_target_remove_powerups( gentity_t *ent, gentity_t *other, gentity_t *ac
 
 	if( activator->client->ps.powerups[PW_REDFLAG] ) {
 		Team_ReturnFlag( TEAM_RED );
-	} else if( activator->client->ps.powerups[PW_BLUEFLAG] ) {
+	} else if ( activator->client->ps.powerups[PW_BLUEFLAG] ) {
 		Team_ReturnFlag( TEAM_BLUE );
-	} else if( activator->client->ps.powerups[PW_NEUTRALFLAG] ) {
+	} else if ( activator->client->ps.powerups[PW_NEUTRALFLAG] ) {
 		Team_ReturnFlag( TEAM_FREE );
 	}
 
@@ -403,7 +403,7 @@ void SP_target_kill( gentity_t *self ) {
 /*QUAKED target_position (0 0.5 0) (-4 -4 -4) (4 4 4)
 Used as a positional target for in-game calculation, like jumppad targets.
 */
-void SP_target_position( gentity_t *self ){
+void SP_target_position( gentity_t *self ) {
 	G_SetOrigin( self, self->s.origin );
 }
 
@@ -445,7 +445,7 @@ Set "count" to 0-7 for color.
 Closest target_location in sight used for the location, if none
 in site, closest in distance
 */
-void SP_target_location( gentity_t *self ){
+void SP_target_location( gentity_t *self ) {
 	self->think = target_location_linkup;
 	self->nextthink = level.time + 200;  // Let them all spawn first
 

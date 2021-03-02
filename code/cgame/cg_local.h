@@ -1049,8 +1049,8 @@ typedef struct {
 	float			screenYmin;
 	float			screenYmax;
 
-	int				serverCommandSequence;	// reliable command stream counter
-	int				processedSnapshotNum;// the number of snapshots cgame has requested
+	int				serverCommandSequence; // reliable command stream counter
+	int				processedSnapshotNum; // the number of snapshots cgame has requested
 
 	qboolean		localServer;		// detected on startup by checking sv_running
 

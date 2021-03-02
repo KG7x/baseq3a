@@ -399,7 +399,7 @@ void SkipBracedSection( char **program ) {
 			if( token[0] == '{' ) {
 				depth++;
 			}
-			else if( token[0] == '}' ) {
+			else if ( token[0] == '}' ) {
 				depth--;
 			}
 		}
@@ -568,7 +568,7 @@ char *COM_ParseSep( char **data_p, qboolean allowLineBreaks )
 	}
 
 	// special case for separators
- 	if ( is_separator[ c ]  )
+ 	if ( is_separator[ c ] )
 	{
 		com_token[ len ] = c;
 		len++;

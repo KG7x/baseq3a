@@ -564,7 +564,7 @@ static void UI_PlayerAngles( playerInfo_t *pi, vec3_t legs[3], vec3_t torso[3], 
 
 	// allow yaw to drift a bit
 	if ( ( pi->legsAnim & ~ANIM_TOGGLEBIT ) != LEGS_IDLE
-		|| ( pi->torsoAnim & ~ANIM_TOGGLEBIT ) != TORSO_STAND  ) {
+		|| ( pi->torsoAnim & ~ANIM_TOGGLEBIT ) != TORSO_STAND ) {
 		// if not standing still, always point all in the same direction
 		pi->torso.yawing = qtrue;	// always center
 		pi->torso.pitching = qtrue;	// always center

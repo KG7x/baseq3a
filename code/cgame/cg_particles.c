@@ -171,7 +171,7 @@ void CG_AddParticleToScene (cparticle_t *p, vec3_t org, float alpha)
 
 	if (p->type == P_WEATHER || p->type == P_WEATHER_TURBULENT || p->type == P_WEATHER_FLURRY
 		|| p->type == P_BUBBLE || p->type == P_BUBBLE_TURBULENT)
-	{// create a front facing polygon
+	{ // create a front facing polygon
 
 		if (p->type != P_WEATHER_FLURRY)
 		{
@@ -379,7 +379,7 @@ void CG_AddParticleToScene (cparticle_t *p, vec3_t org, float alpha)
 		verts[3].modulate[3] = 255;
 	}
 	else if (p->type == P_SMOKE || p->type == P_SMOKE_IMPACT)
-	{// create a front rotating facing polygon
+	{ // create a front rotating facing polygon
 
 		if ( p->type == P_SMOKE_IMPACT && Distance( cg.snap->ps.origin, org ) > 1024) {
 			return;

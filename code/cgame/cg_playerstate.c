@@ -420,7 +420,7 @@ void CG_CheckLocalSounds( playerState_t *ps, playerState_t *ops ) {
 			// never play lead changes during warmup
 			if ( ps->persistant[PERS_RANK] != ops->persistant[PERS_RANK] ) {
 				if ( cgs.gametype < GT_TEAM) {
-					if (  ps->persistant[PERS_RANK] == 0 ) {
+					if ( ps->persistant[PERS_RANK] == 0 ) {
 						CG_AddBufferedSound(cgs.media.takenLeadSound);
 					} else if ( ps->persistant[PERS_RANK] == RANK_TIED_FLAG ) {
 						CG_AddBufferedSound(cgs.media.tiedLeadSound);

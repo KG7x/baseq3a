@@ -1892,7 +1892,7 @@ void CG_MissileHitWall( weapon_t weapon, int clientNum, vec3_t origin, vec3_t di
 	case WP_NAILGUN:
 		if( soundType == IMPACTSOUND_FLESH ) {
 			sfx = cgs.media.sfx_nghitflesh;
-		} else if( soundType == IMPACTSOUND_METAL ) {
+		} else if ( soundType == IMPACTSOUND_METAL ) {
 			sfx = cgs.media.sfx_nghitmetal;
 		} else {
 			sfx = cgs.media.sfx_nghit;
@@ -1993,7 +1993,7 @@ void CG_MissileHitWall( weapon_t weapon, int clientNum, vec3_t origin, vec3_t di
 		mod = cgs.media.bulletFlashModel;
 		if( soundType == IMPACTSOUND_FLESH ) {
 			sfx = cgs.media.sfx_chghitflesh;
-		} else if( soundType == IMPACTSOUND_METAL ) {
+		} else if ( soundType == IMPACTSOUND_METAL ) {
 			sfx = cgs.media.sfx_chghitmetal;
 		} else {
 			sfx = cgs.media.sfx_chghit;
@@ -2137,7 +2137,7 @@ static void CG_ShotgunPellet( vec3_t start, vec3_t end, int skipNum ) {
 		CG_BubbleTrail( tr.endpos, trace.endpos, 32 );
 	}
 
-	if (  tr.surfaceFlags & SURF_NOIMPACT ) {
+	if ( tr.surfaceFlags & SURF_NOIMPACT ) {
 		return;
 	}
 

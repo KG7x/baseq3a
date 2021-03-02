@@ -926,9 +926,9 @@ void G_Damage( gentity_t *targ, gentity_t *inflictor, gentity_t *attacker,
 		// if TF_NO_FRIENDLY_FIRE is set, don't do damage to the target
 		// if the attacker was on the same team
 #ifdef MISSIONPACK
-		if ( mod != MOD_JUICED && targ != attacker && !(dflags & DAMAGE_NO_TEAM_PROTECTION) && OnSameTeam (targ, attacker)  ) {
+		if ( mod != MOD_JUICED && targ != attacker && !(dflags & DAMAGE_NO_TEAM_PROTECTION) && OnSameTeam (targ, attacker) ) {
 #else
-		if ( targ != attacker && OnSameTeam (targ, attacker)  ) {
+		if ( targ != attacker && OnSameTeam (targ, attacker) ) {
 #endif
 			if ( !g_friendlyFire.integer ) {
 				return;

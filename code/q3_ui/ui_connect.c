@@ -41,7 +41,7 @@ static void UI_PrintTime ( char *buf, int bufsize, int time ) {
 		Com_sprintf( buf, bufsize, "%d hr %d min", time / 3600, (time % 3600) / 60 );
 	} else if (time > 60) { // mins
 		Com_sprintf( buf, bufsize, "%d min %d sec", time / 60, time % 60 );
-	} else  { // secs
+	} else { // secs
 		Com_sprintf( buf, bufsize, "%d sec", time );
 	}
 }
@@ -86,7 +86,7 @@ static void UI_DisplayDownloadInfo( const char *downloadName ) {
 	UI_DrawProportionalString( 8, 224, xferText, style, color_white );
 
 	if (downloadSize > 0) {
-		if ( downloadCount > 21474836 ) {// x100 could cause overflow!
+		if ( downloadCount > 21474836 ) { // x100 could cause overflow!
 			div = downloadSize >> 8;
 			if ( div )
 				percentage = (downloadCount >> 8) * 100 / div;

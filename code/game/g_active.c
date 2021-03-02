@@ -904,7 +904,7 @@ void ClientThink_real( gentity_t *ent ) {
 
 #ifdef MISSIONPACK
 		if (level.intermissionQueued != 0 && g_singlePlayer.integer) {
-			if ( level.time - level.intermissionQueued >= 1000  ) {
+			if ( level.time - level.intermissionQueued >= 1000 ) {
 				pm.cmd.buttons = 0;
 				pm.cmd.forwardmove = 0;
 				pm.cmd.rightmove = 0;

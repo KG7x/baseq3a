@@ -286,10 +286,10 @@ int BotGetItemLongTermGoal(bot_state_t *bs, int tfl, bot_goal_t *goal) {
 			trap_BotGetTopGoal(bs->gs, goal);
 			trap_BotGoalName(goal->number, buf, sizeof(buf));
 			BotAI_Print(PRT_MESSAGE, "%1.1f: new long term goal %s\n", FloatTime(), buf);
-            */
+			*/
 			bs->ltg_time = FloatTime() + 20;
 		}
-		else {//the bot gets sorta stuck with all the avoid timings, shouldn't happen though
+		else { //the bot gets sorta stuck with all the avoid timings, shouldn't happen though
 			//
 #ifdef DEBUG
 			char netname[128];

@@ -1299,7 +1299,7 @@ void CG_NewClientInfo( int clientNum ) {
 		forceDefer = trap_MemoryRemaining() < 4000000;
 
 		// if we are defering loads, just have it pick the first valid
-		if ( forceDefer || (can_defer && !cg_buildScript.integer && !cg.loading) )  {
+		if ( forceDefer || (can_defer && !cg_buildScript.integer && !cg.loading) ) {
 			// keep whatever they had if it won't violate team skins
 			CG_SetDeferredClientInfo( &newInfo );
 			// if we are low on memory, leave them with this model
@@ -2130,7 +2130,7 @@ static void CG_PlayerPowerups( centity_t *cent, refEntity_t *torso ) {
 
 	// blueflag
 	if ( powerups & ( 1 << PW_BLUEFLAG ) ) {
-		if (ci->newAnims){
+		if (ci->newAnims) {
 			CG_PlayerFlag( cent, cgs.media.blueFlagFlapSkin, torso );
 		}
 		else {

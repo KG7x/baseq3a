@@ -465,7 +465,7 @@ static ID_INLINE void VectorNormalizeFast( vec3_t v )
 	v[2] *= ilength;
 }
 
-static ID_INLINE void VectorInverse( vec3_t v ){
+static ID_INLINE void VectorInverse( vec3_t v ) {
 	v[0] = -v[0];
 	v[1] = -v[1];
 	v[2] = -v[2];
@@ -889,7 +889,7 @@ typedef struct playerState_s {
 	int			delta_angles[3];	// add to command angles to get view direction
 									// changed by spawns, rotating objects, and teleporters
 
-	int			groundEntityNum;// ENTITYNUM_NONE = in air
+	int			groundEntityNum; // ENTITYNUM_NONE = in air
 
 	int			legsTimer;		// don't change low priority animations until this runs out
 	int			legsAnim;		// mask off ANIM_TOGGLEBIT
@@ -1028,10 +1028,10 @@ typedef struct entityState_s {
 	vec3_t	angles;
 	vec3_t	angles2;
 
-	int		otherEntityNum;	// shotgun sources, etc
+	int		otherEntityNum; // shotgun sources, etc
 	int		otherEntityNum2;
 
-	int		groundEntityNum;// ENTITYNUM_NONE = in air
+	int		groundEntityNum; // ENTITYNUM_NONE = in air
 
 	int		constantLight;	// r + (g<<8) + (b<<16) + (intensity<<24)
 	int		loopSound;		// constantly loop this sound

@@ -1001,7 +1001,7 @@ void CG_PredictPlayerState( void ) {
 		}
 		// cg.physicsTime is the current snapshot's serverTime if it's the same
 		// as the last one
-		else if( cg.physicsTime == cg.lastServerTime ) {
+		else if ( cg.physicsTime == cg.lastServerTime ) {
 			// we have no new information, so do an incremental predict
 			predictCmd = cg.lastPredictedCommand + 1;
 		} else {

@@ -115,7 +115,7 @@ void G_InitSessionData( gclient_t *client, const char *team, qboolean isBot ) {
 				// always spawn as spectator in team games
 				if ( isBot == qfalse ) {
 					sess->sessionTeam = TEAM_SPECTATOR;
-				} else  {
+				} else {
 					// bind player to specified team
 					if ( team[0] == 'r' || team[0] == 'R' ) {
 						sess->sessionTeam = TEAM_RED;
