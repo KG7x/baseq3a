@@ -518,11 +518,11 @@ void BotSetInfoConfigString(bot_state_t *bs) {
 			break;
 		}
 	}
-  	cs = va("l\\%s\\c\\%s\\a\\%s",
+	cs = va("l\\%s\\c\\%s\\a\\%s",
 				leader,
 				carrying,
 				action);
-  	trap_SetConfigstring (CS_BOTINFO + bs->client, cs);
+	trap_SetConfigstring (CS_BOTINFO + bs->client, cs);
 }
 
 /*
@@ -1597,77 +1597,77 @@ int BotInitLibrary( void ) {
 	trap_BotLibVarSet( "maxclients", buf );
 
 	Com_sprintf(buf, sizeof(buf), "%d", MAX_GENTITIES);
-	trap_BotLibVarSet("maxentities", buf);
+	trap_BotLibVarSet( "maxentities", buf );
 	//bsp checksum
-	trap_Cvar_VariableStringBuffer("sv_mapChecksum", buf, sizeof(buf));
+	trap_Cvar_VariableStringBuffer( "sv_mapChecksum", buf, sizeof( buf ) );
 	if ( buf[0] )
 		trap_BotLibVarSet( "sv_mapChecksum", buf );
 
 	//maximum number of aas links
-	trap_Cvar_VariableStringBuffer("max_aaslinks", buf, sizeof(buf));
+	trap_Cvar_VariableStringBuffer( "max_aaslinks", buf, sizeof( buf ) );
 	if ( buf[0] )
 		trap_BotLibVarSet( "max_aaslinks", buf );
 
 	//maximum number of items in a level
-	trap_Cvar_VariableStringBuffer("max_levelitems", buf, sizeof(buf));
+	trap_Cvar_VariableStringBuffer( "max_levelitems", buf, sizeof( buf ) );
 	if ( buf[0] )
 		trap_BotLibVarSet( "max_levelitems", buf );
 
 	//game type
-	trap_Cvar_VariableStringBuffer("g_gametype", buf, sizeof(buf));
+	trap_Cvar_VariableStringBuffer( "g_gametype", buf, sizeof( buf ) );
 	if ( !buf[0] )
 		strcpy( buf, "0" );
-	trap_BotLibVarSet("g_gametype", buf);
+	trap_BotLibVarSet( "g_gametype", buf );
 	//bot developer mode and log file
-	trap_BotLibVarSet("bot_developer", bot_developer.string);
-	trap_BotLibVarSet("log", buf);
+	trap_BotLibVarSet( "bot_developer", bot_developer.string );
+	trap_BotLibVarSet( "log", buf );
 	//no chatting
-	trap_Cvar_VariableStringBuffer("bot_nochat", buf, sizeof(buf));
+	trap_Cvar_VariableStringBuffer( "bot_nochat", buf, sizeof( buf ) );
 	if ( buf[0] )
 		trap_BotLibVarSet( "nochat", "0" );
 
 	//visualize jump pads
-	trap_Cvar_VariableStringBuffer("bot_visualizejumppads", buf, sizeof(buf));
+	trap_Cvar_VariableStringBuffer( "bot_visualizejumppads", buf, sizeof( buf ) );
 	if ( buf[0] )
 		trap_BotLibVarSet( "bot_visualizejumppads", buf );
 
 	//forced clustering calculations
-	trap_Cvar_VariableStringBuffer("bot_forceclustering", buf, sizeof(buf));
+	trap_Cvar_VariableStringBuffer( "bot_forceclustering", buf, sizeof( buf ) );
 	if ( buf[0] )
 		trap_BotLibVarSet( "forceclustering", buf );
 
 	//forced reachability calculations
-	trap_Cvar_VariableStringBuffer("bot_forcereachability", buf, sizeof(buf));
+	trap_Cvar_VariableStringBuffer( "bot_forcereachability", buf, sizeof( buf ) );
 	if ( buf[0] )
 		trap_BotLibVarSet( "forcereachability", buf );
 
 	//force writing of AAS to file
-	trap_Cvar_VariableStringBuffer("bot_forcewrite", buf, sizeof(buf));
+	trap_Cvar_VariableStringBuffer( "bot_forcewrite", buf, sizeof( buf ) );
 	if ( buf[0] )
 		trap_BotLibVarSet( "forcewrite", buf );
 
 	//no AAS optimization
-	trap_Cvar_VariableStringBuffer("bot_aasoptimize", buf, sizeof(buf));
+	trap_Cvar_VariableStringBuffer( "bot_aasoptimize", buf, sizeof( buf ) );
 	if ( buf[0] )
 		trap_BotLibVarSet( "aasoptimize", buf );
 
 	//
-	trap_Cvar_VariableStringBuffer("bot_saveroutingcache", buf, sizeof(buf));
+	trap_Cvar_VariableStringBuffer( "bot_saveroutingcache", buf, sizeof( buf ) );
 	if ( buf[0] )
 		trap_BotLibVarSet( "saveroutingcache", buf );
 
 	//reload instead of cache bot character files
-	trap_Cvar_VariableStringBuffer("bot_reloadcharacters", buf, sizeof(buf));
+	trap_Cvar_VariableStringBuffer( "bot_reloadcharacters", buf, sizeof( buf ) );
 	if ( !buf[0] )
 		strcpy( buf, "0" );
-	trap_BotLibVarSet("bot_reloadcharacters", buf);
+	trap_BotLibVarSet( "bot_reloadcharacters", buf );
 	//base directory
-	trap_Cvar_VariableStringBuffer("fs_basepath", buf, sizeof(buf));
+	trap_Cvar_VariableStringBuffer( "fs_basepath", buf, sizeof( buf ) );
 	if ( buf[0] )
 		trap_BotLibVarSet( "basedir", buf );
 
 	//home directory
-	trap_Cvar_VariableStringBuffer("fs_homepath", buf, sizeof(buf));
+	trap_Cvar_VariableStringBuffer(  "fs_homepath", buf, sizeof( buf ) );
 	if ( buf[0] )
 		trap_BotLibVarSet( "homedir", buf );
 

@@ -199,7 +199,7 @@ int BotNearbyGoal(bot_state_t *bs, int tfl, bot_goal_t *ltg, float range) {
 		trap_BotGoalName(goal.number, buf, sizeof(buf));
 		BotAI_Print(PRT_MESSAGE, "%1.1f: new nearby goal %s\n", FloatTime(), buf);
 	}
-    */
+	*/
 	return ret;
 }
 

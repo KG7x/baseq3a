@@ -545,7 +545,7 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
 			self->client->ps.powerups[PW_NEUTRALFLAG] = 0;
 		} else
 #endif
-		if ( self->client->ps.powerups[PW_REDFLAG] ) {		// only happens in standard CTF
+		if ( self->client->ps.powerups[PW_REDFLAG] ) {			// only happens in standard CTF
 			Team_ReturnFlag( TEAM_RED );
 			self->client->ps.powerups[PW_REDFLAG] = 0;
 		}

@@ -238,7 +238,7 @@ void G_UseTargets( gentity_t *ent, gentity_t *activator ) {
 	t = NULL;
 	while ( (t = G_Find (t, FOFS(targetname), ent->target)) != NULL ) {
 		if ( t == ent ) {
-			G_Printf ("WARNING: Entity used itself.\n");
+			G_Printf("WARNING: Entity used itself.\n");
 		} else {
 			if ( t->use ) {
 				t->use (t, ent, activator);

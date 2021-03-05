@@ -29,7 +29,7 @@
 
 #define	VOTE_TIME			30000	// 30 seconds before vote times out
 
-#define	DROPPED_TIME		30000   // 30 seconds before removing  dropped items
+#define	DROPPED_TIME		30000	// 30 seconds before removing  dropped items
 
 #define	MINS_Z				-24
 #define	DEFAULT_VIEWHEIGHT	26
@@ -112,11 +112,11 @@ movement on the server game.
 */
 
 typedef enum {
-	PM_NORMAL,		// can accelerate and turn
-	PM_NOCLIP,		// noclip movement
-	PM_SPECTATOR,	// still run into walls
-	PM_DEAD,		// no acceleration or turning, but free falling
-	PM_FREEZE,		// stuck in place with no control
+	PM_NORMAL,			// can accelerate and turn
+	PM_NOCLIP,			// noclip movement
+	PM_SPECTATOR,		// still run into walls
+	PM_DEAD,			// no acceleration or turning, but free falling
+	PM_FREEZE,			// stuck in place with no control
 	PM_INTERMISSION,	// no movement or status bar
 	PM_SPINTERMISSION	// no movement or status bar
 } pmtype_t;

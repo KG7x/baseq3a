@@ -1454,7 +1454,7 @@ can see the last frag.
 =================
 */
 static void CheckExitRules( void ) {
- 	int			i;
+	int			i;
 	gclient_t	*cl;
 
 	// if at the intermission, wait for all non-bots to
@@ -1805,11 +1805,11 @@ CheckVote
 static void CheckVote( void ) {
 
 	if ( level.voteExecuteTime ) {
-		 if ( level.voteExecuteTime < level.time ) {
+		if ( level.voteExecuteTime < level.time ) {
 			level.voteExecuteTime = 0;
 			trap_SendConsoleCommand( EXEC_APPEND, va( "%s\n", level.voteString ) );
-		 }
-		 return;
+		}
+		return;
 	}
 
 	if ( !level.voteTime ) {

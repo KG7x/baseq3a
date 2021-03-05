@@ -158,7 +158,7 @@ typedef int		clipHandle_t;
 #define	MAX_INFO_KEY		1024
 #define	MAX_INFO_VALUE		1024
 
-#define	BIG_INFO_STRING		8192  // used for system info key only
+#define	BIG_INFO_STRING		8192	// used for system info key only
 #define	BIG_INFO_KEY		8192
 #define	BIG_INFO_VALUE		8192
 
@@ -172,7 +172,7 @@ typedef int		clipHandle_t;
 
 #define	MAX_NAME_LENGTH		32		// max length of a client name
 
-#define	MAX_SAY_TEXT	150
+#define	MAX_SAY_TEXT		150
 
 // parameters for command buffer stuffing
 typedef enum {
@@ -186,7 +186,7 @@ typedef enum {
 //
 // these aren't needed by any of the VMs.  put in another header?
 //
-#define	MAX_MAP_AREA_BYTES		32		// bit vector of area visibility
+#define	MAX_MAP_AREA_BYTES	32		// bit vector of area visibility
 
 
 // print levels from renderer (FIXME: set up for game / cgame?)
@@ -586,7 +586,7 @@ typedef struct pc_token_s
 
 // data is an in/out parm, returns a parsed out token
 
-void	COM_MatchToken( char**buf_p, char *match );
+void COM_MatchToken( char**buf_p, char *match );
 
 void SkipBracedSection (char **program);
 void SkipRestOfLine ( char **data );
@@ -747,14 +747,14 @@ typedef struct cplane_s {
 
 // a trace is returned when a box is swept through the world
 typedef struct {
-	qboolean	allsolid;	// if true, plane is not valid
-	qboolean	startsolid;	// if true, the initial point was in a solid area
-	float		fraction;	// time completed, 1.0 = didn't hit anything
-	vec3_t		endpos;		// final position
-	cplane_t	plane;		// surface normal at impact, transformed to world space
+	qboolean	allsolid;		// if true, plane is not valid
+	qboolean	startsolid;		// if true, the initial point was in a solid area
+	float		fraction;		// time completed, 1.0 = didn't hit anything
+	vec3_t		endpos;			// final position
+	cplane_t	plane;			// surface normal at impact, transformed to world space
 	int			surfaceFlags;	// surface hit
-	int			contents;	// contents on other side of surface hit
-	int			entityNum;	// entity the contacted sirface is a part of
+	int			contents;		// contents on other side of surface hit
+	int			entityNum;		// entity the contacted sirface is a part of
 } trace_t;
 
 // trace->entityNum can also be 0 to (MAX_GENTITIES-1)
@@ -779,7 +779,7 @@ typedef struct {
 
 // in order from highest priority to lowest
 // if none of the catchers are active, bound key strings will be executed
-#define KEYCATCH_CONSOLE		0x0001
+#define	KEYCATCH_CONSOLE		0x0001
 #define	KEYCATCH_UI				0x0002
 #define	KEYCATCH_MESSAGE		0x0004
 #define	KEYCATCH_CGAME			0x0008
@@ -790,7 +790,7 @@ typedef struct {
 // other channels will allways override a playing sound on that channel
 typedef enum {
 	CHAN_AUTO,
-	CHAN_LOCAL,		// menu sounds, etc
+	CHAN_LOCAL,			// menu sounds, etc
 	CHAN_WEAPON,
 	CHAN_VOICE,
 	CHAN_ITEM,
@@ -813,13 +813,13 @@ typedef enum {
 
 #define	SNAPFLAG_RATE_DELAYED	1
 #define	SNAPFLAG_NOT_ACTIVE		2	// snapshot used during connection and for zombies
-#define SNAPFLAG_SERVERCOUNT	4	// toggled every map_restart so transitions can be detected
+#define	SNAPFLAG_SERVERCOUNT	4	// toggled every map_restart so transitions can be detected
 
 //
 // per-level limits
 //
 #define	MAX_CLIENTS			64		// absolute limit
-#define MAX_LOCATIONS		64
+#define	MAX_LOCATIONS		64
 
 #define	GENTITYNUM_BITS		10		// don't need to send any more
 #define	MAX_GENTITIES		(1<<GENTITYNUM_BITS)
@@ -827,8 +827,8 @@ typedef enum {
 // entitynums are communicated with GENTITY_BITS, so any reserved
 // values that are going to be communcated over the net need to
 // also be in this range
-#define	ENTITYNUM_NONE		(MAX_GENTITIES-1)
-#define	ENTITYNUM_WORLD		(MAX_GENTITIES-2)
+#define	ENTITYNUM_NONE			(MAX_GENTITIES-1)
+#define	ENTITYNUM_WORLD			(MAX_GENTITIES-2)
 #define	ENTITYNUM_MAX_NORMAL	(MAX_GENTITIES-2)
 
 
@@ -862,7 +862,7 @@ typedef struct {
 
 #define	MAX_PS_EVENTS			2
 
-#define PS_PMOVEFRAMECOUNTBITS	6
+#define	PS_PMOVEFRAMECOUNTBITS	6
 
 // playerState_t is the information needed by both the client and server
 // to predict player motion and actions
@@ -960,15 +960,15 @@ typedef struct playerState_s {
 										// only generate a small move value for that frame
 										// walking will use different animations and
 										// won't generate footsteps
-#define BUTTON_AFFIRMATIVE	32
+#define	BUTTON_AFFIRMATIVE	32
 #define	BUTTON_NEGATIVE		64
 
-#define BUTTON_GETFLAG		128
-#define BUTTON_GUARDBASE	256
-#define BUTTON_PATROL		512
-#define BUTTON_FOLLOWME		1024
+#define	BUTTON_GETFLAG		128
+#define	BUTTON_GUARDBASE	256
+#define	BUTTON_PATROL		512
+#define	BUTTON_FOLLOWME		1024
 
-#define	BUTTON_ANY			2048			// any key whatsoever
+#define	BUTTON_ANY			2048		// any key whatsoever
 
 #define	MOVE_RUN			120			// if forwardmove or rightmove are >= MOVE_RUN,
 										// then BUTTON_WALKING should be set
@@ -978,7 +978,7 @@ typedef struct usercmd_s {
 	int				serverTime;
 	int				angles[3];
 	int 			buttons;
-	byte			weapon;           // weapon
+	byte			weapon;				// weapon
 	signed char	forwardmove, rightmove, upmove;
 } usercmd_t;
 
@@ -1057,7 +1057,7 @@ typedef struct entityState_s {
 
 typedef enum {
 	CA_UNINITIALIZED,
-	CA_DISCONNECTED, 	// not talking to a server
+	CA_DISCONNECTED,	// not talking to a server
 	CA_AUTHORIZING,		// not used any more, was checking cd key
 	CA_CONNECTING,		// sending request packets to the server
 	CA_CHALLENGING,		// sending challenge packets to the server
@@ -1088,13 +1088,13 @@ typedef struct {
   float s2;
   float t2;
   qhandle_t glyph;  // handle to the shader with the glyph
-	char shaderName[32];
+  char shaderName[32];
 } glyphInfo_t;
 
 typedef struct {
   glyphInfo_t glyphs [GLYPHS_PER_FONT];
-	float glyphScale;
-	char name[MAX_QPATH];
+  float glyphScale;
+  char name[MAX_QPATH];
 } fontInfo_t;
 
 #define Square(x) ((x)*(x))
@@ -1153,4 +1153,4 @@ typedef enum _flag_status {
 #define CDKEY_LEN 16
 #define CDCHKSUM_LEN 2
 
-#endif	// __Q_SHARED_H
+#endif // __Q_SHARED_H

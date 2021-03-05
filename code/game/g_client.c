@@ -774,10 +774,10 @@ const char *ClientConnect( int clientNum, qboolean firstTime, qboolean isBot ) {
 
 	trap_GetUserinfo( clientNum, userinfo, sizeof( userinfo ) );
 
- 	// IP filtering
- 	// https://zerowing.idsoftware.com/bugzilla/show_bug.cgi?id=500
- 	// recommending PB based IP / GUID banning, the builtin system is pretty limited
- 	// check to see if they are on the banned IP list
+	// IP filtering
+	// https://zerowing.idsoftware.com/bugzilla/show_bug.cgi?id=500
+	// recommending PB based IP / GUID banning, the builtin system is pretty limited
+	// check to see if they are on the banned IP list
 	value = Info_ValueForKey( userinfo, "ip" );
 
 	if ( !strcmp( value, "localhost" ) && !isBot )
@@ -853,9 +853,9 @@ const char *ClientConnect( int clientNum, qboolean firstTime, qboolean isBot ) {
 	CalculateRanks();
 
 	// for statistics
-//	client->areabits = areabits;
-//	if ( !client->areabits )
-//		client->areabits = G_Alloc( (trap_AAS_PointReachabilityAreaIndex( NULL ) + 7) / 8 );
+	//	client->areabits = areabits;
+	//	if ( !client->areabits )
+	//		client->areabits = G_Alloc( (trap_AAS_PointReachabilityAreaIndex( NULL ) + 7) / 8 );
 
 	return NULL;
 }

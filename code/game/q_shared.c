@@ -39,7 +39,7 @@ COM_StripExtension
 ============
 */
 void COM_StripExtension( const char *in, char *out, int destsize ) {
-	int             length;
+	int			length;
 
 	Q_strncpyz(out, in, destsize);
 
@@ -62,7 +62,7 @@ COM_DefaultExtension
 */
 void COM_DefaultExtension (char *path, int maxSize, const char *extension ) {
 	char	oldPath[MAX_QPATH];
-	char    *src;
+	char	*src;
 
 //
 // if path doesn't have a .EXT, append extension
@@ -72,7 +72,7 @@ void COM_DefaultExtension (char *path, int maxSize, const char *extension ) {
 
 	while (*src != '/' && src != path) {
 		if ( *src == '.' ) {
-			return;                 // it has an extension
+			return;				// it has an extension
 		}
 		src--;
 	}
@@ -198,48 +198,48 @@ int COM_Compress( char *data_p ) {
 					in++;
 				if ( *in )
 					in += 2;
-                        // record when we hit a newline
-                        } else if ( c == '\n' || c == '\r' ) {
-                            newline = qtrue;
-                            in++;
-                        // record when we hit whitespace
-                        } else if ( c == ' ' || c == '\t') {
-                            whitespace = qtrue;
-                            in++;
-                        // an actual token
+						// record when we hit a newline
+						} else if ( c == '\n' || c == '\r' ) {
+							newline = qtrue;
+							in++;
+						// record when we hit whitespace
+						} else if ( c == ' ' || c == '\t') {
+							whitespace = qtrue;
+							in++;
+						// an actual token
 			} else {
-                            // if we have a pending newline, emit it (and it counts as whitespace)
-                            if (newline) {
-                                *out++ = '\n';
-                                newline = qfalse;
-                                whitespace = qfalse;
-                            } else if (whitespace) {
-                                *out++ = ' ';
-                                whitespace = qfalse;
-                            }
+							// if we have a pending newline, emit it (and it counts as whitespace)
+							if (newline) {
+								*out++ = '\n';
+								newline = qfalse;
+								whitespace = qfalse;
+							} else if (whitespace) {
+								*out++ = ' ';
+								whitespace = qfalse;
+							}
 
-                            // copy quoted strings unmolested
-                            if (c == '"') {
-                                    *out++ = c;
-                                    in++;
-                                    while (1) {
-                                        c = *in;
-                                        if (c && c != '"') {
-                                            *out++ = c;
-                                            in++;
-                                        } else {
-                                            break;
-                                        }
-                                    }
-                                    if (c == '"') {
-                                        *out++ = c;
-                                        in++;
-                                    }
-                            } else {
-                                *out = c;
-                                out++;
-                                in++;
-                            }
+							// copy quoted strings unmolested
+							if (c == '"') {
+									*out++ = c;
+									in++;
+									while (1) {
+										c = *in;
+										if (c && c != '"') {
+											*out++ = c;
+											in++;
+										} else {
+											break;
+										}
+									}
+									if (c == '"') {
+										*out++ = c;
+										in++;
+									}
+							} else {
+								*out = c;
+								out++;
+								in++;
+							}
 			}
 		}
 	}

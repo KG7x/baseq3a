@@ -41,7 +41,7 @@ typedef struct projectileinfo_s
 typedef struct weaponinfo_s
 {
 	int valid;					//true if the weapon info is valid
-	int number;									//number of the weapon
+	int number;					//number of the weapon
 	char name[MAX_STRINGFIELD];
 	char model[MAX_STRINGFIELD];
 	int level;
@@ -63,7 +63,7 @@ typedef struct weaponinfo_s
 	float reload;
 	float spinup;
 	float spindown;
-	projectileinfo_t proj;						//pointer to the used projectile
+	projectileinfo_t proj;		//pointer to the used projectile
 } weaponinfo_t;
 
 //setup the weapon AI
