@@ -990,7 +990,7 @@ angle)
 static void CG_LightningBolt( centity_t *cent, vec3_t origin ) {
 	trace_t			trace;
 	refEntity_t		beam;
-	vec3_			forward;
+	vec3_t			forward;
 	vec3_t			muzzlePoint, endPoint;
 	int				anim;
 	qboolean		directView;
