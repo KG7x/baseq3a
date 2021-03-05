@@ -32,7 +32,7 @@
 
 #define SB_SCORELINE_X		112
 
-#define SB_RATING_WIDTH	    (6 * BIGCHAR_WIDTH) // width 6
+#define SB_RATING_WIDTH		(6 * BIGCHAR_WIDTH) // width 6
 #define SB_SCORE_X			(SB_SCORELINE_X + BIGCHAR_WIDTH) // width 6
 #define SB_RATING_X			(SB_SCORELINE_X + 6 * BIGCHAR_WIDTH) // width 6
 #define SB_PING_X			(SB_SCORELINE_X + 12 * BIGCHAR_WIDTH + 8) // width 5
@@ -45,7 +45,7 @@
 // here's the layout
 
 //
-//	0   32   80  112  144   240  320  400   <-- pixel position
+//  0   32   80  112  144   240  320  400   <-- pixel position
 //  bot head bot head score ping time name
 //
 //  wins/losses are drawn on bot icon now

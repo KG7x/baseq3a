@@ -116,9 +116,9 @@ extern menuDef_t *menuScoreboard;
 void Menu_Reset( void );			// FIXME: add to right include file
 
 static void CG_LoadHud_f( void) {
-  char buff[1024];
+	char buff[1024];
 	const char *hudSet;
-  memset(buff, 0, sizeof(buff));
+	memset(buff, 0, sizeof(buff));
 
 	String_Init();
 	Menu_Reset();

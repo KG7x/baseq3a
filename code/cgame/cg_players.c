@@ -724,7 +724,7 @@ static const char *CG_GetTeamColors( const char *color, team_t team ) {
 		case TEAM_BLUE: replace1( '?', '4', str ); break;
 		case TEAM_FREE: replace1( '?', '7', str ); break;
 		default: break;
-    }
+	}
 
 	return str;
 }

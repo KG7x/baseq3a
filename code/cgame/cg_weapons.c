@@ -224,9 +224,9 @@ void CG_RailTrail( const clientInfo_t *ci, const vec3_t start, const vec3_t end 
 	VectorCopy(end, re->oldorigin);
 
 	re->shaderRGBA[0] = ci->color1[0] * 255;
-    re->shaderRGBA[1] = ci->color1[1] * 255;
-    re->shaderRGBA[2] = ci->color1[2] * 255;
-    re->shaderRGBA[3] = 255;
+	re->shaderRGBA[1] = ci->color1[1] * 255;
+	re->shaderRGBA[2] = ci->color1[2] * 255;
+	re->shaderRGBA[3] = 255;
 
 	le->color[0] = ci->color1[0] * 0.75;
 	le->color[1] = ci->color1[1] * 0.75;
@@ -513,20 +513,20 @@ static void CG_PlasmaTrail( centity_t *cent, const weaponInfo_t *wi ) {
 	else
 		re->u.shaderTime = cg.time / 1000.0f;
 
-    re->reType = RT_SPRITE;
-    re->radius = 0.25f;
+	re->reType = RT_SPRITE;
+	re->radius = 0.25f;
 	re->customShader = cgs.media.railRingsShader;
 	le->bounceFactor = 0.3f;
 
-    re->shaderRGBA[0] = wi->flashDlightColor[0] * 63;
-    re->shaderRGBA[1] = wi->flashDlightColor[1] * 63;
-    re->shaderRGBA[2] = wi->flashDlightColor[2] * 63;
-    re->shaderRGBA[3] = 63;
+	re->shaderRGBA[0] = wi->flashDlightColor[0] * 63;
+	re->shaderRGBA[1] = wi->flashDlightColor[1] * 63;
+	re->shaderRGBA[2] = wi->flashDlightColor[2] * 63;
+	re->shaderRGBA[3] = 63;
 
-    le->color[0] = wi->flashDlightColor[0] * 0.2;
-    le->color[1] = wi->flashDlightColor[1] * 0.2;
-    le->color[2] = wi->flashDlightColor[2] * 0.2;
-    le->color[3] = 0.25f;
+	le->color[0] = wi->flashDlightColor[0] * 0.2;
+	le->color[1] = wi->flashDlightColor[1] * 0.2;
+	le->color[2] = wi->flashDlightColor[2] * 0.2;
+	le->color[3] = 0.25f;
 
 	le->angles.trType = TR_LINEAR;
 	le->angles.trTime = cg.time;
@@ -988,12 +988,12 @@ angle)
 ===============
 */
 static void CG_LightningBolt( centity_t *cent, vec3_t origin ) {
-	trace_t  trace;
-	refEntity_t  beam;
-	vec3_t   forward;
-	vec3_t   muzzlePoint, endPoint;
-	int      anim;
-	qboolean directView;
+	trace_t			trace;
+	refEntity_t		beam;
+	vec3_			forward;
+	vec3_t			muzzlePoint, endPoint;
+	int				anim;
+	qboolean		directView;
 
 	if (cent->currentState.weapon != WP_LIGHTNING) {
 		return;
@@ -1090,7 +1090,7 @@ static void CG_LightningBolt( centity_t *cent, vec3_t origin ) {
 /*
 
 static void CG_LightningBolt( centity_t *cent, vec3_t origin ) {
-	trace_t		trace;
+	trace_t			trace;
 	refEntity_t		beam;
 	vec3_t			forward;
 	vec3_t			muzzlePoint, endPoint;
