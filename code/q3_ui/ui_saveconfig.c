@@ -155,8 +155,8 @@ static void UI_SaveConfigMenu_Init( void ) {
 	saveConfig.save.generic.callback	= UI_SaveConfigMenu_SaveEvent;
 	saveConfig.save.generic.x			= 640;
 	saveConfig.save.generic.y			= 480-64;
-	saveConfig.save.width  				= 128;
-	saveConfig.save.height  		    = 64;
+	saveConfig.save.width				= 128;
+	saveConfig.save.height				= 64;
 	saveConfig.save.focuspic			= ART_SAVE1;
 
 	Menu_AddItem( &saveConfig.menu, &saveConfig.banner );

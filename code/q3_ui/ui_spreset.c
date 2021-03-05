@@ -158,14 +158,14 @@ void UI_ResetMenu(void) {
 	s_reset.no.generic.flags		= QMF_LEFT_JUSTIFY|QMF_PULSEIFFOCUS;
 	s_reset.no.generic.callback		= Reset_MenuEvent;
 	s_reset.no.generic.id			= ID_NO;
-	s_reset.no.generic.x		    = l3;
-	s_reset.no.generic.y		    = 264;
+	s_reset.no.generic.x			= l3;
+	s_reset.no.generic.y			= 264;
 	s_reset.no.string				= "NO";
-	s_reset.no.color			    = color_red;
-	s_reset.no.style			    = UI_LEFT;
+	s_reset.no.color				= color_red;
+	s_reset.no.style				= UI_LEFT;
 
-	Menu_AddItem( &s_reset.menu,	&s_reset.yes );
-	Menu_AddItem( &s_reset.menu,	&s_reset.no );
+	Menu_AddItem( &s_reset.menu, &s_reset.yes );
+	Menu_AddItem( &s_reset.menu, &s_reset.no );
 
 	UI_PushMenu( &s_reset.menu );
 

@@ -111,25 +111,25 @@ void Options_MenuInit( void ) {
 	s_options.banner.generic.flags	= QMF_CENTER_JUSTIFY;
 	s_options.banner.generic.x		= 320;
 	s_options.banner.generic.y		= 16;
-	s_options.banner.string		    = "SYSTEM SETUP";
+	s_options.banner.string			= "SYSTEM SETUP";
 	s_options.banner.color			= color_white;
 	s_options.banner.style			= UI_CENTER;
 
 	s_options.framel.generic.type  = MTYPE_BITMAP;
 	s_options.framel.generic.name  = ART_FRAMEL;
 	s_options.framel.generic.flags = QMF_INACTIVE;
-	s_options.framel.generic.x	   = 8;
-	s_options.framel.generic.y	   = 76;
-	s_options.framel.width  	   = 256;
-	s_options.framel.height  	   = 334;
+	s_options.framel.generic.x     = 8;
+	s_options.framel.generic.y     = 76;
+	s_options.framel.width         = 256;
+	s_options.framel.height        = 334;
 
 	s_options.framer.generic.type  = MTYPE_BITMAP;
 	s_options.framer.generic.name  = ART_FRAMER;
 	s_options.framer.generic.flags = QMF_INACTIVE;
-	s_options.framer.generic.x	   = 376;
-	s_options.framer.generic.y	   = 76;
-	s_options.framer.width  	   = 256;
-	s_options.framer.height  	   = 334;
+	s_options.framer.generic.x     = 376;
+	s_options.framer.generic.y     = 76;
+	s_options.framer.width         = 256;
+	s_options.framer.height        = 334;
 
 	y = 168;
 	s_options.graphics.generic.type		= MTYPE_PTEXT;
@@ -175,16 +175,16 @@ void Options_MenuInit( void ) {
 	s_options.network.color				= color_red;
 	s_options.network.style				= UI_CENTER;
 
-	s_options.back.generic.type	    = MTYPE_BITMAP;
-	s_options.back.generic.name     = ART_BACK0;
-	s_options.back.generic.flags    = QMF_LEFT_JUSTIFY|QMF_PULSEIFFOCUS;
+	s_options.back.generic.type		= MTYPE_BITMAP;
+	s_options.back.generic.name		= ART_BACK0;
+	s_options.back.generic.flags	= QMF_LEFT_JUSTIFY|QMF_PULSEIFFOCUS;
 	s_options.back.generic.callback = Options_Event;
-	s_options.back.generic.id	    = ID_BACK;
+	s_options.back.generic.id		= ID_BACK;
 	s_options.back.generic.x		= 0;
 	s_options.back.generic.y		= 480-64;
-	s_options.back.width  		    = 128;
-	s_options.back.height  		    = 64;
-	s_options.back.focuspic         = ART_BACK1;
+	s_options.back.width			= 128;
+	s_options.back.height			= 64;
+	s_options.back.focuspic			= ART_BACK1;
 
 	Menu_AddItem( &s_options.menu, ( void * ) &s_options.banner );
 	Menu_AddItem( &s_options.menu, ( void * ) &s_options.framel );

@@ -256,33 +256,33 @@ static void UI_AddBotsMenu_Init( void ) {
 	addBotsMenuInfo.numBots = UI_GetNumBots();
 	count = addBotsMenuInfo.numBots < 7 ? addBotsMenuInfo.numBots : 7;
 
-	addBotsMenuInfo.arrows.generic.type  = MTYPE_BITMAP;
-	addBotsMenuInfo.arrows.generic.name  = ART_ARROWS;
+	addBotsMenuInfo.arrows.generic.type	 = MTYPE_BITMAP;
+	addBotsMenuInfo.arrows.generic.name	 = ART_ARROWS;
 	addBotsMenuInfo.arrows.generic.flags = QMF_INACTIVE;
 	addBotsMenuInfo.arrows.generic.x	 = 200;
 	addBotsMenuInfo.arrows.generic.y	 = 128;
-	addBotsMenuInfo.arrows.width  	     = 64;
-	addBotsMenuInfo.arrows.height  	     = 128;
+	addBotsMenuInfo.arrows.width		 = 64;
+	addBotsMenuInfo.arrows.height		 = 128;
 
-	addBotsMenuInfo.up.generic.type	    = MTYPE_BITMAP;
-	addBotsMenuInfo.up.generic.flags    = QMF_LEFT_JUSTIFY|QMF_PULSEIFFOCUS;
-	addBotsMenuInfo.up.generic.x		= 200;
-	addBotsMenuInfo.up.generic.y		= 128;
-	addBotsMenuInfo.up.generic.id	    = ID_UP;
-	addBotsMenuInfo.up.generic.callback = UI_AddBotsMenu_UpEvent;
-	addBotsMenuInfo.up.width  		    = 64;
-	addBotsMenuInfo.up.height  		    = 64;
-	addBotsMenuInfo.up.focuspic         = ART_ARROWUP;
+	addBotsMenuInfo.up.generic.type		 = MTYPE_BITMAP;
+	addBotsMenuInfo.up.generic.flags	 = QMF_LEFT_JUSTIFY|QMF_PULSEIFFOCUS;
+	addBotsMenuInfo.up.generic.x		 = 200;
+	addBotsMenuInfo.up.generic.y		 = 128;
+	addBotsMenuInfo.up.generic.id		 = ID_UP;
+	addBotsMenuInfo.up.generic.callback	 = UI_AddBotsMenu_UpEvent;
+	addBotsMenuInfo.up.width			 = 64;
+	addBotsMenuInfo.up.height			 = 64;
+	addBotsMenuInfo.up.focuspic			 = ART_ARROWUP;
 
 	addBotsMenuInfo.down.generic.type	  = MTYPE_BITMAP;
-	addBotsMenuInfo.down.generic.flags    = QMF_LEFT_JUSTIFY|QMF_PULSEIFFOCUS;
+	addBotsMenuInfo.down.generic.flags	  = QMF_LEFT_JUSTIFY|QMF_PULSEIFFOCUS;
 	addBotsMenuInfo.down.generic.x		  = 200;
 	addBotsMenuInfo.down.generic.y		  = 128+64;
-	addBotsMenuInfo.down.generic.id	      = ID_DOWN;
+	addBotsMenuInfo.down.generic.id		  = ID_DOWN;
 	addBotsMenuInfo.down.generic.callback = UI_AddBotsMenu_DownEvent;
-	addBotsMenuInfo.down.width  		  = 64;
-	addBotsMenuInfo.down.height  		  = 64;
-	addBotsMenuInfo.down.focuspic         = ART_ARROWDOWN;
+	addBotsMenuInfo.down.width			  = 64;
+	addBotsMenuInfo.down.height			  = 64;
+	addBotsMenuInfo.down.focuspic		  = ART_ARROWDOWN;
 
 	for( n = 0, y = 120; n < count; n++, y += 20 ) {
 		addBotsMenuInfo.bots[n].generic.type		= MTYPE_PTEXT;

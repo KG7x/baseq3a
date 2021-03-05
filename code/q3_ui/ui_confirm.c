@@ -199,14 +199,14 @@ void UI_ConfirmMenu_Style( const char *question, int style, void (*draw)( void )
 	s_confirm.no.generic.flags		= QMF_LEFT_JUSTIFY|QMF_PULSEIFFOCUS;
 	s_confirm.no.generic.callback	= ConfirmMenu_Event;
 	s_confirm.no.generic.id			= ID_CONFIRM_NO;
-	s_confirm.no.generic.x		    = l3;
-	s_confirm.no.generic.y		    = 264;
+	s_confirm.no.generic.x			= l3;
+	s_confirm.no.generic.y			= 264;
 	s_confirm.no.string				= "NO";
-	s_confirm.no.color			    = color_red;
-	s_confirm.no.style			    = UI_LEFT;
+	s_confirm.no.color				= color_red;
+	s_confirm.no.style				= UI_LEFT;
 
-	Menu_AddItem( &s_confirm.menu,	&s_confirm.yes );
-	Menu_AddItem( &s_confirm.menu,	&s_confirm.no );
+	Menu_AddItem( &s_confirm.menu, &s_confirm.yes );
+	Menu_AddItem( &s_confirm.menu, &s_confirm.no );
 
 	UI_PushMenu( &s_confirm.menu );
 

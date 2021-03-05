@@ -533,14 +533,14 @@ static void ArenaServers_UpdateMenu( void ) {
 		else
 		{
 			// all servers pinged - enable controls
-			//g_arenaservers.gametype.generic.flags	&= ~QMF_GRAYED;
-			//g_arenaservers.sortkey.generic.flags	&= ~QMF_GRAYED;
-			//g_arenaservers.showempty.generic.flags&= ~QMF_GRAYED;
-			//g_arenaservers.showfull.generic.flags	&= ~QMF_GRAYED;
-			g_arenaservers.list.generic.flags		&= ~QMF_GRAYED;
-			g_arenaservers.refresh.generic.flags	&= ~QMF_GRAYED;
-			g_arenaservers.go.generic.flags			&= ~QMF_GRAYED;
-			//g_arenaservers.punkbuster.generic.flags &= ~QMF_GRAYED;
+			//g_arenaservers.gametype.generic.flags		&= ~QMF_GRAYED;
+			//g_arenaservers.sortkey.generic.flags		&= ~QMF_GRAYED;
+			//g_arenaservers.showempty.generic.flags	&= ~QMF_GRAYED;
+			//g_arenaservers.showfull.generic.flags		&= ~QMF_GRAYED;
+			g_arenaservers.list.generic.flags			&= ~QMF_GRAYED;
+			g_arenaservers.refresh.generic.flags		&= ~QMF_GRAYED;
+			g_arenaservers.go.generic.flags				&= ~QMF_GRAYED;
+			//g_arenaservers.punkbuster.generic.flags	&= ~QMF_GRAYED;
 
 			// update status bar
 			if ( g_servertype == AS_GLOBAL ) {
@@ -557,13 +557,13 @@ static void ArenaServers_UpdateMenu( void ) {
 			g_arenaservers.statusbar.string = "Press SPACE to stop";
 
 			// disable controls during refresh
-			//g_arenaservers.gametype.generic.flags	|= QMF_GRAYED;
-			//g_arenaservers.sortkey.generic.flags	|= QMF_GRAYED;
-			//g_arenaservers.showempty.generic.flags|= QMF_GRAYED;
-			//g_arenaservers.showfull.generic.flags	|= QMF_GRAYED;
-			g_arenaservers.list.generic.flags		|= QMF_GRAYED;
-			g_arenaservers.refresh.generic.flags	|= QMF_GRAYED;
-			g_arenaservers.go.generic.flags			|= QMF_GRAYED;
+			//g_arenaservers.gametype.generic.flags		|= QMF_GRAYED;
+			//g_arenaservers.sortkey.generic.flags		|= QMF_GRAYED;
+			//g_arenaservers.showempty.generic.flags	|= QMF_GRAYED;
+			//g_arenaservers.showfull.generic.flags		|= QMF_GRAYED;
+			g_arenaservers.list.generic.flags			|= QMF_GRAYED;
+			g_arenaservers.refresh.generic.flags		|= QMF_GRAYED;
+			g_arenaservers.go.generic.flags				|= QMF_GRAYED;
 		}
 		else
 		{
@@ -821,7 +821,7 @@ void ArenaServers_LoadFavorites( void )
 	servernode_t	templist[MAX_FAVORITESERVERS];
 	qboolean		found;
 
-	found        = qfalse;
+	found = qfalse;
 
 	// copy the old
 	memcpy( templist, g_favoriteserverlist, sizeof(servernode_t)*MAX_FAVORITESERVERS );
@@ -923,17 +923,17 @@ static void ArenaServers_DoRefresh( void )
 
 	if (uis.realtime < g_arenaservers.refreshtime)
 	{
-	  if (g_servertype != AS_FAVORITES) {
+		if (g_servertype != AS_FAVORITES) {
 			if (g_servertype == AS_LOCAL) {
 				if (!trap_LAN_GetServerCount(g_servertype)) {
 					return;
 				}
 			}
 			if (trap_LAN_GetServerCount(g_servertype) < 0) {
-			  // still waiting for response
-			  return;
+				// still waiting for response
+				return;
 			}
-	  }
+		}
 	} else if (g_servertype == AS_LOCAL) {
 		if ( !trap_LAN_GetServerCount(AS_LOCAL)) {
 			// no local servers found, check again
@@ -1006,7 +1006,7 @@ static void ArenaServers_DoRefresh( void )
 
 			// clear this query from internal list
 			g_arenaservers.pinglist[j].adrstr[0] = '\0';
-   		}
+		}
 
 		// clear this query from external list
 		trap_LAN_ClearPing( i );
@@ -1425,11 +1425,11 @@ static void ArenaServers_MenuInit( void ) {
 
 	g_arenaservers.banner.generic.type  = MTYPE_BTEXT;
 	g_arenaservers.banner.generic.flags = QMF_CENTER_JUSTIFY;
-	g_arenaservers.banner.generic.x	    = 320;
-	g_arenaservers.banner.generic.y	    = 16;
-	g_arenaservers.banner.string  		= "ARENA SERVERS";
-	g_arenaservers.banner.style  	    = UI_CENTER;
-	g_arenaservers.banner.color  	    = color_white;
+	g_arenaservers.banner.generic.x     = 320;
+	g_arenaservers.banner.generic.y     = 16;
+	g_arenaservers.banner.string        = "ARENA SERVERS";
+	g_arenaservers.banner.style         = UI_CENTER;
+	g_arenaservers.banner.color         = color_white;
 
 	y = 80;
 	g_arenaservers.master.generic.type			= MTYPE_SPINCONTROL;
@@ -1555,11 +1555,11 @@ static void ArenaServers_MenuInit( void ) {
 
 	y += SMALLCHAR_HEIGHT;
 	g_arenaservers.statusbar.generic.type   = MTYPE_TEXT;
-	g_arenaservers.statusbar.generic.x	    = 320;
-	g_arenaservers.statusbar.generic.y	    = y;
-	g_arenaservers.statusbar.string	        = "";
-	g_arenaservers.statusbar.style	        = UI_CENTER|UI_SMALLFONT;
-	g_arenaservers.statusbar.color	        = text_color_normal;
+	g_arenaservers.statusbar.generic.x      = 320;
+	g_arenaservers.statusbar.generic.y      = y;
+	g_arenaservers.statusbar.string         = "";
+	g_arenaservers.statusbar.style          = UI_CENTER|UI_SMALLFONT;
+	g_arenaservers.statusbar.color          = text_color_normal;
 
 	g_arenaservers.remove.generic.type		= MTYPE_BITMAP;
 	g_arenaservers.remove.generic.name		= ART_REMOVE0;
@@ -1583,16 +1583,16 @@ static void ArenaServers_MenuInit( void ) {
 	g_arenaservers.back.height				= 64;
 	g_arenaservers.back.focuspic			= ART_BACK1;
 
-	g_arenaservers.specify.generic.type	    = MTYPE_BITMAP;
+	g_arenaservers.specify.generic.type		= MTYPE_BITMAP;
 	g_arenaservers.specify.generic.name		= ART_SPECIFY0;
-	g_arenaservers.specify.generic.flags    = QMF_LEFT_JUSTIFY|QMF_PULSEIFFOCUS;
+	g_arenaservers.specify.generic.flags	= QMF_LEFT_JUSTIFY|QMF_PULSEIFFOCUS;
 	g_arenaservers.specify.generic.callback = ArenaServers_Event;
-	g_arenaservers.specify.generic.id	    = ID_SPECIFY;
+	g_arenaservers.specify.generic.id		= ID_SPECIFY;
 	g_arenaservers.specify.generic.x		= 128;
 	g_arenaservers.specify.generic.y		= 480-64;
-	g_arenaservers.specify.width  		    = 128;
-	g_arenaservers.specify.height  		    = 64;
-	g_arenaservers.specify.focuspic         = ART_SPECIFY1;
+	g_arenaservers.specify.width			= 128;
+	g_arenaservers.specify.height			= 64;
+	g_arenaservers.specify.focuspic			= ART_SPECIFY1;
 
 	g_arenaservers.refresh.generic.type		= MTYPE_BITMAP;
 	g_arenaservers.refresh.generic.name		= ART_REFRESH0;

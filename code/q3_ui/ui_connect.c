@@ -70,7 +70,7 @@ static void UI_DisplayDownloadInfo( const char *downloadName ) {
 	fprintf( stderr, "DB: downloadSize:  %16d\n", downloadSize );
 	fprintf( stderr, "DB: downloadCount: %16d\n", downloadCount );
 	fprintf( stderr, "DB: downloadTime:  %16d\n", downloadTime );
-  	fprintf( stderr, "DB: UI realtime:   %16d\n", uis.realtime );	// bk
+	fprintf( stderr, "DB: UI realtime:   %16d\n", uis.realtime );	// bk
 	fprintf( stderr, "DB: UI frametime:  %16d\n", uis.frametime );	// bk
 #endif
 
@@ -111,19 +111,19 @@ static void UI_DisplayDownloadInfo( const char *downloadName ) {
 		UI_DrawProportionalString( leftWidth, 192,
 			va("(%s of %s copied)", dlSizeBuf, totalSizeBuf), style, color_white );
 	} else {
-	  // bk010108
-	  //float elapsedTime = (float)(uis.realtime - downloadTime); // current - start (msecs)
-	  //elapsedTime = elapsedTime * 0.001f; // in seconds
-	  //if ( elapsedTime <= 0.0f ) elapsedTime == 0.0f;
-	  if ( (uis.realtime - downloadTime) / 1000) {
+		// bk010108
+		//float elapsedTime = (float)(uis.realtime - downloadTime); // current - start (msecs)
+		//elapsedTime = elapsedTime * 0.001f; // in seconds
+		//if ( elapsedTime <= 0.0f ) elapsedTime == 0.0f;
+		if ( (uis.realtime - downloadTime) / 1000) {
 			xferRate = downloadCount / ((uis.realtime - downloadTime) / 1000);
-		  //xferRate = (int)( ((float)downloadCount) / elapsedTime);
+			//xferRate = (int)( ((float)downloadCount) / elapsedTime);
 		} else {
 			xferRate = 0;
 		}
 
-	  //fprintf( stderr, "DB: elapsedTime:  %16.8f\n", elapsedTime );	// bk
-	  //fprintf( stderr, "DB: xferRate:   %16d\n", xferRate );	// bk
+		//fprintf( stderr, "DB: elapsedTime:  %16.8f\n", elapsedTime );	// bk
+		//fprintf( stderr, "DB: xferRate:   %16d\n", xferRate );	// bk
 
 		UI_ReadableSize( xferRateBuf, sizeof xferRateBuf, xferRate );
 

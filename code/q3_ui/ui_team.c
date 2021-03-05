@@ -80,9 +80,9 @@ void TeamMain_MenuInit( void ) {
 	s_teammain.menu.wrapAround = qtrue;
 	s_teammain.menu.fullscreen = qfalse;
 
-	s_teammain.frame.generic.type   = MTYPE_BITMAP;
+	s_teammain.frame.generic.type	= MTYPE_BITMAP;
 	s_teammain.frame.generic.flags	= QMF_INACTIVE;
-	s_teammain.frame.generic.name   = TEAMMAIN_FRAME;
+	s_teammain.frame.generic.name	= TEAMMAIN_FRAME;
 	s_teammain.frame.width			= 300;
 	s_teammain.frame.height			= 225;
 	s_teammain.frame.generic.x		= (640-s_teammain.frame.width)/2;

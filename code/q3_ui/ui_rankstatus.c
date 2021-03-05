@@ -21,7 +21,7 @@ typedef struct
 	menutext_s		ok;
 } rankstatus_t;
 
-static rankstatus_t	s_rankstatus;
+static rankstatus_t		s_rankstatus;
 
 static menuframework_s	s_rankstatus_menu;
 static menuaction_s		s_rankstatus_ok;
@@ -29,7 +29,7 @@ static menuaction_s		s_rankstatus_ok;
 static grank_status_t	s_status = 0;
 static char*			s_rankstatus_message = NULL;
 
-static vec4_t s_rankingstatus_color_prompt  = {1.00, 0.43, 0.00, 1.00};
+static vec4_t s_rankingstatus_color_prompt = {1.00, 0.43, 0.00, 1.00};
 
 /*
 ===============
@@ -104,25 +104,25 @@ void RankStatus_MenuInit( void ) {
 
 	y = 214;
 
-	s_rankstatus.message.generic.type			= MTYPE_PTEXT;
-	s_rankstatus.message.generic.flags			= QMF_CENTER_JUSTIFY|QMF_INACTIVE;
-	s_rankstatus.message.generic.id				= ID_MESSAGE;
-	s_rankstatus.message.generic.x				= 320;
-	s_rankstatus.message.generic.y				= y;
-	s_rankstatus.message.string					= s_rankstatus_message;
-	s_rankstatus.message.style					= UI_CENTER|UI_SMALLFONT;
-	s_rankstatus.message.color					= s_rankingstatus_color_prompt;
+	s_rankstatus.message.generic.type		= MTYPE_PTEXT;
+	s_rankstatus.message.generic.flags		= QMF_CENTER_JUSTIFY|QMF_INACTIVE;
+	s_rankstatus.message.generic.id			= ID_MESSAGE;
+	s_rankstatus.message.generic.x			= 320;
+	s_rankstatus.message.generic.y			= y;
+	s_rankstatus.message.string				= s_rankstatus_message;
+	s_rankstatus.message.style				= UI_CENTER|UI_SMALLFONT;
+	s_rankstatus.message.color				= s_rankingstatus_color_prompt;
 	y += 40;
 
-	s_rankstatus.ok.generic.type				= MTYPE_PTEXT;
-	s_rankstatus.ok.generic.flags				= QMF_CENTER_JUSTIFY|QMF_PULSEIFFOCUS;
-	s_rankstatus.ok.generic.id					= ID_OK;
-	s_rankstatus.ok.generic.callback			= RankStatus_MenuEvent;
-	s_rankstatus.ok.generic.x					= 320;
-	s_rankstatus.ok.generic.y					= y;
-	s_rankstatus.ok.string						= "OK";
-	s_rankstatus.ok.style						= UI_CENTER|UI_SMALLFONT;
-	s_rankstatus.ok.color						= colorRed;
+	s_rankstatus.ok.generic.type			= MTYPE_PTEXT;
+	s_rankstatus.ok.generic.flags			= QMF_CENTER_JUSTIFY|QMF_PULSEIFFOCUS;
+	s_rankstatus.ok.generic.id				= ID_OK;
+	s_rankstatus.ok.generic.callback		= RankStatus_MenuEvent;
+	s_rankstatus.ok.generic.x				= 320;
+	s_rankstatus.ok.generic.y				= y;
+	s_rankstatus.ok.string					= "OK";
+	s_rankstatus.ok.style					= UI_CENTER|UI_SMALLFONT;
+	s_rankstatus.ok.color					= colorRed;
 
 	Menu_AddItem( &s_rankstatus.menu, (void*) &s_rankstatus.frame );
 	Menu_AddItem( &s_rankstatus.menu, (void*) &s_rankstatus.message );

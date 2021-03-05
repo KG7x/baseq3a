@@ -29,7 +29,7 @@ GAME OPTIONS MENU
 #define ID_SYNCEVERYFRAME		134
 #define ID_FORCEMODEL			135
 #define ID_DRAWTEAMOVERLAY		136
-#define ID_ALLOWDOWNLOAD			137
+#define ID_ALLOWDOWNLOAD		137
 #define ID_BACK					138
 
 #define	NUM_CROSSHAIRS			10
@@ -209,27 +209,27 @@ static void Preferences_MenuInit( void ) {
 	s_preferences.menu.fullscreen = qtrue;
 
 	s_preferences.banner.generic.type  = MTYPE_BTEXT;
-	s_preferences.banner.generic.x	   = 320;
-	s_preferences.banner.generic.y	   = 16;
-	s_preferences.banner.string		   = "GAME OPTIONS";
+	s_preferences.banner.generic.x     = 320;
+	s_preferences.banner.generic.y     = 16;
+	s_preferences.banner.string        = "GAME OPTIONS";
 	s_preferences.banner.color         = color_white;
 	s_preferences.banner.style         = UI_CENTER;
 
 	s_preferences.framel.generic.type  = MTYPE_BITMAP;
 	s_preferences.framel.generic.name  = ART_FRAMEL;
 	s_preferences.framel.generic.flags = QMF_INACTIVE;
-	s_preferences.framel.generic.x	   = 0;
-	s_preferences.framel.generic.y	   = 78;
-	s_preferences.framel.width  	   = 256;
-	s_preferences.framel.height  	   = 329;
+	s_preferences.framel.generic.x     = 0;
+	s_preferences.framel.generic.y     = 78;
+	s_preferences.framel.width         = 256;
+	s_preferences.framel.height        = 329;
 
 	s_preferences.framer.generic.type  = MTYPE_BITMAP;
 	s_preferences.framer.generic.name  = ART_FRAMER;
 	s_preferences.framer.generic.flags = QMF_INACTIVE;
-	s_preferences.framer.generic.x	   = 376;
-	s_preferences.framer.generic.y	   = 76;
-	s_preferences.framer.width  	   = 256;
-	s_preferences.framer.height  	   = 334;
+	s_preferences.framer.generic.x     = 376;
+	s_preferences.framer.generic.y     = 76;
+	s_preferences.framer.width         = 256;
+	s_preferences.framer.height        = 334;
 
 	y = 144;
 	s_preferences.crosshair.generic.type		= MTYPE_TEXT;
@@ -247,105 +247,105 @@ static void Preferences_MenuInit( void ) {
 
 	y += BIGCHAR_HEIGHT+2+4;
 	s_preferences.simpleitems.generic.type        = MTYPE_RADIOBUTTON;
-	s_preferences.simpleitems.generic.name	      = "Simple Items:";
-	s_preferences.simpleitems.generic.flags	      = QMF_PULSEIFFOCUS|QMF_SMALLFONT;
+	s_preferences.simpleitems.generic.name        = "Simple Items:";
+	s_preferences.simpleitems.generic.flags       = QMF_PULSEIFFOCUS|QMF_SMALLFONT;
 	s_preferences.simpleitems.generic.callback    = Preferences_Event;
 	s_preferences.simpleitems.generic.id          = ID_SIMPLEITEMS;
-	s_preferences.simpleitems.generic.x	          = PREFERENCES_X_POS;
-	s_preferences.simpleitems.generic.y	          = y;
+	s_preferences.simpleitems.generic.x           = PREFERENCES_X_POS;
+	s_preferences.simpleitems.generic.y           = y;
 
 	y += BIGCHAR_HEIGHT;
 	s_preferences.wallmarks.generic.type          = MTYPE_RADIOBUTTON;
-	s_preferences.wallmarks.generic.name	      = "Marks on Walls:";
-	s_preferences.wallmarks.generic.flags	      = QMF_PULSEIFFOCUS|QMF_SMALLFONT;
+	s_preferences.wallmarks.generic.name          = "Marks on Walls:";
+	s_preferences.wallmarks.generic.flags         = QMF_PULSEIFFOCUS|QMF_SMALLFONT;
 	s_preferences.wallmarks.generic.callback      = Preferences_Event;
 	s_preferences.wallmarks.generic.id            = ID_WALLMARKS;
-	s_preferences.wallmarks.generic.x	          = PREFERENCES_X_POS;
-	s_preferences.wallmarks.generic.y	          = y;
+	s_preferences.wallmarks.generic.x             = PREFERENCES_X_POS;
+	s_preferences.wallmarks.generic.y             = y;
 
 	y += BIGCHAR_HEIGHT+2;
 	s_preferences.brass.generic.type              = MTYPE_RADIOBUTTON;
-	s_preferences.brass.generic.name	          = "Ejecting Brass:";
-	s_preferences.brass.generic.flags	          = QMF_PULSEIFFOCUS|QMF_SMALLFONT;
+	s_preferences.brass.generic.name              = "Ejecting Brass:";
+	s_preferences.brass.generic.flags             = QMF_PULSEIFFOCUS|QMF_SMALLFONT;
 	s_preferences.brass.generic.callback          = Preferences_Event;
 	s_preferences.brass.generic.id                = ID_EJECTINGBRASS;
-	s_preferences.brass.generic.x	              = PREFERENCES_X_POS;
-	s_preferences.brass.generic.y	              = y;
+	s_preferences.brass.generic.x                 = PREFERENCES_X_POS;
+	s_preferences.brass.generic.y                 = y;
 
 	y += BIGCHAR_HEIGHT+2;
 	s_preferences.dynamiclights.generic.type      = MTYPE_RADIOBUTTON;
-	s_preferences.dynamiclights.generic.name	  = "Dynamic Lights:";
+	s_preferences.dynamiclights.generic.name      = "Dynamic Lights:";
 	s_preferences.dynamiclights.generic.flags     = QMF_PULSEIFFOCUS|QMF_SMALLFONT;
 	s_preferences.dynamiclights.generic.callback  = Preferences_Event;
 	s_preferences.dynamiclights.generic.id        = ID_DYNAMICLIGHTS;
-	s_preferences.dynamiclights.generic.x	      = PREFERENCES_X_POS;
-	s_preferences.dynamiclights.generic.y	      = y;
+	s_preferences.dynamiclights.generic.x         = PREFERENCES_X_POS;
+	s_preferences.dynamiclights.generic.y         = y;
 
 	y += BIGCHAR_HEIGHT+2;
 	s_preferences.identifytarget.generic.type     = MTYPE_RADIOBUTTON;
-	s_preferences.identifytarget.generic.name	  = "Identify Target:";
+	s_preferences.identifytarget.generic.name     = "Identify Target:";
 	s_preferences.identifytarget.generic.flags    = QMF_PULSEIFFOCUS|QMF_SMALLFONT;
 	s_preferences.identifytarget.generic.callback = Preferences_Event;
 	s_preferences.identifytarget.generic.id       = ID_IDENTIFYTARGET;
-	s_preferences.identifytarget.generic.x	      = PREFERENCES_X_POS;
-	s_preferences.identifytarget.generic.y	      = y;
+	s_preferences.identifytarget.generic.x        = PREFERENCES_X_POS;
+	s_preferences.identifytarget.generic.y        = y;
 
 	y += BIGCHAR_HEIGHT+2;
 	s_preferences.highqualitysky.generic.type     = MTYPE_RADIOBUTTON;
-	s_preferences.highqualitysky.generic.name	  = "High Quality Sky:";
-	s_preferences.highqualitysky.generic.flags	  = QMF_PULSEIFFOCUS|QMF_SMALLFONT;
+	s_preferences.highqualitysky.generic.name     = "High Quality Sky:";
+	s_preferences.highqualitysky.generic.flags    = QMF_PULSEIFFOCUS|QMF_SMALLFONT;
 	s_preferences.highqualitysky.generic.callback = Preferences_Event;
 	s_preferences.highqualitysky.generic.id       = ID_HIGHQUALITYSKY;
-	s_preferences.highqualitysky.generic.x	      = PREFERENCES_X_POS;
-	s_preferences.highqualitysky.generic.y	      = y;
+	s_preferences.highqualitysky.generic.x        = PREFERENCES_X_POS;
+	s_preferences.highqualitysky.generic.y        = y;
 
 	y += BIGCHAR_HEIGHT+2;
 	s_preferences.synceveryframe.generic.type     = MTYPE_RADIOBUTTON;
-	s_preferences.synceveryframe.generic.name	  = "Sync Every Frame:";
-	s_preferences.synceveryframe.generic.flags	  = QMF_PULSEIFFOCUS|QMF_SMALLFONT;
+	s_preferences.synceveryframe.generic.name     = "Sync Every Frame:";
+	s_preferences.synceveryframe.generic.flags    = QMF_PULSEIFFOCUS|QMF_SMALLFONT;
 	s_preferences.synceveryframe.generic.callback = Preferences_Event;
 	s_preferences.synceveryframe.generic.id       = ID_SYNCEVERYFRAME;
-	s_preferences.synceveryframe.generic.x	      = PREFERENCES_X_POS;
-	s_preferences.synceveryframe.generic.y	      = y;
+	s_preferences.synceveryframe.generic.x        = PREFERENCES_X_POS;
+	s_preferences.synceveryframe.generic.y        = y;
 
 	y += BIGCHAR_HEIGHT+2;
 	s_preferences.forcemodel.generic.type     = MTYPE_RADIOBUTTON;
-	s_preferences.forcemodel.generic.name	  = "Force Player Models:";
-	s_preferences.forcemodel.generic.flags	  = QMF_PULSEIFFOCUS|QMF_SMALLFONT;
+	s_preferences.forcemodel.generic.name     = "Force Player Models:";
+	s_preferences.forcemodel.generic.flags    = QMF_PULSEIFFOCUS|QMF_SMALLFONT;
 	s_preferences.forcemodel.generic.callback = Preferences_Event;
 	s_preferences.forcemodel.generic.id       = ID_FORCEMODEL;
-	s_preferences.forcemodel.generic.x	      = PREFERENCES_X_POS;
-	s_preferences.forcemodel.generic.y	      = y;
+	s_preferences.forcemodel.generic.x        = PREFERENCES_X_POS;
+	s_preferences.forcemodel.generic.y        = y;
 
 	y += BIGCHAR_HEIGHT+2;
 	s_preferences.drawteamoverlay.generic.type     = MTYPE_SPINCONTROL;
-	s_preferences.drawteamoverlay.generic.name	   = "Draw Team Overlay:";
-	s_preferences.drawteamoverlay.generic.flags	   = QMF_PULSEIFFOCUS|QMF_SMALLFONT;
+	s_preferences.drawteamoverlay.generic.name     = "Draw Team Overlay:";
+	s_preferences.drawteamoverlay.generic.flags    = QMF_PULSEIFFOCUS|QMF_SMALLFONT;
 	s_preferences.drawteamoverlay.generic.callback = Preferences_Event;
 	s_preferences.drawteamoverlay.generic.id       = ID_DRAWTEAMOVERLAY;
-	s_preferences.drawteamoverlay.generic.x	       = PREFERENCES_X_POS;
-	s_preferences.drawteamoverlay.generic.y	       = y;
-	s_preferences.drawteamoverlay.itemnames			= teamoverlay_names;
+	s_preferences.drawteamoverlay.generic.x        = PREFERENCES_X_POS;
+	s_preferences.drawteamoverlay.generic.y        = y;
+	s_preferences.drawteamoverlay.itemnames        = teamoverlay_names;
 
 	y += BIGCHAR_HEIGHT+2;
-	s_preferences.allowdownload.generic.type     = MTYPE_RADIOBUTTON;
-	s_preferences.allowdownload.generic.name	   = "Automatic Downloading:";
-	s_preferences.allowdownload.generic.flags	   = QMF_PULSEIFFOCUS|QMF_SMALLFONT;
-	s_preferences.allowdownload.generic.callback = Preferences_Event;
-	s_preferences.allowdownload.generic.id       = ID_ALLOWDOWNLOAD;
-	s_preferences.allowdownload.generic.x	       = PREFERENCES_X_POS;
-	s_preferences.allowdownload.generic.y	       = y;
+	s_preferences.allowdownload.generic.type       = MTYPE_RADIOBUTTON;
+	s_preferences.allowdownload.generic.name       = "Automatic Downloading:";
+	s_preferences.allowdownload.generic.flags      = QMF_PULSEIFFOCUS|QMF_SMALLFONT;
+	s_preferences.allowdownload.generic.callback   = Preferences_Event;
+	s_preferences.allowdownload.generic.id         = ID_ALLOWDOWNLOAD;
+	s_preferences.allowdownload.generic.x          = PREFERENCES_X_POS;
+	s_preferences.allowdownload.generic.y          = y;
 
 	y += BIGCHAR_HEIGHT+2;
-	s_preferences.back.generic.type	    = MTYPE_BITMAP;
+	s_preferences.back.generic.type     = MTYPE_BITMAP;
 	s_preferences.back.generic.name     = ART_BACK0;
 	s_preferences.back.generic.flags    = QMF_LEFT_JUSTIFY|QMF_PULSEIFFOCUS;
 	s_preferences.back.generic.callback = Preferences_Event;
-	s_preferences.back.generic.id	    = ID_BACK;
-	s_preferences.back.generic.x		= 0;
-	s_preferences.back.generic.y		= 480-64;
-	s_preferences.back.width  		    = 128;
-	s_preferences.back.height  		    = 64;
+	s_preferences.back.generic.id       = ID_BACK;
+	s_preferences.back.generic.x        = 0;
+	s_preferences.back.generic.y        = 480-64;
+	s_preferences.back.width            = 128;
+	s_preferences.back.height           = 64;
 	s_preferences.back.focuspic         = ART_BACK1;
 
 	Menu_AddItem( &s_preferences.menu, &s_preferences.banner );

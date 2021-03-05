@@ -161,44 +161,44 @@ void SpecifyLeague_MenuInit( void )
 	s_specifyleague.menu.wrapAround = qtrue;
 	s_specifyleague.menu.fullscreen = qtrue;
 
-	s_specifyleague.banner.generic.type	 = MTYPE_BTEXT;
+	s_specifyleague.banner.generic.type  = MTYPE_BTEXT;
 	s_specifyleague.banner.generic.x     = 320;
 	s_specifyleague.banner.generic.y     = 16;
-	s_specifyleague.banner.string		 = "CHOOSE LEAGUE";
-	s_specifyleague.banner.color  		 = color_white;
-	s_specifyleague.banner.style  		 = UI_CENTER;
+	s_specifyleague.banner.string        = "CHOOSE LEAGUE";
+	s_specifyleague.banner.color         = color_white;
+	s_specifyleague.banner.style         = UI_CENTER;
 
 	s_specifyleague.framel.generic.type  = MTYPE_BITMAP;
 	s_specifyleague.framel.generic.name  = SPECIFYLEAGUE_FRAMEL;
 	s_specifyleague.framel.generic.flags = QMF_INACTIVE;
-	s_specifyleague.framel.generic.x	 = 0;
-	s_specifyleague.framel.generic.y	 = 78;
-	s_specifyleague.framel.width  	     = 256;
-	s_specifyleague.framel.height  	     = 334;
+	s_specifyleague.framel.generic.x     = 0;
+	s_specifyleague.framel.generic.y     = 78;
+	s_specifyleague.framel.width         = 256;
+	s_specifyleague.framel.height        = 334;
 
 	s_specifyleague.framer.generic.type  = MTYPE_BITMAP;
 	s_specifyleague.framer.generic.name  = SPECIFYLEAGUE_FRAMER;
 	s_specifyleague.framer.generic.flags = QMF_INACTIVE;
-	s_specifyleague.framer.generic.x	 = 376;
-	s_specifyleague.framer.generic.y	 = 76;
-	s_specifyleague.framer.width  	     = 256;
-	s_specifyleague.framer.height  	     = 334;
+	s_specifyleague.framer.generic.x     = 376;
+	s_specifyleague.framer.generic.y     = 76;
+	s_specifyleague.framer.width         = 256;
+	s_specifyleague.framer.height        = 334;
 
 	s_specifyleague.grlogo.generic.type  = MTYPE_BITMAP;
 	s_specifyleague.grlogo.generic.name  = GLOBALRANKINGS_LOGO;
 	s_specifyleague.grlogo.generic.flags = QMF_INACTIVE;
-	s_specifyleague.grlogo.generic.x	 = 0;
-	s_specifyleague.grlogo.generic.y	 = 0;
-	s_specifyleague.grlogo.width		 = 64;
-	s_specifyleague.grlogo.height		 = 128;
+	s_specifyleague.grlogo.generic.x     = 0;
+	s_specifyleague.grlogo.generic.y     = 0;
+	s_specifyleague.grlogo.width         = 64;
+	s_specifyleague.grlogo.height        = 128;
 
 	s_specifyleague.rankname.generic.type       = MTYPE_FIELD;
 	s_specifyleague.rankname.generic.name       = "Player Name:";
 	s_specifyleague.rankname.generic.flags      = QMF_PULSEIFFOCUS|QMF_SMALLFONT;
 	s_specifyleague.rankname.generic.callback   = SpecifyLeague_Event;
-	s_specifyleague.rankname.generic.id	        = ID_SPECIFYLEAGUENAME;
-	s_specifyleague.rankname.generic.x	        = 226;
-	s_specifyleague.rankname.generic.y	        = 128;
+	s_specifyleague.rankname.generic.id         = ID_SPECIFYLEAGUENAME;
+	s_specifyleague.rankname.generic.x          = 226;
+	s_specifyleague.rankname.generic.y          = 128;
 	s_specifyleague.rankname.field.widthInChars = 32;
 	s_specifyleague.rankname.field.maxchars     = 80;
 
@@ -211,7 +211,7 @@ void SpecifyLeague_MenuInit( void )
 	s_specifyleague.list.width					= MAX_LISTBOXWIDTH;
 	s_specifyleague.list.height					= 8;
 	s_specifyleague.list.itemnames				= (const char **)leaguename_items;
-	s_specifyleague.list.numitems               = 0;
+	s_specifyleague.list.numitems				= 0;
 	for( i = 0; i < MAX_LISTBOXITEMS; i++ ) {
 		league_table[i].buff[0] = 0;
 		league_table[i].leaguename[0] = 0;
@@ -247,15 +247,15 @@ void SpecifyLeague_MenuInit( void )
 	s_specifyleague.down.height					= 64;
 	s_specifyleague.down.focuspic				= SPECIFYLEAGUE_DOWN;
 
-	s_specifyleague.back.generic.type	  = MTYPE_BITMAP;
+	s_specifyleague.back.generic.type     = MTYPE_BITMAP;
 	s_specifyleague.back.generic.name     = SPECIFYLEAGUE_BACK0;
 	s_specifyleague.back.generic.flags    = QMF_LEFT_JUSTIFY|QMF_PULSEIFFOCUS;
 	s_specifyleague.back.generic.callback = SpecifyLeague_Event;
-	s_specifyleague.back.generic.id	      = ID_SPECIFYLEAGUEBACK;
-	s_specifyleague.back.generic.x		  = 0;
-	s_specifyleague.back.generic.y		  = 480-64;
-	s_specifyleague.back.width  		  = 128;
-	s_specifyleague.back.height  		  = 64;
+	s_specifyleague.back.generic.id       = ID_SPECIFYLEAGUEBACK;
+	s_specifyleague.back.generic.x        = 0;
+	s_specifyleague.back.generic.y        = 480-64;
+	s_specifyleague.back.width            = 128;
+	s_specifyleague.back.height           = 64;
 	s_specifyleague.back.focuspic         = SPECIFYLEAGUE_BACK1;
 
 	Menu_AddItem( &s_specifyleague.menu, &s_specifyleague.banner );

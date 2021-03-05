@@ -21,10 +21,10 @@ DEMOS MENU
 #define ART_ARROWS_UP		"menu/art/arrows_vert_top"
 #define ART_ARROWS_DOWN		"menu/art/arrows_vert_bot"
 
-#define UI_DEMO_LENGTH      64
-#define UI_MAX_DEMOS        1024
-#define UI_MAX_ITEMS        18
-#define NAMEBUFSIZE         65536
+#define UI_DEMO_LENGTH		64
+#define UI_MAX_DEMOS		1024
+#define UI_MAX_ITEMS		18
+#define NAMEBUFSIZE			65536
 
 #define ID_BACK				10
 #define ID_GO				11
@@ -435,21 +435,21 @@ int	UI_cstrdiff( char * str ) {
 }
 
 int UI_cstricmp( const char *src, const char *dst ) {
-    int ret = 0;
-    int c1 = 0, c2 = 0;
+	int ret = 0;
+	int c1 = 0, c2 = 0;
 	unsigned char	ch1, ch2;
-    do {
-        if ( *src == '^' && src[1] ) {
-            c1 = src[1];
-            src += 2;
-            continue;
-        }
+	do {
+		if ( *src == '^' && src[1] ) {
+			c1 = src[1];
+			src += 2;
+			continue;
+		}
 
-        if ( *dst == '^' && dst[1] ) {
-            c2 = dst[1];
-            dst += 2;
-            continue;
-        }
+		if ( *dst == '^' && dst[1] ) {
+			c2 = dst[1];
+			dst += 2;
+			continue;
+		}
 
 		ch1 = *src;
 		ch2 = *dst;
@@ -459,24 +459,24 @@ int UI_cstricmp( const char *src, const char *dst ) {
 		if ( ch2 >= 'a' && ch2 <= 'z' )
 			ch2 = ch2 - 'a' + 'A';
 
-        ret = ch1 - ch2;
-        if ( !ret )
-            ret = c1 - c2;
+		ret = ch1 - ch2;
+		if ( !ret )
+			ret = c1 - c2;
 
-        dst++;
-        if ( ret || !*dst )
-            break;
+		dst++;
+		if ( ret || !*dst )
+			break;
 
-        src++;
+		src++;
 
-    } while ( 1 );
+	} while ( 1 );
 
-    if ( ret < 0 )
-        ret = -1;
-    else if ( ret > 0 )
-        ret = 1;
+	if ( ret < 0 )
+		ret = -1;
+	else if ( ret > 0 )
+		ret = 1;
 
-    return( ret );
+	return( ret );
 }
 
 
@@ -497,26 +497,26 @@ static int compare_entries( demo_entry_t * a, demo_entry_t *b, int mode )
 
 static void UI_demosort( demo_entry_t **a, int n, int mode )
 {
-    demo_entry_t * tmp;
-    int i = 0, j = n;
-    demo_entry_t *m = a[ n>>1 ];
-    do
-    {
-        while ( compare_entries( a[i], m, mode ) < 0 ) i++;
-        while ( compare_entries( a[j], m, mode ) > 0 ) j--;
+	demo_entry_t * tmp;
+	int i = 0, j = n;
+	demo_entry_t *m = a[ n>>1 ];
+	do
+	{
+		while ( compare_entries( a[i], m, mode ) < 0 ) i++;
+		while ( compare_entries( a[j], m, mode ) > 0 ) j--;
 
 		if ( i <= j )
-        {
-            tmp = a[i];
-            a[i] = a[j];
-            a[j] = tmp;
-            i++;
-            j--;
-        }
-    }
-    while ( i <= j );
-    if ( j > 0 ) UI_demosort( a, j, mode );
-    if ( n > i ) UI_demosort( a+i, n-i, mode );
+		{
+			tmp = a[i];
+			a[i] = a[j];
+			a[j] = tmp;
+			i++;
+			j--;
+		}
+	}
+	while ( i <= j );
+	if ( j > 0 ) UI_demosort( a, j, mode );
+	if ( n > i ) UI_demosort( a+i, n-i, mode );
 }
 
 

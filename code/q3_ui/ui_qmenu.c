@@ -18,42 +18,42 @@ static qhandle_t	sliderBar;
 static qhandle_t	sliderButton_0;
 static qhandle_t	sliderButton_1;
 
-vec4_t menu_text_color	    = {1.0f, 1.0f, 1.0f, 1.0f};
-vec4_t menu_dim_color       = {0.0f, 0.0f, 0.0f, 0.75f};
-vec4_t color_black	    = {0.00f, 0.00f, 0.00f, 1.00f};
-vec4_t color_white	    = {1.00f, 1.00f, 1.00f, 1.00f};
-vec4_t color_yellow	    = {1.00f, 1.00f, 0.00f, 1.00f};
-vec4_t color_blue	    = {0.00f, 0.00f, 1.00f, 1.00f};
-vec4_t color_lightOrange    = {1.00f, 0.68f, 0.00f, 1.00f };
-vec4_t color_orange	    = {1.00f, 0.43f, 0.00f, 1.00f};
-vec4_t color_red	    = {1.00f, 0.00f, 0.00f, 1.00f};
-vec4_t color_dim	    = {0.00f, 0.00f, 0.00f, 0.25f};
+vec4_t menu_text_color   = {1.0f, 1.0f, 1.0f, 1.0f};
+vec4_t menu_dim_color    = {0.0f, 0.0f, 0.0f, 0.75f};
+vec4_t color_black       = {0.00f, 0.00f, 0.00f, 1.00f};
+vec4_t color_white       = {1.00f, 1.00f, 1.00f, 1.00f};
+vec4_t color_yellow      = {1.00f, 1.00f, 0.00f, 1.00f};
+vec4_t color_blue        = {0.00f, 0.00f, 1.00f, 1.00f};
+vec4_t color_lightOrange = {1.00f, 0.68f, 0.00f, 1.00f };
+vec4_t color_orange      = {1.00f, 0.43f, 0.00f, 1.00f};
+vec4_t color_red         = {1.00f, 0.00f, 0.00f, 1.00f};
+vec4_t color_dim         = {0.00f, 0.00f, 0.00f, 0.25f};
 
 // current color scheme
 vec4_t pulse_color          = {1.00f, 1.00f, 1.00f, 1.00f};
-vec4_t text_color_disabled  = {0.50f, 0.50f, 0.50f, 1.00f};	// light gray
-vec4_t text_color_normal    = {1.00f, 0.43f, 0.00f, 1.00f};	// light orange
-vec4_t text_color_highlight = {1.00f, 1.00f, 0.00f, 1.00f};	// bright yellow
-vec4_t listbar_color        = {1.00f, 0.43f, 0.00f, 0.30f};	// transluscent orange
-vec4_t text_color_status    = {1.00f, 1.00f, 1.00f, 1.00f};	// bright white
+vec4_t text_color_disabled  = {0.50f, 0.50f, 0.50f, 1.00f}; // light gray
+vec4_t text_color_normal    = {1.00f, 0.43f, 0.00f, 1.00f}; // light orange
+vec4_t text_color_highlight = {1.00f, 1.00f, 0.00f, 1.00f}; // bright yellow
+vec4_t listbar_color        = {1.00f, 0.43f, 0.00f, 0.30f}; // transluscent orange
+vec4_t text_color_status    = {1.00f, 1.00f, 1.00f, 1.00f}; // bright white
 
 // action widget
-static void	Action_Init( menuaction_s *a );
-static void	Action_Draw( menuaction_s *a );
+static void Action_Init( menuaction_s *a );
+static void Action_Draw( menuaction_s *a );
 
 // radio button widget
-static void	RadioButton_Init( menuradiobutton_s *rb );
-static void	RadioButton_Draw( menuradiobutton_s *rb );
+static void RadioButton_Init( menuradiobutton_s *rb );
+static void RadioButton_Draw( menuradiobutton_s *rb );
 static sfxHandle_t RadioButton_Key( menuradiobutton_s *rb, int key );
 
 // slider widget
 static void Slider_Init( menuslider_s *s );
 static sfxHandle_t Slider_Key( menuslider_s *s, int key );
-static void	Slider_Draw( menuslider_s *s );
+static void Slider_Draw( menuslider_s *s );
 
 // spin control widget
-static void	SpinControl_Init( menulist_s *s );
-static void	SpinControl_Draw( menulist_s *s );
+static void SpinControl_Init( menulist_s *s );
+static void SpinControl_Draw( menulist_s *s );
 static sfxHandle_t SpinControl_Key( menulist_s *l, int key );
 
 // text widget
@@ -61,7 +61,7 @@ static void Text_Init( menutext_s *b );
 static void Text_Draw( menutext_s *b );
 
 // scrolllist widget
-static void	ScrollList_Init( menulist_s *l );
+static void ScrollList_Init( menulist_s *l );
 sfxHandle_t ScrollList_Key( menulist_s *l, int key );
 
 // proportional text widget
@@ -762,7 +762,7 @@ static void SpinControl_Init( menulist_s *s ) {
 		s->numitems++;
 	}
 
-	s->generic.top	  =	s->generic.y;
+	s->generic.top    =	s->generic.y;
 	s->generic.right  =	s->generic.x + (len+1)*SMALLCHAR_WIDTH;
 	s->generic.bottom =	s->generic.y + SMALLCHAR_HEIGHT;
 }
@@ -1433,7 +1433,7 @@ Menu_SetCursorToItem
 */
 void Menu_SetCursorToItem( menuframework_s *m, void* ptr )
 {
-	int	i;
+	int i;
 
 	for (i=0; i<m->nitems; i++)
 	{
@@ -1579,7 +1579,7 @@ void Menu_Draw( menuframework_s *menu )
 				x = itemptr->left;
 				y = itemptr->top;
 				w = itemptr->right - itemptr->left + 1;
-				h =	itemptr->bottom - itemptr->top + 1;
+				h = itemptr->bottom - itemptr->top + 1;
 
 				if (itemptr->flags & QMF_HASMOUSEFOCUS) {
 					UI_DrawRect(x, y, w, h, colorYellow );
@@ -1764,10 +1764,10 @@ Menu_Cache
 */
 void Menu_Cache( void )
 {
-	uis.charset			= trap_R_RegisterShaderNoMip( "gfx/2d/bigchars" );
-	uis.charsetProp		= trap_R_RegisterShaderNoMip( "menu/art/font1_prop.tga" );
-	uis.charsetPropGlow	= trap_R_RegisterShaderNoMip( "menu/art/font1_prop_glo.tga" );
-	uis.charsetPropB	= trap_R_RegisterShaderNoMip( "menu/art/font2_prop.tga" );
+	uis.charset         = trap_R_RegisterShaderNoMip( "gfx/2d/bigchars" );
+	uis.charsetProp     = trap_R_RegisterShaderNoMip( "menu/art/font1_prop.tga" );
+	uis.charsetPropGlow = trap_R_RegisterShaderNoMip( "menu/art/font1_prop_glo.tga" );
+	uis.charsetPropB    = trap_R_RegisterShaderNoMip( "menu/art/font2_prop.tga" );
 	uis.cursor          = trap_R_RegisterShaderNoMip( "menu/art/3_cursor2" );
 	uis.rb_on           = trap_R_RegisterShaderNoMip( "menu/art/switch_on" );
 	uis.rb_off          = trap_R_RegisterShaderNoMip( "menu/art/switch_off" );
@@ -1781,11 +1781,11 @@ void Menu_Cache( void )
 	}
 	uis.menuBackNoLogoShader = trap_R_RegisterShaderNoMip( "menubacknologo" );
 
-	menu_in_sound	= trap_S_RegisterSound( "sound/misc/menu1.wav", qfalse );
-	menu_move_sound	= trap_S_RegisterSound( "sound/misc/menu2.wav", qfalse );
-	menu_out_sound	= trap_S_RegisterSound( "sound/misc/menu3.wav", qfalse );
-	menu_buzz_sound	= trap_S_RegisterSound( "sound/misc/menu4.wav", qfalse );
-	weaponChangeSound	= trap_S_RegisterSound( "sound/weapons/change.wav", qfalse );
+	menu_in_sound     = trap_S_RegisterSound( "sound/misc/menu1.wav", qfalse );
+	menu_move_sound   = trap_S_RegisterSound( "sound/misc/menu2.wav", qfalse );
+	menu_out_sound    = trap_S_RegisterSound( "sound/misc/menu3.wav", qfalse );
+	menu_buzz_sound   = trap_S_RegisterSound( "sound/misc/menu4.wav", qfalse );
+	weaponChangeSound = trap_S_RegisterSound( "sound/weapons/change.wav", qfalse );
 
 	// need a nonzero sound, make an empty sound for this
 	menu_null_sound = -1;

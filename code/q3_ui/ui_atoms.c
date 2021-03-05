@@ -588,16 +588,16 @@ void UI_DrawProportionalString_AutoWrapped( int x, int y, int xmax, int ystep, c
 			UI_DrawProportionalString(x, y, s1, style, color);
 			y += ystep;
 			if (c_bcp == '\0')
-      {
-        // that was the last word
-        // we could start a new loop, but that wouldn't be much use
-        // even if the word is too long, we would overflow it (see above)
-        // so just print it now if needed
-        s2++;
-        if (*s2 != '\0') // if we are printing an overflowing line we have s2 == s3
-          UI_DrawProportionalString(x, y, s2, style, color);
+			{
+				// that was the last word
+				// we could start a new loop, but that wouldn't be much use
+				// even if the word is too long, we would overflow it (see above)
+				// so just print it now if needed
+				s2++;
+				if (*s2 != '\0') // if we are printing an overflowing line we have s2 == s3
+				UI_DrawProportionalString(x, y, s2, style, color);
 				break;
-      }
+			}
 			s2++;
 			s1 = s2;
 			s3 = s2;
@@ -826,9 +826,9 @@ void UI_SetActiveMenu( uiMenuCommand_t menu ) {
 	case UIMENU_POSTGAME:
 	default:
 #ifndef NDEBUG
-	  Com_Printf("UI_SetActiveMenu: bad enum %d\n", menu );
+		Com_Printf("UI_SetActiveMenu: bad enum %d\n", menu );
 #endif
-	  break;
+		break;
 	}
 }
 

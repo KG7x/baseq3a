@@ -146,12 +146,12 @@ typedef struct
 {
 	int type;
 	const char *name;
-	int	id;
+	int id;
 	int x, y;
 	int left;
-	int	top;
-	int	right;
-	int	bottom;
+	int top;
+	int right;
+	int bottom;
 	menuframework_s *parent;
 	int menuPosition;
 	unsigned flags;
@@ -192,19 +192,19 @@ typedef struct
 {
 	menucommon_s generic;
 
-	int	oldvalue;
+	int oldvalue;
 	int curvalue;
-	int	numitems;
-	int	top;
-	int	scroll;
+	int numitems;
+	int top;
+	int scroll;
 	int mouse1time;
 
 	const char **itemnames;
 
 	int width;
 	int height;
-	int	columns;
-	int	separation;
+	int columns;
+	int separation;
 } menulist_s;
 
 typedef struct
@@ -575,7 +575,7 @@ extern void			UI_DrawProportionalString_AutoWrapped( int x, int ystart, int xmax
 extern int			UI_ProportionalStringWidth( const char* str );
 extern void			UI_DrawString( int x, int y, const char* str, int style, vec4_t color );
 extern void			UI_DrawChar( int x, int y, int ch, int style, vec4_t color );
-extern qboolean 	UI_CursorInRect (int x, int y, int width, int height);
+extern qboolean		UI_CursorInRect (int x, int y, int width, int height);
 extern void			UI_AdjustFrom640( float *x, float *y, float *w, float *h );
 extern void			UI_DrawTextBox (int x, int y, int width, int lines);
 extern qboolean		UI_IsFullscreen( void );
@@ -761,7 +761,7 @@ void UI_SetBestScore( int level, int score );
 int UI_TierCompleted( int levelWon );
 qboolean UI_ShowTierVideo( int tier );
 qboolean UI_CanShowTierVideo( int tier );
-int  UI_GetCurrentGame( void );
+int UI_GetCurrentGame( void );
 void UI_NewGame( void );
 void UI_LogAwardData( int award, int data );
 int UI_GetAwardLevel( int award );

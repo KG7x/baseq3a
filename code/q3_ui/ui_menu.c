@@ -17,7 +17,7 @@ MAIN MENU
 #define ID_SETUP				12
 #define ID_DEMOS				13
 #define ID_CINEMATICS			14
-#define ID_TEAMARENA		15
+#define ID_TEAMARENA			15
 #define ID_MODS					16
 #define ID_EXIT					17
 
@@ -219,19 +219,19 @@ static qboolean UI_TeamArenaExists( void ) {
 	int		numdirs;
 	char	dirlist[2048];
 	char	*dirptr;
-  char  *descptr;
+	char	*descptr;
 	int		i;
 	int		dirlen;
 
 	numdirs = trap_FS_GetFileList( "$modlist", "", dirlist, sizeof(dirlist) );
-	dirptr  = dirlist;
+	dirptr = dirlist;
 	for( i = 0; i < numdirs; i++ ) {
 		dirlen = strlen( dirptr ) + 1;
-    descptr = dirptr + dirlen;
+	descptr = dirptr + dirlen;
 		if (Q_stricmp(dirptr, "missionpack") == 0) {
 			return qtrue;
 		}
-    dirptr += dirlen + strlen(descptr) + 1;
+	dirptr += dirlen + strlen(descptr) + 1;
 	}
 	return qfalse;
 }
