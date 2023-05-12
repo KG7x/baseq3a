@@ -44,7 +44,7 @@ jobs:
 
   windows_gcc:
     name: ${{ matrix.config }} Windows ${{ matrix.arch }}-bit (GCC)
-    runs-on: windows-2019
+    runs-on: windows-2022
     strategy:
       fail-fast: false
       matrix:
@@ -78,9 +78,10 @@ jobs:
         submodules: recursive
 
     - name: Build
+    - shell: msys2 {0}
       run: |
         cd build/linux
-          make -j 4 ARCH=${{ matrix.make_ARCH }} COMPILE_ARCH=${{ matrix.COMPILE_ARCH }}
+        msys2 -c 'make -j 4 ARCH=${{ matrix.make_ARCH }} COMPILE_ARCH=${{ matrix.COMPILE_ARCH }}
         
  #   - name: Install
  #     run: make install DESTDIR=./bin
