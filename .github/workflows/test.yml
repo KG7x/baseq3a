@@ -80,7 +80,7 @@ jobs:
     - name: Build
       run: |
         cd build/linux
-        msys2 -c 'make -j 4 ARCH=${{ matrix.make_ARCH }} COMPILE_ARCH=${{ matrix.COMPILE_ARCH }}'
+        C:\msys64\msys2 -c 'make -j 4 ARCH=${{ matrix.make_ARCH }} COMPILE_ARCH=${{ matrix.COMPILE_ARCH }}'
         
  #   - name: Install
  #     run: make install DESTDIR=./bin
