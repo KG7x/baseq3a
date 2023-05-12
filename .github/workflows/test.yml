@@ -78,7 +78,6 @@ jobs:
         submodules: recursive
 
     - name: Build
-    - shell: msys2 {0}
       run: |
         cd build/linux
         msys2 -c 'make -j 4 ARCH=${{ matrix.make_ARCH }} COMPILE_ARCH=${{ matrix.COMPILE_ARCH }}
