@@ -65,22 +65,24 @@ jobs:
         shell: msys2 {0}
 
     steps:
-    - uses: msys2/setup-msys2@v2
-      with:
-        install: ${{ matrix.prefix }}-make ${{ matrix.prefix }}-binutils ${{ matrix.prefix }}-gcc
-        msystem: ${{ matrix.msystem }}
-        path-type: minimal
-        release: false
-        update: false
-
     - uses: actions/checkout@v3
       with:
         submodules: recursive
 
+    - uses: msys2/setup-msys2@v2
+      with:
+        install: >- 
+         ${{ matrix.prefix }}-make
+         ${{ matrix.prefix }}-binutils
+         ${{ matrix.prefix }}-gcc
+#       msystem: ${{ matrix.msystem }}
+#       path-type: minimal
+#       release: false
+#       update: false
+
     - name: Build
-      run: |
-        cd build/linux
-        "C:\msys64\msys2" -c 'make -j 4 ARCH=${{ matrix.make_ARCH }} COMPILE_ARCH=${{ matrix.COMPILE_ARCH }}'
+      working-directory: build/linux
+      run: make -j 4 ARCH=${{ matrix.make_ARCH }} COMPILE_ARCH=${{ matrix.COMPILE_ARCH }}
         
  #   - name: Install
  #     run: make install DESTDIR=./bin
