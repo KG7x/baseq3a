@@ -67,7 +67,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        submodules: recursive
+        submodules: 'true'
 
     - uses: msys2/setup-msys2@v2
       with:
@@ -75,7 +75,7 @@ jobs:
          ${{ matrix.prefix }}-make
          ${{ matrix.prefix }}-binutils
          ${{ matrix.prefix }}-gcc
-#       msystem: ${{ matrix.msystem }}
+         msystem: ${{ matrix.msystem }}
 #       path-type: minimal
 #       release: false
 #       update: false
