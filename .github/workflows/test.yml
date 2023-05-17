@@ -75,7 +75,7 @@ jobs:
          ${{ matrix.prefix }}-make
          ${{ matrix.prefix }}-binutils
          ${{ matrix.prefix }}-gcc
-         msystem: ${{ matrix.msystem }}
+#       msystem: ${{ matrix.msystem }}
 #       path-type: minimal
 #       release: false
 #       update: false
