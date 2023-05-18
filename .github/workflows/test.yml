@@ -84,9 +84,10 @@ jobs:
 #       update: false
 
     - name: Build
-      working-directory: build/linux
-      run: make -j 4 ARCH=${{ matrix.make_ARCH }}
-#       cd build/linux
+#      working-directory: build/linux
+      run: |
+       cd build/linux
+         make -j 4 ARCH=${{ matrix.make_ARCH }}
 #      COMPILE_ARCH=${{ matrix.COMPILE_ARCH }}
         
  #   - name: Install
