@@ -71,7 +71,9 @@ jobs:
 
     - uses: msys2/setup-msys2@v2
       with:
-        install: >- 
+        update: true
+        install: >-
+         base-devel
          ${{ matrix.prefix }}-make
          ${{ matrix.prefix }}-binutils
          ${{ matrix.prefix }}-gcc
@@ -83,8 +85,9 @@ jobs:
     - name: Build
       working-directory: build/linux
       run: |
-        set "PATH=C:\msys64\${{ matrix.msystem }}\bin;%PATH%"
-        make -j 4 ARCH=${{ matrix.make_ARCH }} COMPILE_ARCH=${{ matrix.COMPILE_ARCH }}
+       cd build/linux
+        make -j 4 ARCH=${{ matrix.make_ARCH }} 
+#      COMPILE_ARCH=${{ matrix.COMPILE_ARCH }}
         
  #   - name: Install
  #     run: make install DESTDIR=./bin
