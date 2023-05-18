@@ -87,7 +87,7 @@ jobs:
 #      working-directory: build/linux
       run: |
        cd build/linux
-         make -j 4 PLATFORM=msys${{ matrix.arch }} ARCH=${{ matrix.make_ARCH }} COMPILE_ARCH=${{ matrix.make_ARCH }}
+         make -j 4 PLATFORM=mingw${{ matrix.arch }} ARCH=${{ matrix.make_ARCH }} COMPILE_ARCH=${{ matrix.make_ARCH }}
         
  #   - name: Install
  #     run: make install DESTDIR=./bin
