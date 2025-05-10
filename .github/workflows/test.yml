@@ -26,7 +26,7 @@ jobs:
             sudo apt-get update -y
             sudo apt-get -y install gcc-multilib g++-multilib
         fi
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
 
@@ -36,7 +36,7 @@ jobs:
            make -j 4 ARCH=${{ matrix.make_ARCH }} COMPILE_ARCH=${{ matrix.COMPILE_ARCH }}
 
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: Linux
         path: build/linux/build/**/*.so
@@ -66,7 +66,7 @@ jobs:
         shell: msys2 {0}
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: 'true'
 
@@ -92,7 +92,7 @@ jobs:
  #   - name: Install
  #     run: make install DESTDIR=./bin
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: Windows
         path: build/linux/build/**/*.dll
@@ -109,7 +109,7 @@ jobs:
 #          - c: gcc
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
 
@@ -120,7 +120,7 @@ jobs:
           call .\compile.bat
 # make -j 4 install DESTDIR=build/bin     
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: pak8a(win32-qvm)
         path: |
